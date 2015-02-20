@@ -7,7 +7,7 @@ RSpec.describe User, type: :model do
 
   it "is invalid without an email" do
     user = build(:user)
-    user.email = nil;
+    user.email = nil
     expect(user).to be_invalid
   end
 
@@ -35,5 +35,27 @@ RSpec.describe User, type: :model do
     user2.email = user.email
     expect(user2).to be_invalid
   end
+
+  it "is invalid without a password" do
+    user = create(:user)
+    user.password = nil
+    expect(user).to be_invalid
+  end
+
+  it "should require password_confirmation" do
+    user = create(:user)
+    user.password_confirmation = nil
+    expect(user).to be_invalid
+  end
+
+  it "should confirm that the password matches the password_confirmation" do
+    user = build(:user)
+    user.password = "selmaandwang"
+    user.password_confirmation = "selmaandwang2"
+    expect(user.valid?).to eq(false)
+    expect(user.errors.full_messages).to eq(["Password confirmation doesn't match Password"])
+  end
+
+
 
 end
