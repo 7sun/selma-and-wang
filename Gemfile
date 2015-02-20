@@ -47,6 +47,8 @@ group :development, :test do
   #Use Rspec for unit testing
   gem 'rspec-rails'
 
+  gem 'factory_girl_rails', '~> 4.0'
+
 end
 
 
