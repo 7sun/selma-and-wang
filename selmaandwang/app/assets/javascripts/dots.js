@@ -1,6 +1,6 @@
 <script type="text/paperscript" canvas="myCanvas">
   // declaring a new firebase application
-      var myDataRef = new Firebase('https://railsample.firebaseio.com/');
+      var myDataRef = new Firebase('https://selmaandwang.firebaseio.com/');
 
    var user;
    var color1;
