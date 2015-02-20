@@ -14,11 +14,12 @@ class UsersController < ApplicationController
     if @user.valid?
       if @user.save
         # temporary path until landing page is built
-        redirect_to users_path
+        redirect_to root_path
       else
         render :new
       end
     end
+  end
 
   def show
     @user = User.find(:id)
