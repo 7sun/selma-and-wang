@@ -1,0 +1,7 @@
+<h1>Join the adventure</h1>
+<%= form_for @user do |u| %>
+	<%= u.text_field :email, placeholder: :email %>
+	<%= u.text_field :password, placeholder: :password %>
+	<%= u.text_field :password_confirmation, placeholder: 'confirm password' %>
+	<%= u.submit %>
+<% end %>

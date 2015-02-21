@@ -9,6 +9,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<header>
+		<!-- BEGIN User session links  -->
+		<div>
+			<% if current_user %>
+		  	<%= link_to 'Log Out', logout_path %>
+		  <% else %>
+		  	<%= link_to 'Log In', login_path %>
+		  	<%= link_to 'Sign Up', signup_path %>
+		  <% end %>
+		</div>
+		<!-- END User session links  -->
+	</header>
+
 <%= render 'application/dots' %>
 <%= yield %>
 
