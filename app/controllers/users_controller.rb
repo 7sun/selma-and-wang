@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    # Should only be visible by admin.
+    # Should only be visible by admin. Need to update
     @users = User.all
   end
 
@@ -13,6 +13,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.valid?
       if @user.save
+        session[:user_id] = @user.id.to_s
+        flash[:info] = "Welcome to the world of Selma and Wang!"
         redirect_to root_path
       else
         render :new

@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+
   it "has a valid facory" do
     expect(build(:user)).to be_valid
   end
@@ -37,7 +38,7 @@ RSpec.describe User, type: :model do
   end
 
   it "is invalid without a password" do
-    user = create(:user)
+    user = build(:user)
     user.password = nil
     expect(user).to be_invalid
   end
@@ -55,7 +56,6 @@ RSpec.describe User, type: :model do
     expect(user.valid?).to eq(false)
     expect(user.errors.full_messages).to eq(["Password confirmation doesn't match Password"])
   end
-
 
 
 end
