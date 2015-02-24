@@ -8,9 +8,9 @@ body {
 }
 
 .bug {
-	width: 40%;
-	margin-left: 30%;
-	margin-right: 30%;
+	width: 25%;
+	margin-left: 68%;
+	position: fixed;
 }
 
 .scroll-on-page {
@@ -31,6 +31,11 @@ body {
   a {
     color: $base-link-color;
     text-decoration: none;
+  }
+
+  section {
+  	height: 800px;
+  	width: 1400px;
   }
   //////////////////////////////////////////////////////////////////////////////////
 

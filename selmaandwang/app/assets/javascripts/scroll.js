@@ -9,7 +9,7 @@
       return jQuery(options.selector).click(function (e) {
         var jumpobj = jQuery(this);
         var target = jumpobj.attr('href');
-        var thespeed = 2000;
+        var thespeed = 750;
         var offset = jQuery(target).offset().top;
         jQuery('html,body').animate({
           scrollTop: offset
