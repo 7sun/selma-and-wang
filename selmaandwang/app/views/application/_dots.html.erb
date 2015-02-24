@@ -1,4 +1,17 @@
-<script type="text/paperscript" canvas="myCanvas">
+ <script type="text/paperscript" canvas="myCanvas">
+  document.getElementById("a").addEventListener("click",function(){
+    pick('yellow')
+    });
+  document.getElementById("b").addEventListener("click",function(){
+    pick('dodgerblue')
+    });
+  document.getElementById("c").addEventListener("click",function(){
+    pick('peachpuff')
+    });
+  document.getElementById("d").addEventListener("click",function(){
+    pick('tomato')
+    });
+
 // settinig up the new firebase
   var myDataRef = new Firebase('https://selmaandwang.firebaseio.com/'); 
    var user;
@@ -25,26 +38,13 @@
        view.update();
    }
    // function the pushes the coordinates to firebase
-   function onKeyDown(event) {
-    if (event.key == 'space') {
+   function pick(color) {
      var x = Math.floor((Math.random() * 1400) + 100);
      var y = Math.floor((Math.random() * 800) + 100);
-     var a = Math.floor((Math.random() * 4) + 1);
-       if (a == 1) {
-       var color  = 'red';
-     } else if (a == 2) {
-         var color= 'blue';
-     } else if (a == 3) {
-        var color = 'peachpuff';
-     } else if (a == 4) {
-       var color  = 'tomato';
-     }
      myDataRef.push({ x: x, y: y, color: color})
      console.log(x,y)
    
     }
-
-   }
    // function that asks the question on mouse click(unused)
    // function onMouseDown(event) {
    //   ask();
