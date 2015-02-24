@@ -8,9 +8,20 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<header>
 <%= render 'application/dots' %>
+<section>
+<img class="bug" alt="Brand" src="<%= asset_path('SnW.svg')%>">
+
+  <div class="scroll-on-page">
+  <aside id="scroll-on-page-top">
+    <a class="scroll-on-page-link" href="#scroll-link-1">First Scroll Link</a>
+    <a class="scroll-on-page-link" href="#scroll-link-2">Second Link</a>
+    <a class="scroll-on-page-link" href="#scroll-link-3">Last Link</a>
+  </aside>
+</section>
+
 <%= yield %>
 
-</body>
+</header>
 </html>

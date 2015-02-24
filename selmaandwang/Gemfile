@@ -26,6 +26,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #adding firebase
 gem 'firebase' 
 
+# bourbon, neat, refill
+gem 'bourbon'
+gem 'bitters'
+gem 'neat'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
