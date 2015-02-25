@@ -10,4 +10,10 @@
   		console.log("Current position: " + positionSC);
   	});
   }
+
+	widget.bind(SC.Widget.Events.PLAY_PROGRESS, function(eventData) {
+            console.log("Current position: "  + JSON.stringify(eventData.currentPosition));
+          });
+
+
 </script>
