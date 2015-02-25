@@ -3,7 +3,7 @@
 
 <p>OR</p>
 
-<%= form_for @user do |u| %>
+<%= form_for @user, method: 'POST', url: '/signup' do |u| %>
 	<%= u.text_field :first_name, placeholder: :first_name %>
 	<%= u.text_field :last_name, placeholder: :last_name %>
 	<%= u.text_field :email, placeholder: :email %>
