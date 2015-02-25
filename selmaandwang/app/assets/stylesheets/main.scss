@@ -2,9 +2,7 @@
 
 body {
 	background-color: #A0E18F;
-	margin-top: 40px;
-	margin-left: 40px;
-	margin-right: 40px;
+	margin: 40px;
 }
 
 .bug {
@@ -17,7 +15,7 @@ body {
   ///////////////////////////////////////////////////////////////////////////////////
   $base-line-height: 1.5em !default;
   $base-spacing: 1.5em !default;
-  $base-accent-color: #477DCA !default;
+  $base-accent-color: #F4661F !default;
   $base-link-color: $base-accent-color !default;
   $dark-gray: #333 !default;
   $large-screen: em(860) !default;
@@ -33,10 +31,6 @@ body {
     text-decoration: none;
   }
 
-  section {
-  	height: 800px;
-  	width: 1400px;
-  }
   //////////////////////////////////////////////////////////////////////////////////
 
   display: inline-block;
@@ -74,4 +68,18 @@ body {
   }
 }
 
-// Based on code by http://codepen.io/xmark/
+.scenarios {
+	height: 28em;
+	margin-top: 0px;
+	padding: 40px;
+	border: solid 1px #acf199;
+}
+
+.b1 {
+  font-size: 6em;
+	text-align: center;
+  }
+
+  #myCanvas {
+  	position: fixed;
+  }
