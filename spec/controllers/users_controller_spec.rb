@@ -23,25 +23,27 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
-  # describe 'GET show' do
-  #   let!(:yogurt) { Yogurt.create!(flavor: 'ny cheese cake', topping: 'strawberries', quantity: 11.9) }
-  #   let!(:not_the_yogurt) { Yogurt.create!(flavor: 'not ny cheese cake', topping: 'coal', quantity: 1.0) }
+  describe 'GET new' do
 
-  #   before(:each) {
-  #     get :show, id: yogurt.id
-  #   }
+    before(:each) { 
+      get :new
+    }
 
-  #   it "is successful" do
-  #     expect( response ).to be_success # 200
-  #   end
+    it "is successful" do
+      expect( response ).to be_success # 200
+    end
 
-  #   it "renders the show view file" do
-  #     expect( response ).to render_template(:show)
-  #   end
+    it "renders the new view file" do
+      expect( response ).to render_template(:new)
+    end
 
-  #   it "assigns the requested yogurt to a variable yogurt" do
-  #     expect( assigns(:yogurt) ).to eq(yogurt)
-  #   end
-  # end
+    it "assigns a new user to variable user" do
+      expect( assigns(:user) ).to be_a(User)
+    end
+
+    it "does not save a new user record" do
+      expect{ get :new }.to change(User, :count).by(0)
+    end
+  end
 
 end
