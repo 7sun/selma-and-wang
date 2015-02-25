@@ -75,5 +75,26 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
+  describe "GET show" do
+    let!(:user) { create(:user) }
+
+    before(:each) { 
+      get :show, id: user.id
+    }
+
+    it "is successful" do
+      expect( response ).to be_success
+    end
+
+    it "renders the show view file" do
+      expect( response ).to render_template(:show)
+    end
+
+    it "assigns the requested user to a variable user" do
+      expect( assigns(:user) ).to eq(user)
+    end
+
+  end
+
 
 end
