@@ -1,14 +1,18 @@
 header.navigation {
   ///////////////////////////////////////////////////////////////////////////////////
-  $base-border-color: gainsboro !default;
-  $base-border-radius: 3px !default;
+  
+
   $base-accent-color: #3f3f3f !default;
   $dark-gray: #333 !default;
   $large-screen: em(860) !default;
+
+  position: fixed;
+  margin-top: -40px;
   
   a {
     text-decoration: none;
   }
+
   //////////////////////////////////////////////////////////////////////////////////
 
   $navigation-padding: 1em;
@@ -25,14 +29,14 @@ header.navigation {
   z-index: 999;
 
   .navigation-wrapper {
-    @include clearfix;
-    @include outer-container;
+    // @include clearfix;
+    // @include outer-container;
     position: relative;
     z-index: 9999;
   }
 
   .logo {
-    float: left;
+    float: right;
     max-height: $navigation-height;
     padding-left: $navigation-padding;
     padding-right: 2em;
@@ -106,7 +110,7 @@ header.navigation {
     line-height: $navigation-height;
     overflow: hidden;
     padding-right: 0.8em;
-    text-align: right;
+    text-align: left;
     width: 100%;
     z-index: 9999;
 
@@ -138,4 +142,33 @@ header.navigation {
     border-bottom: 1px solid $navigation-active-link-color;
     padding-bottom: 3px;
   }
+
+  .navigation-tools {
+    background: #505050;
+    clear: both;
+    display: block;
+    height: $navigation-height;
+    margin-top: 21px;
+    padding-left: $navigation-padding / 2;
+    padding-right: $navigation-padding;
+
+    @include media($large-screen) {
+      background: transparent;
+      clear: none;
+      float: right;
+    }
+  }
+
+  .sign-up {
+    @include button(flat, $base-accent-color);
+    appearance: none;
+    display: inline;
+    float: right;
+    font-size: 0.8em;
+    margin-top: 1em;
+    padding: 0.75em 1em;
+    text-transform: uppercase;
+  }
+
+
 }
