@@ -93,7 +93,6 @@ RSpec.describe UsersController, type: :controller do
     it "assigns the requested user to a variable user" do
       expect( assigns(:user) ).to eq(user)
     end
-
   end
 
 
