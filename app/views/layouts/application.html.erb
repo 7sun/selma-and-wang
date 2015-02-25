@@ -9,22 +9,29 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<header>
-		<!-- Logo and Nav -->
-		<img class="bug" alt="Brand" src="<%= asset_path('SnW.svg')%>">
-		<%= render 'application/dots' %>
-		<!-- BEGIN User session links  -->
-		<div>
-			<% if current_user %>
-		  	<%= link_to 'Log Out', logout_path %>
-		  <% else %>
-		  	<%= link_to 'Log In', login_path %>
-		  	<%= link_to 'Sign Up', signup_path %>
-		  <% end %>
-		</div>
-		<!-- END User session links  -->
+	<!-- Navigation -->
+	<header class="navigation" role="banner">
+ 	 <div class="navigation-wrapper">
+    	<a href="javascript:void(0)" class="logo"><!-- <img src="<%= asset_path('SnW.svg')%>" alt="Logo Image"> --></a>
+    	<a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
+    	<nav role="navigation">
+      	<ul id="js-navigation-menu" class="navigation-menu show">
+        	<li class="nav-link"><a class="scroll-on-page-link" href="#scroll-link-1">First Scroll Link</a></li>
+        	<li class="nav-link"><a class="scroll-on-page-link" href="#scroll-link-2">Second Link</a></li>
+        	<li class="nav-link"><a class="scroll-on-page-link" href="#scroll-link-3">Last Link</a></li>
+        	<li class="nav-link"><a class="scroll-on-page-link" href="#scroll-on-page-top">Top</a></li>
+      	<% if current_user %>
+        	<li class="nav-link"><%= link_to 'Log Out', logout_path %></li>
+      	<% else %>
+        	<li class="nav-link"><%= link_to 'Log In', login_path %></li>
+        	<li class="nav-link"><%= link_to 'Sign Up', signup_path %></li>
+      	<% end %>
+      	</div>
+    	</nav>
+  	</div>
 	</header>
 
 <%= yield %>
+
 </body>
 </html>
