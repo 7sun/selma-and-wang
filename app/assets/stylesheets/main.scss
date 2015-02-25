@@ -6,9 +6,11 @@ body {
 }
 
 .bug {
-	width: 25%;
-	margin-left: 68%;
-	position: fixed;
+  width: 18%;
+  margin-left: 76%;
+  margin-top: -30px;
+  position: fixed;
+  z-index: 9999999;
 }
 
 .scroll-on-page {
@@ -69,15 +71,17 @@ body {
 }
 
 .scenarios {
-	height: 28em;
+	height: 37.25em;
 	margin-top: 0px;
 	padding: 40px;
 	border: solid 1px #acf199;
 }
 
 .b1 {
-  font-size: 6em;
+  font-size: 11em;
 	text-align: center;
+  margin-top: 70px;
+  margin-bottom: 36px;
   }
 
   #myCanvas {
