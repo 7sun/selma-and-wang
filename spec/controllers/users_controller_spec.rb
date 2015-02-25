@@ -24,7 +24,6 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe 'GET new' do
-
     before(:each) { 
       get :new
     }
@@ -45,5 +44,36 @@ RSpec.describe UsersController, type: :controller do
       expect{ get :new }.to change(User, :count).by(0)
     end
   end
+
+  describe "POST create" do
+    context "when form is valid" do
+      let!(:valid_attrs) { attributes_for(:user) }
+
+      it "adds a new user record" do
+        expect{ post :create, user: valid_attrs}.to change(User, :count).by(1)
+      end
+
+      it "redirects to index" do
+        post :create, user: valid_attrs
+        expect( response).to redirect_to root_path
+      end
+    end
+
+    context "when form is invalid" do
+      let!(:evil_attrs) do
+       { first_name: nil, last_name: nil, email: nil, password: nil, password_confirmation: nil }
+      end
+
+      it "does not add a new user record" do
+        expect{ post :create, user: evil_attrs}.to change(User, :count).by(0)
+      end
+
+      it "renders new template" do
+        post :create, user: evil_attrs
+        expect( response).to render_template(:new)
+      end
+    end
+  end
+
 
 end
