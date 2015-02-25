@@ -15,34 +15,57 @@
 // settinig up the new firebase
   var myDataRef = new Firebase('https://selmaandwang.firebaseio.com/'); 
    var user;
-   var color1;
-   var color2;
-   var color3;
-   var color4;
+   var loaded = true;
    // loading the firebase assets
    myDataRef.on("value",function(snapshot) {
+   if (loaded === true) {
      var a = snapshot.val();
      for (var key in a) { 
        var obj = a[key];
-       whoa(obj.x, obj.y, obj.color)
+       whoa(obj.x, obj.y, obj.color, obj.segment)
      }
+     loaded = false;
+   } else {
+     console.log('nothing')
+   }
    });
+// updating canvas when a child is added to the fb object
+  myDataRef.on("child_added", function(snapshot) {
+     var aa = snapshot.val();
+       var ob = aa;
+       whoa(ob.x, ob.y, ob.color, ob.segment)
+   });
+
+
+    
    // function for drawing the dots on the page
-   function whoa(x,y,color) {
+   function whoa(x,y,color,segment) {
 
      var point = new Point(x,y)
      var myCircle = new Path.Ellipse({
-       size: [15,20] ,
+       size: [20,25] ,
        center: point,
        fillColor: color 
      });
-       view.update();
+
+     myCircle.removeSegment(segment);
+       view.update(); 
    }
-   // function the pushes the coordinates to firebase
+     // function the pushes the coordinates to firebase
    function pick(color) {
      var x = Math.floor((Math.random() * 1400) + 100);
      var y = Math.floor((Math.random() * 800) + 100);
-     myDataRef.push({ x: x, y: y, color: color})
+     var math = Math.random();
+     if (math > 0.75) {
+       var segment = 1 
+     } else if (math < 0.75 && math > 0.50) {
+       var segment = 2
+     } else if (math < 0.50 && math > 0.25) {
+       var segment = 3 
+     } else {
+       var segment = 0
+     }
+     myDataRef.push({ x: x, y: y, color: color,segment: segment})
      console.log(x,y)
    
     }
