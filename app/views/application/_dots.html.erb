@@ -48,7 +48,7 @@
        center: point,
        fillColor: color 
      });
-
+  // function for pulsating dots
      myCircle.removeSegment(segment);
      if (pulse == true) {
     var myVar=setInterval(function(){myTimer()},1000);
@@ -57,9 +57,11 @@
       if (big == true) { 
       myCircle.scale(2)
       big = false;
+      iview.update(); 
       } else {
       myCircle.scale(0.5)
       big = true;
+      view.update(); 
       }
     }
    }
