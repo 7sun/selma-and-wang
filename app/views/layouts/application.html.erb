@@ -10,6 +10,9 @@
 </head>
 <body>
 	<header>
+		<!-- Logo and Nav -->
+		<img class="bug" alt="Brand" src="<%= asset_path('SnW.svg')%>">
+		<%= render 'application/dots' %>
 		<!-- BEGIN User session links  -->
 		<div>
 			<% if current_user %>
@@ -22,8 +25,6 @@
 		<!-- END User session links  -->
 	</header>
 
-<%= render 'application/dots' %>
 <%= yield %>
-
 </body>
 </html>

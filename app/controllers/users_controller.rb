@@ -15,10 +15,13 @@ class UsersController < ApplicationController
       if @user.save
         session[:user_id] = @user.id.to_s
         flash[:info] = "Welcome to the world of Selma and Wang!"
+        UserMailer.welcome_email(@user).deliver_now
         redirect_to root_path
-      else
-        render :new
       end
+    else
+      # Need to add forgot password function and link
+      flash[:error] = "You are already registered. Please login instead."
+      render :new
     end
   end
 
@@ -29,7 +32,7 @@ class UsersController < ApplicationController
 private
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
   end
 
 end
