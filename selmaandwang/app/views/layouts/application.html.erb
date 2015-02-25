@@ -8,9 +8,23 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<header>
-<img class="bug" alt="Brand" src="<%= asset_path('SnW.svg')%>">
-<%= render 'application/dots' %>
-</header>
+<body>
+	<header>
+		<!-- Logo and Nav -->
+		<img class="bug" alt="Brand" src="<%= asset_path('SnW.svg')%>">
+		<%= render 'application/dots' %>
+		<!-- BEGIN User session links  -->
+		<div>
+			<% if current_user %>
+		  	<%= link_to 'Log Out', logout_path %>
+		  <% else %>
+		  	<%= link_to 'Log In', login_path %>
+		  	<%= link_to 'Sign Up', signup_path %>
+		  <% end %>
+		</div>
+		<!-- END User session links  -->
+	</header>
+
 <%= yield %>
+</body>
 </html>
