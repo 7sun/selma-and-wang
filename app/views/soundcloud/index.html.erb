@@ -11,9 +11,15 @@
   	});
   }
 
+  var track_position = "";
 	widget.bind(SC.Widget.Events.PLAY_PROGRESS, function(eventData) {
-            console.log("Current position: "  + JSON.stringify(eventData.currentPosition));
+            track_position = JSON.stringify(eventData.currentPosition);
+            if (track_position > 6000.000){
+            	document.body.style.backgroundColor = "red";
+            };
           });
+
+
 
 
 </script>
