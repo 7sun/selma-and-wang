@@ -1,5 +1,9 @@
 // // Main Outer Container
 
+html {
+  height: 100%;
+}
+
 body {
 	background-color: #A0E18F;
 	margin: 40px;
@@ -14,7 +18,9 @@ body {
 }
 
 .scroll-on-page {
+
   ///////////////////////////////////////////////////////////////////////////////////
+  
   $base-line-height: 1.5em !default;
   $base-spacing: 1.5em !default;
   $base-accent-color: #F4661F !default;
@@ -70,9 +76,14 @@ body {
   }
 }
 
+.scenario-cont {
+  padding-top: 40px;
+}
+
 .scenarios {
-	height: 37.25em;
-	margin-top: 0px;
+	height: 100%;
+	margin-bottom: 10%;
+  margin-top: 30px;
 	padding: 40px;
 	border: solid 1px #acf199;
 }

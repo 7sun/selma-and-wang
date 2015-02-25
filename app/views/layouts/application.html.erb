@@ -8,17 +8,19 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-	<img class="bug" src="<%= asset_path('SnW.svg')%>" alt="Logo Image"></a>
+<!-- logo -->
+<img class="bug" src="<%= asset_path('SnW.svg')%>" alt="Logo Image"></a>
 	<!-- Navigation -->
+
 	<header class="navigation" role="banner">
  	 <div class="navigation-wrapper">
-    	<!-- <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a> -->
+    	<a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
     	<nav role="navigation">
       	<ul id="js-navigation-menu" class="navigation-menu show">
         	<li class="nav-link"><a class="scroll-on-page-link" href="#scroll-link-1">One</a></li>
         	<li class="nav-link"><a class="scroll-on-page-link" href="#scroll-link-2">Two</a></li>
         	<li class="nav-link"><a class="scroll-on-page-link" href="#scroll-link-3">Three</a></li>
+        	<li class="nav-link"><a class="scroll-on-page-link" href="#scroll-link-4">Four</a></li>
         	<li class="nav-link"><a class="scroll-on-page-link" href="#scroll-on-page-top">Top</a></li>
       	<% if current_user %>
         	<li class="nav-link"><%= link_to 'Log Out', logout_path %></li>
@@ -38,7 +40,10 @@
     	</nav>
   	</div>
 	</header>
+	
+<body>
 
 <%= yield %>
+
 </body>
 </html>
