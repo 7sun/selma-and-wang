@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Selmaandwang</title>
+  <script src='https://cdn.firebase.com/js/client/2.0.4/firebase.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.21/paper-full.min.js'></script>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<header>
+		<!-- Logo and Nav -->
+		<img class="bug" alt="Brand" src="<%= asset_path('SnW.svg')%>">
+		<%= render 'application/dots' %>
+		<!-- BEGIN User session links  -->
+		<div>
+			<% if current_user %>
+		  	<%= link_to 'Log Out', logout_path %>
+		  <% else %>
+		  	<%= link_to 'Log In', login_path %>
+		  	<%= link_to 'Sign Up', signup_path %>
+		  <% end %>
+		</div>
+		<!-- END User session links  -->
+	</header>
+
+<%= yield %>
+</body>
+</html>
