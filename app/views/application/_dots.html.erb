@@ -22,34 +22,50 @@
      var a = snapshot.val();
      for (var key in a) { 
        var obj = a[key];
-       whoa(obj.x, obj.y, obj.color, obj.segment)
+       whoa(obj.x, obj.y, obj.color, obj.segment, false)
      }
      loaded = false;
    } else {
-     console.log('nothing')
    }
    });
 // updating canvas when a child is added to the fb object
   myDataRef.on("child_added", function(snapshot) {
+     if (loaded === false) { 
      var aa = snapshot.val();
        var ob = aa;
-       whoa(ob.x, ob.y, ob.color, ob.segment)
+       whoa(ob.x, ob.y, ob.color, ob.segment, true)
+     }
    });
 
 
     
    // function for drawing the dots on the page
-   function whoa(x,y,color,segment) {
-
+   function whoa(x,y,color,segment,pulse) {
+     console.log(pulse)
      var point = new Point(x,y)
      var myCircle = new Path.Ellipse({
        size: [20,25] ,
        center: point,
        fillColor: color 
      });
-
+  // function for pulsating dots
      myCircle.removeSegment(segment);
-       view.update(); 
+     if (pulse == true) {
+    var myVar=setInterval(function(){myTimer()},1000);
+    var big = true;
+    function myTimer() {
+      if (big == true) { 
+      myCircle.scale(2)
+      big = false;
+      iview.update(); 
+      } else {
+      myCircle.scale(0.5)
+      big = true;
+      view.update(); 
+      }
+    }
+   }
+    view.update(); 
    }
      // function the pushes the coordinates to firebase
    function pick(color) {
