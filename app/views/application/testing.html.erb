@@ -1,0 +1,35 @@
+<div id='widget'>
+    <div class='bluebox' style='height:50px; width:50px; background-color:blue'>
+        
+    </div>
+</div>
+<button id='btnSave'> click </button>
+<button id='save'> save </button>
+<div id='img-out'>
+</div>
+<script>
+$(function() { 
+  var theCanvas
+    $("#btnSave").click(function() { 
+        html2canvas($(".bluebox"), {
+            onrendered: function(canvas) {
+                theCanvas = canvas;
+                document.body.appendChild(canvas);
+
+                // Convert and download as image 
+                $("#img-out").append(canvas);
+                // Clean up 
+                //document.body.removeChild(canvas);
+            }
+        });
+    });
+    $("#save").click(function() {
+          Canvas2Image.saveAsPNG(theCanvas);
+    });
+}); 
+</script>
+
+
+
+
+
