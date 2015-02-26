@@ -1,9 +1,8 @@
 <!-- SOUNDCLOUD IFRAME -->
-
-<iframe id="sc-widget" src=<%= "https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/190913112?client_id=#{ENV['SOUNDCLOUD_CLIENT_ID']}" %> width="500" height="170" scrolling="no" frameborder="no"></iframe>
-
-
 <div id="container">
+  
+  <iframe id="sc-widget" src=<%= "https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/190913112?client_id=#{ENV['SOUNDCLOUD_CLIENT_ID']}" %> width="500" height="170" scrolling="no" frameborder="no"></iframe>
+
   <div id="questions" class="hidden">
     <p>Which color do you imagine?</p>
     <div id="square-1" class="square" onclick="addSquareColor('#AEE5F1')"></div>
@@ -18,6 +17,7 @@
     <div id="answer-square-3" class="answer-square"></div>
     <div id="answer-square-4" class="answer-square"></div>
   </div>
+
 </div>
 
 

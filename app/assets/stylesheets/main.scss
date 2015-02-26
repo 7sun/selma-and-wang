@@ -127,10 +127,25 @@ body {
 
 /////////////////////////////Dream Tile
 
+#container {
+  width: 600px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+#dream-tile {
+  margin: 50px;
+  height: 500px;
+}
+
+#questions{
+  margin: 0 auto;
+}
+
 .answer-square {
   float: left;
-  width: 100px;
-  height: 100px;
+  width: 250px;
+  height: 250px;
 }
 
 .answer-square:nth-child(2n+1){
@@ -138,22 +153,22 @@ body {
 }
 
 #answer-square-1 {
-  border-bottom: 100px solid transparent;
-  border-left: 100px solid #F25239;
+  border-bottom: 250px solid transparent;
+  border-left: 250px solid #F25239;
 }
 
 #answer-square-2 {
-  border-bottom: 100px solid transparent;
-  border-right: 100px solid #AEE5F1;
+  border-bottom: 250px solid transparent;
+  border-right: 250px solid #AEE5F1;
 }
 
 #answer-square-3 {
-  border-bottom: 100px solid transparent;
-  border-left: 100px solid #FEBBCD;
+  border-bottom: 250px solid transparent;
+  border-left: 250px solid #FEBBCD;
 }
 
 #answer-square-4 {
-  border-bottom: 100px solid transparent;
-  border-right: 100px solid #B3BCBF;
+  border-bottom: 250px solid transparent;
+  border-right: 250px solid #B3BCBF;
 }
 
