@@ -83,3 +83,44 @@ body {
   #myCanvas {
   	position: fixed;
   }
+
+
+////////////////////////////////////////////////////////Music Page Styles
+
+#questions {
+  width: 500px;
+  text-align: center;
+  color: white;
+}
+
+.square {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  margin: 0px 20px;
+}
+
+.square:hover {
+  border: 1px solid white;
+}
+
+#square-1 {
+  background-color: #FDBCCD;
+}
+
+#square-2 {
+  background-color: #B4BDC0;
+}
+
+#square-3 {
+  background-color: #ACA89E;
+}
+
+#square-4 {
+  background-color: #CAB890;
+}
+
+.hidden {
+  visibility: hidden;
+}
+

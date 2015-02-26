@@ -1,7 +1,27 @@
 <!-- SOUNDCLOUD IFRAME -->
 
 <iframe id="sc-widget" src=<%= "https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/190913112?client_id=#{ENV['SOUNDCLOUD_CLIENT_ID']}" %> width="500" height="170" scrolling="no" frameborder="no"></iframe>
+
+
+<div id="container">
+  <div id="questions" class="hidden">
+    <p>Which color do you imagine?</p>
+    <div id="square-1" class="square"></div>
+    <div id="square-2" class="square"></div>
+    <div id="square-3" class="square"></div>
+    <div id="square-4" class="square"></div>
+  </div>
+</div>
+
+
+
+
 <script type="text/javascript">
+
+  $('.square').click(function(){
+    $('#questions').addClass('hidden');
+  })
+
 	var widgetIframe = document.getElementById('sc-widget'),
   widget       = SC.Widget(widgetIframe);
 
@@ -14,12 +34,8 @@
   var track_position = "";
 	widget.bind(SC.Widget.Events.PLAY_PROGRESS, function(eventData) {
             track_position = JSON.stringify(eventData.currentPosition);
-            if (track_position > 6000.000){
-            	document.body.style.backgroundColor = "red";
+            if (track_position > 6000.000 && track_position < 6100.000){
+            	$('#questions').removeClass('hidden');
             };
           });
-
-
-
-
 </script>
