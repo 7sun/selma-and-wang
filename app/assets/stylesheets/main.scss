@@ -124,3 +124,36 @@ body {
   visibility: hidden;
 }
 
+
+/////////////////////////////Dream Tile
+
+.answer-square {
+  float: left;
+  width: 100px;
+  height: 100px;
+}
+
+.answer-square:nth-child(2n+1){
+  clear: left;
+}
+
+#answer-square-1 {
+  border-bottom: 100px solid transparent;
+  border-left: 100px solid #F25239;
+}
+
+#answer-square-2 {
+  border-bottom: 100px solid transparent;
+  border-right: 100px solid #AEE5F1;
+}
+
+#answer-square-3 {
+  border-bottom: 100px solid transparent;
+  border-left: 100px solid #FEBBCD;
+}
+
+#answer-square-4 {
+  border-bottom: 100px solid transparent;
+  border-right: 100px solid #B3BCBF;
+}
+

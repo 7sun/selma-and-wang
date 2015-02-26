@@ -6,10 +6,17 @@
 <div id="container">
   <div id="questions" class="hidden">
     <p>Which color do you imagine?</p>
-    <div id="square-1" class="square"></div>
-    <div id="square-2" class="square"></div>
-    <div id="square-3" class="square"></div>
-    <div id="square-4" class="square"></div>
+    <div id="square-1" class="square" onclick="addSquareColor('#AEE5F1')"></div>
+    <div id="square-2" class="square" onclick="addSquareColor('#F25239')"></div>
+    <div id="square-3" class="square" onclick="addSquareColor('#B3BCBF')"></div>
+    <div id="square-4" class="square" onclick="addSquareColor('#FEBBCD')"></div>
+  </div>
+
+  <div id="dream-tile">
+    <div id="answer-square-1" class="answer-square"></div>
+    <div id="answer-square-2" class="answer-square"></div>
+    <div id="answer-square-3" class="answer-square"></div>
+    <div id="answer-square-4" class="answer-square"></div>
   </div>
 </div>
 
@@ -17,7 +24,15 @@
 
 
 <script type="text/javascript">
-var clickCount = 0;
+
+var clickCount = 1;
+
+function addSquareColor(color){
+  console.log("ran addSquareColor")
+  console.log(clickCount.toString())
+  console.log('#answer-square-' + clickCount.toString())
+  $('#answer-square-' + clickCount.toString()).css({"borderBottomColor":color});
+}
 
   $('.square').click(function(){
     $('#questions').addClass('hidden');
@@ -30,7 +45,7 @@ var clickCount = 0;
 
   function position(){
   	widget.getPosition(function(positionSC){
-  		console.log("Current position: " + positionSC);
+  		console.log(Math.round(positionSC));
   	});
   }
 
