@@ -1,3 +1,5 @@
+// In Page Scrolling
+
 (function (jQuery) {
   jQuery.mark = {
     jump: function (options) {
@@ -9,7 +11,7 @@
       return jQuery(options.selector).click(function (e) {
         var jumpobj = jQuery(this);
         var target = jumpobj.attr('href');
-        var thespeed = 750;
+        var thespeed = 725;
         var offset = jQuery(target).offset().top;
         jQuery('html,body').animate({
           scrollTop: offset
@@ -20,7 +22,42 @@
   }
 })(jQuery);
 
-
 jQuery(function(){  
   jQuery.mark.jump();
+});
+
+// Menu Collapse
+
+$(document).ready(function() {
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+// Modal
+
+$(function() {
+  $("#modal-1").on("change", function() {
+    if ($(this).is(":checked")) {
+      $("body").addClass("modal-open");
+    } else {
+      $("body").removeClass("modal-open");
+    }
+  });
+
+  $(".modal-window").on("click", function() {
+    $(".modal-state:checked").prop("checked", false).change();
+  });
+
+  $(".modal-inner").on("click", function(e) {
+    e.stopPropagation();
+  });
 });
