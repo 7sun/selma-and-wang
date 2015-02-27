@@ -1,8 +1,10 @@
-<div id="container">
+<div id="container" ng-app="SelmaApp">
   <!-- SOUNDCLOUD IFRAME -->
   <iframe id="sc-widget" src=<%= "https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/190913112?client_id=#{ENV['SOUNDCLOUD_CLIENT_ID']}" %> width="500" height="170" scrolling="no" frameborder="no"></iframe>
 
+  <p>{{3 + 4}}</p>
   <!-- Question squares -->
+
   <div id="questions" class="hidden">
     <p>Which color do you imagine?</p>
     <div id="square-1" class="square" onclick="addSquareColor('#AEE5F1')"></div>
@@ -23,6 +25,10 @@
 
   <button id='save' class="hidden">save</button>
   <div id='img-out'></div>
+
+  <div id="quilt" ng-controller="tileController">
+    <p>{{3 * 4}}</p>
+  </div>
 
 </div><!-- Closes container  -->
 
