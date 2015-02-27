@@ -6,6 +6,9 @@ class ApplicationController < ActionController::Base
   def index
   end
 
+  # for playing around with canvas
+  def testing
+  end
   def current_user
     if session[:user_id]
       @current_user ||= User.find(session[:user_id])
