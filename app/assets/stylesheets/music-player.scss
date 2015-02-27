@@ -48,7 +48,7 @@
 
 #dream-tile {
   margin: 50px;
-  height: 500px;
+  height: 750px;
 }
 
 #questions{
@@ -85,6 +85,26 @@
   border-right: 250px solid transparent;
 }
 
+#answer-square-5 {
+  border-top: 250px solid transparent;
+  border-right: 250px solid transparent;
+}
+
+#answer-square-6 {
+  border-top: 250px solid transparent;
+  border-right: 250px solid transparent;
+}
+
+
 #img-out {
   display: none;
+}
+
+#save {
+  font-size: 24px;
+  background-color: #EEC561;
+  padding: 6px;
+  color: peru;
+  border: none;
+  box-shadow: 0px 6px #e7ac1c;
 }
