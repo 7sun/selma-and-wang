@@ -164,9 +164,10 @@
     }
   }
 
-.votes {
+.votes-btn {
     @include button(flat, $navigation-color);
     appearance: none;
+    user-select: none;
     display: inline;
     float: right;
     font-size: 0.8em;
@@ -175,9 +176,9 @@
     padding: 0.75em 1em;
     text-transform: uppercase;
 
-
     &:hover {
       color: $navigation-color-hover;
+      user-select: none;
     }
   }
 
