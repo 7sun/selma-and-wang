@@ -66,21 +66,25 @@
 }
 
 #answer-square-1 {
-  border-bottom: 250px solid transparent;
-  border-left: 250px solid transparent;
+  border-top: 250px solid transparent;
+  border-right: 250px solid transparent;
 }
 
 #answer-square-2 {
-  border-bottom: 250px solid transparent;
-  border-left: 250px solid transparent;
+  border-top: 250px solid transparent;
+  border-right: 250px solid transparent;
 }
 
 #answer-square-3 {
-  border-bottom: 250px solid transparent;
-  border-left: 250px solid transparent;
+  border-top: 250px solid transparent;
+  border-right: 250px solid transparent;
 }
 
 #answer-square-4 {
-  border-bottom: 250px solid transparent;
-  border-left: 250px solid transparent;
+  border-top: 250px solid transparent;
+  border-right: 250px solid transparent;
+}
+
+#img-out {
+  display: none;
 }
