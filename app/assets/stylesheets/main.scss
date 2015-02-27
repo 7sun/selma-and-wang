@@ -8,13 +8,13 @@ body {
   padding-top: 40px;
 }
 
-// .bug {
-//   width: 18%;
-//   margin-left: 76%;
-//   margin-top: -30px;
-//   position: fixed;
-//   z-index: 9999999;
-// }
+.bug {
+  width: 12em;
+  margin-left: 78%;
+  margin-top: -60px;
+  position: fixed;
+  z-index: 9999999;
+}
 
 .scroll-on-page {
   
@@ -55,14 +55,15 @@ body {
 
 section {
   @include outer-container;
+  width: 100%;
 
   .scenarios {
-    @include span-columns(12);
+    // @include span-columns(12);
     @include media(mobile); 
     
     height: 100%;
     padding: 40px;
-    border: solid 1px #acf199;
+    // border: solid 1px #acf199;
     margin-bottom: 210px; 
 
     .scenarios:last-child {

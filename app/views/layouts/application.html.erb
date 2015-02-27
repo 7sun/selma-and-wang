@@ -12,7 +12,7 @@ https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js'></scrip
   <%= csrf_meta_tags %>
 </head>
 	<!-- logo -->
-	<!-- <img class="bug" src="<%= asset_path('SnW.svg')%>" alt="Logo Image"></a> -->
+	<img class="bug" src="<%= asset_path('SnW_2a.svg')%>" alt="Logo Image"></a>
 	
 	<!-- Navigation -->
 	<div class="navigation" role="banner">
@@ -33,19 +33,19 @@ https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js'></scrip
       	<% end %>
       	<div href="javascript:void(0)" class="navigation-tools">
 	      	<!-- Buttons -->
-					<button class="signup" id="a" >Happy</button>
-					<button class="signup" id="b" >Eh</button>
-					<button class="signup" id="c" >Kinda Happy</button>
-					<button class="signup" id="d" >Sad</button>
+					<button class="votes" id="a" >: )</button>
+					<button class="votes" id="b" >: |</button>
+					<button class="votes" id="c" >: \</button>
+					<button class="votes" id="d" >: (</button>
 				</div>
       	</ul>
       	</div>
     	</nav>
       <!-- scroll buttons -->
-      <div class="scroll-btn">
-        <a class="scroll-on-page-link" href="#scroll-on-page-top">▲</a>
-        <a class="scroll-on-page-link" href="#scroll-link-4">▼</a>
-      </div>
+      <ul class="scroll-btn-container">
+        <li class="scroll-btn"><a class="scroll-on-page-link" href="#scroll-on-page-top">▲</a></li>
+        <li class="scroll-btn"><a class="scroll-on-page-link" href="#scroll-link-4">▼</a></li>
+      </ul>
   	</div>
 	</div>
 
