@@ -246,14 +246,15 @@
     margin-top: 30em;
 
   a {
-    color: $base-accent-color;
+    color: #A0E18F;
     display: inline-block;
     font-weight: 400;
+  
+  &:hover {
+    color: $base-accent-color;
   }
 
-  &:hover {
-      color: $navigation-color-hover;
-    }
+  }
 
   }
 }
