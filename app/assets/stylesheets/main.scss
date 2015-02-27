@@ -1,18 +1,27 @@
-// // Main Outer Container
+//
+
+html {
+  height: 100%;
+}
 
 body {
 	background-color: #A0E18F;
 	margin: 40px;
+  padding-top: 40px;
 }
 
 .bug {
-	width: 25%;
-	margin-left: 68%;
-	position: fixed;
+  width: 18%;
+  margin-left: 76%;
+  margin-top: -30px;
+  position: fixed;
+  z-index: 9999999;
 }
 
 .scroll-on-page {
+
   ///////////////////////////////////////////////////////////////////////////////////
+  
   $base-line-height: 1.5em !default;
   $base-spacing: 1.5em !default;
   $base-accent-color: #F4661F !default;
@@ -69,18 +78,22 @@ body {
 }
 
 .scenarios {
-	height: 28em;
-	margin-top: 0px;
+	height: 100%;
+	margin-bottom: 5em;
 	padding: 40px;
-	border: solid 1px #acf199;
+  border: solid 1px #acf199;
 }
 
 .b1 {
-  font-size: 6em;
+  font-size: 11em;
 	text-align: center;
+  margin-top: 70px;
+  margin-bottom: 36px;
   }
 
   #myCanvas {
   	position: fixed;
+    margin-left: -115px;
+    margin-top: -155px;
   }
 

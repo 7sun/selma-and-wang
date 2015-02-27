@@ -23,25 +23,77 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
-  # describe 'GET show' do
-  #   let!(:yogurt) { Yogurt.create!(flavor: 'ny cheese cake', topping: 'strawberries', quantity: 11.9) }
-  #   let!(:not_the_yogurt) { Yogurt.create!(flavor: 'not ny cheese cake', topping: 'coal', quantity: 1.0) }
+  describe 'GET new' do
+    before(:each) { 
+      get :new
+    }
 
-  #   before(:each) {
-  #     get :show, id: yogurt.id
-  #   }
+    it "is successful" do
+      expect( response ).to be_success # 200
+    end
 
-  #   it "is successful" do
-  #     expect( response ).to be_success # 200
-  #   end
+    it "renders the new view file" do
+      expect( response ).to render_template(:new)
+    end
 
-  #   it "renders the show view file" do
-  #     expect( response ).to render_template(:show)
-  #   end
+    it "assigns a new user to variable user" do
+      expect( assigns(:user) ).to be_a(User)
+    end
 
-  #   it "assigns the requested yogurt to a variable yogurt" do
-  #     expect( assigns(:yogurt) ).to eq(yogurt)
-  #   end
-  # end
+    it "does not save a new user record" do
+      expect{ get :new }.to change(User, :count).by(0)
+    end
+  end
+
+  describe "POST create" do
+    context "when form is valid" do
+      let!(:valid_attrs) { attributes_for(:user) }
+
+      it "adds a new user record" do
+        expect{ post :create, user: valid_attrs}.to change(User, :count).by(1)
+      end
+
+      it "redirects to index" do
+        post :create, user: valid_attrs
+        expect( response).to redirect_to root_path
+      end
+    end
+
+    context "when form is invalid" do
+      let!(:evil_attrs) do
+       { first_name: nil, last_name: nil, email: nil, password: nil, password_confirmation: nil }
+      end
+
+      it "does not add a new user record" do
+        expect{ post :create, user: evil_attrs}.to change(User, :count).by(0)
+      end
+
+      it "renders new template" do
+        post :create, user: evil_attrs
+        expect( response).to render_template(:new)
+      end
+    end
+  end
+
+  describe "GET show" do
+    let!(:user) { create(:user) }
+
+    before(:each) { 
+      get :show, id: user.id
+    }
+
+    it "is successful" do
+      expect( response ).to be_success
+    end
+
+    it "renders the show view file" do
+      expect( response ).to render_template(:show)
+    end
+
+    it "assigns the requested user to a variable user" do
+      expect( assigns(:user) ).to eq(user)
+    end
+  end
+
 
 end
