@@ -164,7 +164,7 @@
     }
   }
 
-.votes-btn {
+.votes-btn1 {
     @include button(flat, $navigation-color);
     appearance: none;
     user-select: none;
@@ -177,8 +177,59 @@
     text-transform: uppercase;
 
     &:hover {
-      color: $navigation-color-hover;
+      color: yellow;
       user-select: none;
+    }
+  }
+
+  .votes-btn2 {
+    @include button(flat, $navigation-color);
+    appearance: none;
+    user-select: none;
+    display: inline;
+    float: right;
+    font-size: 0.8em;
+    margin-top: -8px;
+    margin-right: 5px;
+    padding: 0.75em 1em;
+    text-transform: uppercase;
+
+    &:hover {
+      color: peachpuff;
+    }
+  }
+
+  .votes-btn3 {
+    @include button(flat, $navigation-color);
+    appearance: none;
+    user-select: none;
+    display: inline;
+    float: right;
+    font-size: 0.8em;
+    margin-top: -8px;
+    margin-right: 5px;
+    padding: 0.75em 1em;
+    text-transform: uppercase;
+
+    &:hover {
+      color: dodgerblue;
+    }
+  }
+
+    .votes-btn4 {
+    @include button(flat, $navigation-color);
+    appearance: none;
+    user-select: none;
+    display: inline;
+    float: right;
+    font-size: 0.8em;
+    margin-top: -8px;
+    margin-right: 5px;
+    padding: 0.75em 1em;
+    text-transform: uppercase;
+
+    &:hover {
+      color: tomato;
     }
   }
 
