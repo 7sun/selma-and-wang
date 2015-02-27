@@ -1,8 +1,6 @@
-//
-
-html {
-  height: 100%;
-}
+// html {
+//   height: 100%;
+// }
 
 body {
 	background-color: #A0E18F;
@@ -10,17 +8,15 @@ body {
   padding-top: 40px;
 }
 
-.bug {
-  width: 18%;
-  margin-left: 76%;
-  margin-top: -30px;
-  position: fixed;
-  z-index: 9999999;
-}
+// .bug {
+//   width: 18%;
+//   margin-left: 76%;
+//   margin-top: -30px;
+//   position: fixed;
+//   z-index: 9999999;
+// }
 
 .scroll-on-page {
-
-  ///////////////////////////////////////////////////////////////////////////////////
   
   $base-line-height: 1.5em !default;
   $base-spacing: 1.5em !default;
@@ -30,6 +26,8 @@ body {
   $large-screen: em(860) !default;
   $base-font-color: $dark-gray !default;
   
+  // Typograpy //
+
   p {
     color: $base-font-color;
     line-height: $base-line-height;
@@ -38,16 +36,6 @@ body {
   a {
     color: $base-link-color;
     text-decoration: none;
-  }
-
-  //////////////////////////////////////////////////////////////////////////////////
-
-  display: inline-block;
-
-  aside {
-    @include media($large-screen) {
-      @include span-columns(4);
-    }
   }
 
   .scroll-on-page-link {
@@ -61,36 +49,39 @@ body {
       margin-bottom: $base-spacing;
     }
   }
-
-  article {
-    h4 {
-      margin: 0 0 0.5em 0;
-    }
-
-    section p:last-of-type {
-      margin-bottom: 2em; 
-    }
-
-    @include media($large-screen) {
-      @include span-columns(8);
-    }
-  }
 }
 
-.scenarios {
-	height: 100%;
-	margin-bottom: 5em;
-	padding: 40px;
-  border: solid 1px #acf199;
+// Storyboards //
+
+section {
+  @include outer-container;
+
+  .scenarios {
+    @include span-columns(12);
+    @include media(mobile); 
+    
+    height: 100%;
+    padding: 40px;
+    border: solid 1px #acf199;
+    margin-bottom: 210px; 
+
+    .scenarios:last-child {
+      margin-bottom: 40px;
+    }
+  
+  .b1 {
+    font-size: 11em;
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 36px;
+  }
+ }
 }
 
-.b1 {
-  font-size: 11em;
-	text-align: center;
-  margin-top: 70px;
-  margin-bottom: 36px;
-  }
+#myCanvas {
+  margin-left: -115px;
+  margin-top: -155px;
+  position: fixed;
+}
 
-  #myCanvas {
-  	position: fixed;
-  }
+  

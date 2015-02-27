@@ -18,8 +18,4 @@
 @import "main";
 @import "navigation";
 
-
-#myCanvas {
-	margin-left: -115px;
-	margin-top: -155px;
-}
+$mobile: new-breakpoint(max-width 320px 2);

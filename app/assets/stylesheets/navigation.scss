@@ -1,6 +1,4 @@
-.navigation {
-  ///////////////////////////////////////////////////////////////////////////////////
-  
+.navigation {  
 
   $base-accent-color: #3f3f3f !default;
   $dark-gray: #333 !default;
@@ -14,8 +12,6 @@
   a {
     text-decoration: none;
   }
-
-  //////////////////////////////////////////////////////////////////////////////////
 
   $navigation-padding: 1em;
   $navigation-background: #A0E18F;
@@ -63,6 +59,7 @@
     display: block;
     float: left;
     font-weight: 700;
+    color: $navigation-color;
     line-height: $navigation-height;
     margin: 0;
     padding-right: 1em;
@@ -179,6 +176,11 @@
     text-transform: uppercase;
   }
 
+.scroll-btn {
+  color: white;
+  font-size: 40px;
+  margin-top: 455px;
+}
 
 }
 
