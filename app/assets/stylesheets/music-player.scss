@@ -1,0 +1,86 @@
+////////////////////////////////////////////////////////Music Page Styles
+
+#questions {
+  width: 500px;
+  text-align: center;
+  color: white;
+}
+
+.square {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  margin: 0px 20px;
+}
+
+.square:hover {
+  border: 1px solid white;
+}
+
+#square-1 {
+  background-color: #AEE5F1;
+}
+
+#square-2 {
+  background-color: #F25239;
+}
+
+#square-3 {
+  background-color: #B3BCBF;
+}
+
+#square-4 {
+  background-color: #FEBBCD;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+
+/////////////////////////////Dream Tile
+
+#container {
+  width: 600px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+#dream-tile {
+  margin: 50px;
+  height: 500px;
+}
+
+#questions{
+  margin: 0 auto;
+}
+
+.answer-square {
+  float: left;
+  width: 250px;
+  height: 250px;
+}
+
+.answer-square:nth-child(2n+1){
+  clear: left;
+}
+
+#answer-square-1 {
+  border-bottom: 250px solid transparent;
+  border-left: 250px solid transparent;
+}
+
+#answer-square-2 {
+  border-bottom: 250px solid transparent;
+  border-left: 250px solid transparent;
+}
+
+#answer-square-3 {
+  border-bottom: 250px solid transparent;
+  border-left: 250px solid transparent;
+}
+
+#answer-square-4 {
+  border-bottom: 250px solid transparent;
+  border-left: 250px solid transparent;
+}
