@@ -20,7 +20,7 @@
     <div id="answer-square-4" class="answer-square"></div>
   </div>
 
-  <button id='save'> save </button>
+  <button id='save' class="hidden"> save </button>
   <div id='img-out'></div>
 
 </div><!-- Closes container  -->
@@ -63,6 +63,9 @@
     var clickCountString = Math.floor(clickCount).toString();
     if (clickCount % 1 == 0.5){
       $('#answer-square-' + clickCountString).css({"borderRightColor":color});
+        if (clickCount >= 4.5){
+          $('#save').removeClass('hidden');
+        }
     } else if (clickCount % 1 == 0){
       $('#answer-square-' + clickCountString).css({"borderTopColor":color});
     }
@@ -80,7 +83,7 @@
     track_position = JSON.stringify(eventData.currentPosition);
     track_position = Math.floor(track_position/100);
     console.log(track_position);
-    if (track_position%60 == 0 && track_position > 0){
+    if (track_position%40 == 0 && track_position > 0){
       $('#questions').removeClass('hidden');
     };
   });
