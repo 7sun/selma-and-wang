@@ -38,7 +38,7 @@
 }
 
 
-/////////////////////////////Dream Tile
+/////////////////////////////Dream Patch
 
 #container {
   width: 600px;
@@ -46,7 +46,7 @@
   text-align: center;
 }
 
-#dream-tile {
+#dream-patch {
   margin: 50px;
   height: 750px;
 }
@@ -63,6 +63,11 @@
 
 .answer-square:nth-child(2n+1){
   clear: left;
+}
+
+#answer-square-0 {
+  border-top: 250px solid transparent;
+  border-right: 250px solid transparent;
 }
 
 #answer-square-1 {
@@ -90,11 +95,20 @@
   border-right: 250px solid transparent;
 }
 
-#answer-square-6 {
-  border-top: 250px solid transparent;
-  border-right: 250px solid transparent;
+
+.angular-square {
+  float: left;
+  width: 250px;
+  height: 250px;
+  border-top-width: 250px;
+  border-top-style: solid;
+  border-right-width: 250px;
+  border-right-style: solid;
 }
 
+.angular-square:nth-child(2n+1){
+  clear: left;
+}
 
 #img-out {
   display: none;
