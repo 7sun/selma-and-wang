@@ -53,13 +53,12 @@
   // Mobile view
 
   .navigation-menu-button {
-    // color: $navigation-color;
     display: block;
     float: left;
     font-weight: 700;
     color: $navigation-color;
     line-height: $navigation-height;
-    margin: 0;
+    margin-top: 5px;
     padding-right: 1em;
     text-transform: uppercase;
 
@@ -149,13 +148,14 @@
   }
 
   .navigation-tools {
-    background: #505050;
+    // background: $navigation-color;
     clear: both;
     display: block;
     height: $navigation-height;
     margin-top: 30px;
     padding-left: $navigation-padding / 2;
     padding-right: $navigation-padding;
+    float: left;
 
     @include media($large-screen) {
       background: transparent;
@@ -163,6 +163,8 @@
       float: right;
     }
   }
+
+// Votes buttons
 
 .votes-btn1 {
     @include button(flat, $navigation-color);
@@ -236,13 +238,12 @@
 // Page Up/Down Buttons
 
 .scroll-btn-container {
-  // margin-left: -40px;
 }
 
 .scroll-btn {
     @include button(flat, $navigation-color);
-    font-size: 1em;
-    margin-top: 30em;
+    font-size: 1.1em;
+    margin-top: 27.5em;
     padding: .45em .65em;
 
   a {
