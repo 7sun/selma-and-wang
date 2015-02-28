@@ -50,6 +50,11 @@
   $('.square').click(function(){
     $('#questions').addClass('hidden');
     clickCount += 0.5;
+    html2canvas($("#dream-tile"), {
+              onrendered: function(canvas) {
+                save.href = canvas.toDataURL("image/png")              }
+          })
+
   })
 
   // Adds color to half of the square. Adds color to each half before increasing the count to the next integer
