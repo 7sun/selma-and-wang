@@ -53,6 +53,7 @@ body {
 section {
   @include outer-container;
   width: 100%;
+  margin-top: -80px;
 
   .scenarios {
     // @include span-columns(12);
@@ -61,23 +62,33 @@ section {
     height: 100%;
     padding: 40px;
     // border: solid 1px #acf199;
-    margin-bottom: 210px; 
+    // margin-bottom: 210px; 
 
     .scenarios:last-child {
-      margin-bottom: 40px;
+      // margin-bottom: 40px;
     }
   
   .b1 {
     font-size: 11em;
     text-align: center;
+    font-family: times;
     margin-top: 70px;
     margin-bottom: 36px;
   }
  }
 }
 
+// Canvas
+
 #myCanvas {
   margin-left: -115px;
   margin-top: -155px;
   position: fixed;
+}
+
+// Forms
+
+.form {
+  @include outer-container;
+  @include span-columns(6);
 }

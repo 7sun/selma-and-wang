@@ -171,9 +171,9 @@
     display: inline;
     float: right;
     font-size: 0.8em;
-    margin-top: -8px;
+    margin-top: -12px;
     margin-right: 5px;
-    padding: 0.75em 1em;
+    padding: 1em 1em;
     text-transform: uppercase;
 
     &:hover {
@@ -189,13 +189,13 @@
     display: inline;
     float: right;
     font-size: 0.8em;
-    margin-top: -8px;
+    margin-top: -12px;
     margin-right: 5px;
-    padding: 0.75em 1em;
+    padding: 1em 1em;
     text-transform: uppercase;
 
     &:hover {
-      color: peachpuff;
+      color: dodgerblue;
     }
   }
 
@@ -206,13 +206,13 @@
     display: inline;
     float: right;
     font-size: 0.8em;
-    margin-top: -8px;
+    margin-top: -12px;
     margin-right: 5px;
-    padding: 0.75em 1em;
+    padding: 1em 1em;
     text-transform: uppercase;
 
     &:hover {
-      color: dodgerblue;
+      color: peachpuff;
     }
   }
 
@@ -223,9 +223,9 @@
     display: inline;
     float: right;
     font-size: 0.8em;
-    margin-top: -8px;
+    margin-top: -12px;
     margin-right: 5px;
-    padding: 0.75em 1em;
+    padding: 1em 1em;
     text-transform: uppercase;
 
     &:hover {
@@ -236,25 +236,23 @@
 // Page Up/Down Buttons
 
 .scroll-btn-container {
-  margin-left: -40px;
+  // margin-left: -40px;
 }
 
 .scroll-btn {
     @include button(flat, $navigation-color);
-    margin-right: 5px;
     font-size: 1em;
     margin-top: 30em;
+    padding: .45em .65em;
 
   a {
     color: #A0E18F;
     display: inline-block;
     font-weight: 400;
   
-  &:hover {
-    color: $base-accent-color;
-  }
-
-  }
-
+    &:hover {
+      color: $base-accent-color;
+    }
+   }
   }
 }
