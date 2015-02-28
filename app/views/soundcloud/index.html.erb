@@ -21,7 +21,11 @@
     <button id='save' class="hidden">save</button>
     <div id='img-out'></div>
 
-    <div id="quilt" >
+    <!-- Full quilt of all users patches -->
+    <div id="quilt">
+      <div class="quilt-patch" ng-repeat="patch in patches">
+        <div class="quilt-square" ng-repeat="triangle in patch" style="border-top-color:{{triangle.topColor}};border-right-color:{{triangle.rightColor}};"></div>
+      </div>
     </div>
 
   </div><!-- Closes content-wrapper -->
@@ -73,7 +77,7 @@
     track_position = JSON.stringify(eventData.currentPosition);
     track_position = Math.floor(track_position/100);
     // console.log(track_position);
-    if (track_position % 30 == 0 && track_position > 0){
+    if (track_position % 10 == 0 && track_position > 0){
       $('#questions').removeClass('hidden');
     };
   });

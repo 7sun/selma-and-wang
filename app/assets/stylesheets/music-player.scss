@@ -96,17 +96,31 @@
 }
 
 
-.angular-square {
+#quilt {
+  height: 750px;
+  margin: 50px;
+}
+
+.quilt-patch {
   float: left;
-  width: 250px;
-  height: 250px;
-  border-top-width: 250px;
+  width: 100px;
+}
+
+.quilt-patch:nth-child(9n+1){
+  clear: left;
+}
+
+.quilt-square {
+  float: left;
+  width: 50px;
+  height: 50px;
+  border-top-width: 50px;
   border-top-style: solid;
-  border-right-width: 250px;
+  border-right-width: 50px;
   border-right-style: solid;
 }
 
-.angular-square:nth-child(2n+1){
+.quilt-square:nth-child(2n+1){
   clear: left;
 }
 
