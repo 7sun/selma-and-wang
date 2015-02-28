@@ -13,6 +13,6 @@ Rails.application.routes.draw do
 
   # for tesing svg to canvas
   get '/testing' => 'application#testing'
-
+  get 'dashboard' => 'application#dashboard'
 
 end
