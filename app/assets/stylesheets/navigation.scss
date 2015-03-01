@@ -4,10 +4,9 @@
   $dark-gray: #333 !default;
   $large-screen: em(860) !default;
 
+  top: 20px;
+  left: 3%;
   position: fixed;
-  margin-top: -78px;
-  font-family: helvetica;
-  font-weight: 900;
 
   a {
     text-decoration: none;
@@ -116,6 +115,7 @@
     font-weight: 900;
     text-align: left;
     text-transform: uppercase;
+    float: left;
     width: 100%;
     z-index: 9999;
 
@@ -156,16 +156,26 @@
     margin-top: 30px;
     padding-left: $navigation-padding / 2;
     padding-right: $navigation-padding;
-    float: left;
+    float: right;
+    right: 3%;
+
 
     @include media($large-screen) {
       background: transparent;
       clear: none;
-      float: right;
+      float: left;
     }
   }
 
 // Votes buttons
+
+.votes-container {
+  right: 3%;
+  margin-top: -50px;
+  position: fixed;
+  z-index: 999999999;
+
+}
 
 .votes-btn {
     @include button(flat, $navigation-color);
@@ -178,39 +188,45 @@
     font-weight: 900;
     margin-top: -12px;
     margin-right: 5px;
-    padding: 1em 1em;
+    padding: 1.1em;
     text-transform: uppercase;
-    border-radius: 45px;
+    // border-radius: 45px;
   }
 
   .v1:hover {
+    transition: .5s;
     color: yellow;
     user-select: none;
   }
 
   .v2:hover {
+    transition: .5s;
     color: dodgerblue;
     user-select: none;
   }
 
   .v3:hover {
+    transition: .5s;
     color: peachpuff;
   }  
       
   .v4:hover {
+    transition: .5s;
     color: tomato;
   }
 
 // Page Up/Down Buttons
 
 .scroll-btn-container {
-  position: relative;
+  left: 3%;
+  bottom: 40px;
+  position: fixed;
 }
 
 .scroll-btn {
     @include button(flat, $navigation-color);
     font-size: 1.1em;
-    margin-top: 27.5em;
+    // margin-top: 27.5em;
     padding: .45em .65em;
 
   a {
