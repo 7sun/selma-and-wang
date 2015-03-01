@@ -99,7 +99,7 @@
 #quilt {
   height: 600px;
   margin: 50px 0px;
-  background-image: url(http://www.owensvalleyhistory.com/ov_aqueduct1/sf_dam04.JPG);
+  background-image: url(http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef014e8827bb78970d-640wi);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -121,89 +121,62 @@
   }
 }
 
+.quilt-patch:nth-child(n+1):nth-child(-n+3){
+  .quilt-square:nth-child(1){
+    border-top-color: transparent !important;
+  }
+}
+
 .quilt-patch:nth-child(n+4):nth-child(-n+6){
-    float: left;
-    width: 100px;
-    .quilt-square {
-      width: 50px;
-      height: 50px;
-      border-top-width: 50px;
-      border-top-style: solid;
-      border-left-width: 50px;
-      border-left-style: solid;
-      border-right-width: none;
-      border-right-style: none;
-    }
-    .quilt-square:nth-child(5){
-      border-left-color: transparent !important;
-    }
-    .quilt-square:nth-child(2){
-      border-top-color: transparent !important;
-    }
+  .quilt-square {
+    border-left-width: 50px;
+    border-left-style: solid;
+    border-right-width: none;
+    border-right-style: none;
+  }
+  .quilt-square:nth-child(5){
+    border-left-color: transparent !important;
+  }
+  .quilt-square:nth-child(2){
+    border-top-color: transparent !important;
+  }
+}
+
+.quilt-patch:nth-child(n+7):nth-child(-n+9){
+  .quilt-square:nth-child(1){
+    border-top-color: transparent !important;
+  }
 }
 
 .quilt-patch:nth-child(n+10):nth-child(-n+12){
-    float: left;
-    width: 100px;
-    .quilt-square {
-      width: 50px;
-      height: 50px;
-      border-top-width: 50px;
-      border-top-style: solid;
-      border-left-width: 50px;
-      border-left-style: solid;
-      border-right-width: none;
-      border-right-style: none;
-    }
-    .quilt-square:nth-child(5){
-      border-left-color: transparent !important;
-    }
-    .quilt-square:nth-child(1){
-      border-top-color: transparent !important;
-    }
+  .quilt-square {
+    border-left-width: 50px;
+    border-left-style: solid;
+    border-right-width: none;
+    border-right-style: none;
+  }
+  .quilt-square:nth-child(5){
+    border-left-color: transparent !important;
+  }
+  .quilt-square:nth-child(2){
+    border-top-color: transparent !important;
+  }
 }
 
 .quilt-patch:nth-child(n+13):nth-child(-n+15){
-    float: left;
-    width: 100px;
-    .quilt-square {
-      width: 50px;
-      height: 50px;
-      border-top-width: 50px;
-      border-top-style: solid;
-      border-left-width: 50px;
-      border-left-style: solid;
-      border-right-width: none;
-      border-right-style: none;
-    }
-      .quilt-square:nth-child(2){
+  .quilt-square {
+    border-left-width: 50px;
+    border-left-style: solid;
+    border-right-width: none;
+    border-right-style: none;
+  }
+  .quilt-square:nth-child(2){
     border-top-color: transparent !important;
   }
-      .quilt-square:nth-child(5){
+  .quilt-square:nth-child(5){
     border-left-color: transparent !important;
   }
 
-}
-
-.quilt-patch:nth-child(n+19):nth-child(-n+21){
-    float: left;
-    width: 100px;
-    .quilt-square {
-      width: 50px;
-      height: 50px;
-      border-top-width: 50px;
-      border-top-style: solid;
-      border-left-width: 50px;
-      border-left-style: solid;
-      border-right-width: none;
-      border-right-style: none;
-    }
-      .quilt-square:nth-child(5){
-    border-left-color: transparent !important;
-  }
-    .quilt-square:nth-child(2){
-    border-top-color: transparent !important;
-  }
 }
 
 .quilt-patch:nth-child(n+16):nth-child(-n+18){
@@ -212,14 +185,17 @@
   }
 }
 
-.quilt-patch:nth-child(n+1):nth-child(-n+3){
-  .quilt-square:nth-child(1){
-    border-top-color: transparent !important;
+.quilt-patch:nth-child(n+19):nth-child(-n+21){
+  .quilt-square {
+    border-left-width: 50px;
+    border-left-style: solid;
+    border-right-width: none;
+    border-right-style: none;
   }
-}
-
-.quilt-patch:nth-child(n+7):nth-child(-n+9){
-  .quilt-square:nth-child(1){
+  .quilt-square:nth-child(5){
+    border-left-color: transparent !important;
+  }
+  .quilt-square:nth-child(2){
     border-top-color: transparent !important;
   }
 }
