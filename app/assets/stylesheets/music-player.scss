@@ -102,6 +102,7 @@
   background-image: url(http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef014e8827bb78970d-640wi);
   background-size: cover;
   background-repeat: no-repeat;
+  overflow-y: hidden; // Hide to remove overflow for effect
 }
 
 .quilt-patch {
@@ -111,10 +112,8 @@
     float: left;
     width: 50px;
     height: 50px;
-    border-top-width: 50px;
-    border-top-style: solid;
-    border-right-width: 50px;
-    border-right-style: solid;
+    border-top: 50px solid;
+    border-right: 50px solid;
   }
   .quilt-square:nth-child(6){
     border-right-color: transparent !important;
@@ -129,10 +128,9 @@
 
 .quilt-patch:nth-child(n+4):nth-child(-n+6){
   .quilt-square {
-    border-left-width: 50px;
-    border-left-style: solid;
-    border-right-width: none;
-    border-right-style: none;
+    border-left: 50px solid;
+    // border-right-width: none; // Comment out for random pattern effect
+    // border-right-style: none; // Comment out for random pattern effect
   }
   .quilt-square:nth-child(5){
     border-left-color: transparent !important;
@@ -150,10 +148,9 @@
 
 .quilt-patch:nth-child(n+10):nth-child(-n+12){
   .quilt-square {
-    border-left-width: 50px;
-    border-left-style: solid;
-    border-right-width: none;
-    border-right-style: none;
+    border-left: 50px solid;
+    // border-right-width: none; // Comment out for random pattern effect
+    // border-right-style: none; // Comment out for random pattern effect
   }
   .quilt-square:nth-child(5){
     border-left-color: transparent !important;
@@ -165,10 +162,9 @@
 
 .quilt-patch:nth-child(n+13):nth-child(-n+15){
   .quilt-square {
-    border-left-width: 50px;
-    border-left-style: solid;
-    border-right-width: none;
-    border-right-style: none;
+    border-left: 50px solid;
+    // border-right-width: none; // Comment out for random pattern effect
+    // border-right-style: none; // Comment out for random pattern effect
   }
   .quilt-square:nth-child(2){
     border-top-color: transparent !important;
@@ -187,10 +183,9 @@
 
 .quilt-patch:nth-child(n+19):nth-child(-n+21){
   .quilt-square {
-    border-left-width: 50px;
-    border-left-style: solid;
-    border-right-width: none;
-    border-right-style: none;
+    border-left: 50px solid;
+    // border-right-width: none; // Comment out for random pattern effect
+    // border-right-style: none; // Comment out for random pattern effect
   }
   .quilt-square:nth-child(5){
     border-left-color: transparent !important;
