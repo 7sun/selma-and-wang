@@ -97,27 +97,137 @@
 
 
 #quilt {
-  height: 750px;
-  margin: 50px;
+  height: 600px;
+  margin: 50px 0px;
+  background-image: url(http://www.owensvalleyhistory.com/ov_aqueduct1/sf_dam04.JPG);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .quilt-patch {
   float: left;
   width: 100px;
+  .quilt-square {
+    float: left;
+    width: 50px;
+    height: 50px;
+    border-top-width: 50px;
+    border-top-style: solid;
+    border-right-width: 50px;
+    border-right-style: solid;
+  }
+  .quilt-square:nth-child(6){
+    border-right-color: transparent !important;
+  }
 }
 
-.quilt-patch:nth-child(9n+1){
-  clear: left;
+.quilt-patch:nth-child(n+4):nth-child(-n+6){
+    float: left;
+    width: 100px;
+    .quilt-square {
+      width: 50px;
+      height: 50px;
+      border-top-width: 50px;
+      border-top-style: solid;
+      border-left-width: 50px;
+      border-left-style: solid;
+      border-right-width: none;
+      border-right-style: none;
+    }
+    .quilt-square:nth-child(5){
+      border-left-color: transparent !important;
+    }
+    .quilt-square:nth-child(2){
+      border-top-color: transparent !important;
+    }
 }
 
-.quilt-square {
-  float: left;
-  width: 50px;
-  height: 50px;
-  border-top-width: 50px;
-  border-top-style: solid;
-  border-right-width: 50px;
-  border-right-style: solid;
+.quilt-patch:nth-child(n+10):nth-child(-n+12){
+    float: left;
+    width: 100px;
+    .quilt-square {
+      width: 50px;
+      height: 50px;
+      border-top-width: 50px;
+      border-top-style: solid;
+      border-left-width: 50px;
+      border-left-style: solid;
+      border-right-width: none;
+      border-right-style: none;
+    }
+    .quilt-square:nth-child(5){
+      border-left-color: transparent !important;
+    }
+    .quilt-square:nth-child(1){
+      border-top-color: transparent !important;
+    }
+}
+
+.quilt-patch:nth-child(n+13):nth-child(-n+15){
+    float: left;
+    width: 100px;
+    .quilt-square {
+      width: 50px;
+      height: 50px;
+      border-top-width: 50px;
+      border-top-style: solid;
+      border-left-width: 50px;
+      border-left-style: solid;
+      border-right-width: none;
+      border-right-style: none;
+    }
+      .quilt-square:nth-child(2){
+    border-top-color: transparent !important;
+  }
+      .quilt-square:nth-child(5){
+    border-left-color: transparent !important;
+  }
+
+}
+
+.quilt-patch:nth-child(n+19):nth-child(-n+21){
+    float: left;
+    width: 100px;
+    .quilt-square {
+      width: 50px;
+      height: 50px;
+      border-top-width: 50px;
+      border-top-style: solid;
+      border-left-width: 50px;
+      border-left-style: solid;
+      border-right-width: none;
+      border-right-style: none;
+    }
+      .quilt-square:nth-child(5){
+    border-left-color: transparent !important;
+  }
+    .quilt-square:nth-child(2){
+    border-top-color: transparent !important;
+  }
+}
+
+.quilt-patch:nth-child(n+16):nth-child(-n+18){
+  .quilt-square:nth-child(1){
+    border-top-color: transparent !important;
+  }
+}
+
+.quilt-patch:nth-child(n+1):nth-child(-n+3){
+  .quilt-square:nth-child(1){
+    border-top-color: transparent !important;
+  }
+}
+
+.quilt-patch:nth-child(n+7):nth-child(-n+9){
+  .quilt-square:nth-child(1){
+    border-top-color: transparent !important;
+  }
+}
+
+.quilt-patch:nth-child(n+22):nth-child(-n+24){
+  .quilt-square:nth-child(1){
+    border-top-color: transparent !important;
+  }
 }
 
 .quilt-square:nth-child(2n+1){
