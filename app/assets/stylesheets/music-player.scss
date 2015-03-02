@@ -70,32 +70,32 @@
 
 #answer-square-0 {
   border-top: 250px solid transparent;
-  border-right: 250px solid transparent;
+  // border-right: 250px solid transparent;
 }
 
 #answer-square-1 {
   border-top: 250px solid transparent;
-  border-right: 250px solid transparent;
+  // border-right: 250px solid transparent;
 }
 
 #answer-square-2 {
   border-top: 250px solid transparent;
-  border-right: 250px solid transparent;
+  // border-right: 250px solid transparent;
 }
 
 #answer-square-3 {
   border-top: 250px solid transparent;
-  border-right: 250px solid transparent;
+  // border-right: 250px solid transparent;
 }
 
 #answer-square-4 {
   border-top: 250px solid transparent;
-  border-right: 250px solid transparent;
+  // border-right: 250px solid transparent;
 }
 
 #answer-square-5 {
   border-top: 250px solid transparent;
-  border-right: 250px solid transparent;
+  // border-right: 250px solid transparent;
 }
 
 
@@ -121,13 +121,13 @@
     border-right: 50px solid;
   }
   .quilt-square:nth-child(6){
-    border-right-color: transparent !important;
+    // border-right-color: transparent !important;
   }
 }
 
 .quilt-patch:nth-child(n+1):nth-child(-n+3){
   .quilt-square:nth-child(1){
-    border-top-color: transparent !important;
+    // border-top-color: transparent !important;
   }
 }
 
@@ -138,16 +138,16 @@
     border-right-style: none; // Comment out for random pattern effect
   }
   .quilt-square:nth-child(5){
-    border-left-color: transparent !important;
+    // border-left-color: transparent !important;
   }
   .quilt-square:nth-child(2){
-    border-top-color: transparent !important;
+    // border-top-color: transparent !important;
   }
 }
 
 .quilt-patch:nth-child(n+7):nth-child(-n+9){
   .quilt-square:nth-child(1){
-    border-top-color: transparent !important;
+    // border-top-color: transparent !important;
   }
 }
 
@@ -158,10 +158,10 @@
     border-right-style: none; // Comment out for random pattern effect
   }
   .quilt-square:nth-child(5){
-    border-left-color: transparent !important;
+    // border-left-color: transparent !important;
   }
   .quilt-square:nth-child(2){
-    border-top-color: transparent !important;
+    // border-top-color: transparent !important;
   }
 }
 
@@ -172,17 +172,17 @@
     border-right-style: none; // Comment out for random pattern effect
   }
   .quilt-square:nth-child(2){
-    border-top-color: transparent !important;
+    // border-top-color: transparent !important;
   }
   .quilt-square:nth-child(5){
-    border-left-color: transparent !important;
+    // border-left-color: transparent !important;
   }
 
 }
 
 .quilt-patch:nth-child(n+16):nth-child(-n+18){
   .quilt-square:nth-child(1){
-    border-top-color: transparent !important;
+    // border-top-color: transparent !important;
   }
 }
 
@@ -193,16 +193,16 @@
     border-right-style: none; // Comment out for random pattern effect
   }
   .quilt-square:nth-child(5){
-    border-left-color: transparent !important;
+    // border-left-color: transparent !important;
   }
   .quilt-square:nth-child(2){
-    border-top-color: transparent !important;
+    // border-top-color: transparent !important;
   }
 }
 
 .quilt-patch:nth-child(n+22):nth-child(-n+24){
   .quilt-square:nth-child(1){
-    border-top-color: transparent !important;
+    // border-top-color: transparent !important;
   }
 }
 
