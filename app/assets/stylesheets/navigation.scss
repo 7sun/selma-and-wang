@@ -3,11 +3,12 @@
   $base-accent-color: #3f3f3f !default;
   $dark-gray: #333 !default;
   $large-screen: em(860) !default;
+  $font-stack: 'Oswald', Helvetica, sans-serif;
 
   top: 20px;
   left: 3%;
   position: fixed;
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-stack, sans-serif;
 
   a {
     text-decoration: none;

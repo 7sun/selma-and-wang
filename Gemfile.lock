@@ -85,6 +85,8 @@ GEM
     firebase (0.2.3)
       httpclient
       json
+    font-awesome-sass (4.3.1)
+      sass (~> 3.2)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
     hashie (3.4.0)
@@ -236,6 +238,7 @@ DEPENDENCIES
   faker
   figaro
   firebase
+  font-awesome-sass
   jbuilder (~> 2.0)
   jquery-rails
   neat

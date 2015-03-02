@@ -1,6 +1,13 @@
+// Fonts
+
+$font-stack: 'Oswald', Helvetica, sans-serif;
+
+// 
+
+$greenscreen: #A0E18F;
 
 body {
-	background-color: #A0E18F;
+	background-color: $greenscreen;
 	margin: 40px;
   // font-family: geomanistmedium;
   // padding-top: 40px;
@@ -36,7 +43,7 @@ body {
 .loading-icon {
   display: none;
   background-color: transparentize(white, 0.3);
-  color: #A0E18F;
+  color: $greenscreen;
   padding: .75em 1em;
   border-radius: 5px;
   margin-top: 24.5%;
@@ -92,7 +99,7 @@ body.loading .loading-icon {
 section {
   @include outer-container;
   width: 100%;
-  margin-top: -30px;
+  margin-top: -50px;
 
   .scenarios {
     // @include span-columns(12);
@@ -108,7 +115,7 @@ section {
   .b1 {
     font-size: 11em;
     text-align: center;
-    font-family: 'Oswald', sans-serif;
+    font-family: $font-stack, sans-serif;
     line-height: 1.25em;
     margin-top: 100px;
     margin-bottom: 36px;
@@ -127,13 +134,45 @@ section {
 // Forms
 
 .f1 {
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-stack, sans-serif;
   font-size: 2em;
+  line-height: 2em;
+  border-bottom: 1px solid #ffffff; 
 }
 
 .form {
   @include span-columns(6);
   @include shift(3);
   margin-top: 5em;
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-stack, sans-serif;
+
+  a {
+    color: transparentize(#F4661F, 0.3);
+  }
+
+  a:hover {
+    color: #F4661F;
+    transition: 2ms;
+  }
 }
+
+input[type="text"] {
+  background-color: transparentize(white, 0.3);
+  border: none;
+  box-shadow: none;
+  outline: none !important;
+}
+
+input[placeholder] {
+  color: #A9A9A9;
+  font-family: 'oswald';
+}
+
+input[type="submit"] {
+  background-color: transparentize(#F4661F, 0.3);
+  font-family: 'oswald';
+}
+
+input[type="submit"]:hover {
+    background-color: #F4661F;
+  }

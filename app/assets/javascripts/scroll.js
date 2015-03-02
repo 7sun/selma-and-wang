@@ -26,13 +26,20 @@ jQuery(function(){
   jQuery.mark.jump();
 });
 
-// Alt Scroll Func 
+//
 
-// $("#a.scroll-on-page-link").click(function() {
-//     $('html, body').animate({
-//         scrollTop: $('href').offset().top
-//     }, 2000);
-// });
+function cycle(){
+$('a.scroll-link-[href^="#"]').on('click', function(event) {
+    var target = $(this.href);
+    if( target.length ) {
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: target.offset().top
+        }, 725;
+    }
+  })
+console.log("Hi")
+}; 
 
 // Menu Collapse
 
@@ -48,4 +55,13 @@ $(document).ready(function() {
       }
     });
   });
+});
+
+// Loading
+
+$body = $("body");
+
+$(document).on({
+    ajaxStart: function() { $body.addClass("loading");    },
+     ajaxStop: function() { $body.removeClass("loading"); }    
 });
