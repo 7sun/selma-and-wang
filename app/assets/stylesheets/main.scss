@@ -2,6 +2,7 @@
 body {
 	background-color: #A0E18F;
 	margin: 40px;
+  // font-family: geomanistmedium;
   // padding-top: 40px;
 }
 
@@ -107,7 +108,7 @@ section {
   .b1 {
     font-size: 11em;
     text-align: center;
-    font-family: times;
+    font-family: 'Oswald', sans-serif;
     line-height: 1.25em;
     margin-top: 100px;
     margin-bottom: 36px;
@@ -125,8 +126,14 @@ section {
 
 // Forms
 
+.f1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2em;
+}
+
 .form {
   @include span-columns(6);
   @include shift(3);
   margin-top: 5em;
+  font-family: 'Oswald', sans-serif;
 }
