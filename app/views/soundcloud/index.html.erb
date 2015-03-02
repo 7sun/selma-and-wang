@@ -1,6 +1,6 @@
 <div id="container" ng-app="SelmaApp">
   <!-- SOUNDCLOUD IFRAME -->
-  <iframe id="sc-widget" src=<%= "https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/190913112?client_id=#{ENV['SOUNDCLOUD_CLIENT_ID']}" %> width="500" height="170" scrolling="no" frameborder="no"></iframe>
+  <iframe id="sc-widget" src=<%= "https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/186967644?client_id=#{ENV['SOUNDCLOUD_CLIENT_ID']}" %> width="500" height="170" scrolling="no" frameborder="no"></iframe>
 
   <div id="content-wrapper" ng-controller="patchController">
 
@@ -11,10 +11,11 @@
       <div id="square-2" class="square" ng-click="addSquareColor('#F25239')"></div>
       <div id="square-3" class="square" ng-click="addSquareColor('#B3BCBF')"></div>
       <div id="square-4" class="square" ng-click="addSquareColor('#FEBBCD')"></div>
+      <div id="square-5" class="square" ng-click="addSquareColor('transparent')"></div>
     </div>
 
     <!-- Dream patch squares. Hidden by default -->
-    <div id="dream-patch">
+    <div id="dream-patch" class="hidden">
       <div ng-repeat="square in squares" id="answer-square-{{$index}}" class="answer-square"></div>
     </div>
 
@@ -24,7 +25,7 @@
     <!-- Full quilt of all users patches -->
     <div id="quilt">
       <div class="quilt-patch" ng-repeat="patch in patches">
-        <div class="quilt-square" ng-repeat="triangle in patch" style="border-top-color:{{triangle.topColor}};border-right-color:{{triangle.rightColor}};border-left-color:{{triangle.rightColor}};">{{$index}}</div>
+        <div class="quilt-square" ng-repeat="triangle in patch" style="border-top-color:{{triangle.topColor}};border-right-color:{{triangle.rightColor}};border-left-color:{{triangle.rightColor}};"></div>
       </div>
     </div>
 

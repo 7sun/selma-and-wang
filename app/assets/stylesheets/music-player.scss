@@ -49,6 +49,9 @@
 #dream-patch {
   margin: 50px;
   height: 750px;
+  padding-bottom: 50px;
+  // background-image: url(http://www.downtownla.com/images/5_0_aboutUS/lapl-bradbury.jpg);
+  // background-size: cover;
 }
 
 #questions{
@@ -105,6 +108,8 @@
   overflow-y: hidden; // Hide to remove overflow for effect
 }
 
+// SINGLE CENTER DIAMOND /////////////////////////////////////////////////////////////////
+
 .quilt-patch {
   float: left;
   width: 100px;
@@ -129,8 +134,8 @@
 .quilt-patch:nth-child(n+4):nth-child(-n+6){
   .quilt-square {
     border-left: 50px solid;
-    // border-right-width: none; // Comment out for random pattern effect
-    // border-right-style: none; // Comment out for random pattern effect
+    border-right-width: none; // Comment out for random pattern effect
+    border-right-style: none; // Comment out for random pattern effect
   }
   .quilt-square:nth-child(5){
     border-left-color: transparent !important;
@@ -149,8 +154,8 @@
 .quilt-patch:nth-child(n+10):nth-child(-n+12){
   .quilt-square {
     border-left: 50px solid;
-    // border-right-width: none; // Comment out for random pattern effect
-    // border-right-style: none; // Comment out for random pattern effect
+    border-right-width: none; // Comment out for random pattern effect
+    border-right-style: none; // Comment out for random pattern effect
   }
   .quilt-square:nth-child(5){
     border-left-color: transparent !important;
@@ -163,8 +168,8 @@
 .quilt-patch:nth-child(n+13):nth-child(-n+15){
   .quilt-square {
     border-left: 50px solid;
-    // border-right-width: none; // Comment out for random pattern effect
-    // border-right-style: none; // Comment out for random pattern effect
+    border-right-width: none; // Comment out for random pattern effect
+    border-right-style: none; // Comment out for random pattern effect
   }
   .quilt-square:nth-child(2){
     border-top-color: transparent !important;
@@ -184,8 +189,8 @@
 .quilt-patch:nth-child(n+19):nth-child(-n+21){
   .quilt-square {
     border-left: 50px solid;
-    // border-right-width: none; // Comment out for random pattern effect
-    // border-right-style: none; // Comment out for random pattern effect
+    border-right-width: none; // Comment out for random pattern effect
+    border-right-style: none; // Comment out for random pattern effect
   }
   .quilt-square:nth-child(5){
     border-left-color: transparent !important;
@@ -204,6 +209,86 @@
 .quilt-square:nth-child(2n+1){
   clear: left;
 }
+
+
+// MULTI DIAMOND ////////////////////////////////////////////////////////////////
+
+// .quilt-patch {
+//   float: left;
+//   width: 100px;
+//   .quilt-square {
+//     float: left;
+//     width: 50px;
+//     height: 50px;
+//     border-top: 50px solid;
+//     border-right: 50px solid;
+//   }
+//   .quilt-square:nth-child(6){
+//     border-right-color: transparent !important;
+//   }
+//   .quilt-square:nth-child(1){
+//     border-top-color: transparent !important;
+//   }
+// }
+
+// .quilt-patch:nth-child(n+1):nth-child(even):nth-child(-n+6){
+//   .quilt-square {
+//     border-left: 50px solid;
+//     border-right-width: none; // Comment out for random pattern effect
+//     border-right-style: none; // Comment out for random pattern effect
+//   }
+//   .quilt-square:nth-child(5){
+//     border-left-color: transparent !important;
+//   }
+//   .quilt-square:nth-child(2){
+//     border-top-color: transparent !important;
+//   }
+// }
+
+// .quilt-patch:nth-child(n+7):nth-child(odd):nth-child(-n+12){
+//   .quilt-square {
+//     border-left: 50px solid;
+//     border-right-width: none; // Comment out for random pattern effect
+//     border-right-style: none; // Comment out for random pattern effect
+//   }
+//   .quilt-square:nth-child(5){
+//     border-left-color: transparent !important;
+//   }
+//   .quilt-square:nth-child(2){
+//     border-top-color: transparent !important;
+//   }
+// }
+
+// .quilt-patch:nth-child(n+13):nth-child(even):nth-child(-n+18){
+//   .quilt-square {
+//     border-left: 50px solid;
+//     border-right-width: none; // Comment out for random pattern effect
+//     border-right-style: none; // Comment out for random pattern effect
+//   }
+//   .quilt-square:nth-child(5){
+//     border-left-color: transparent !important;
+//   }
+//   .quilt-square:nth-child(2){
+//     border-top-color: transparent !important;
+//   }
+// }
+
+// .quilt-patch:nth-child(n+19):nth-child(odd):nth-child(-n+24){
+//   .quilt-square {
+//     border-left: 50px solid;
+//     border-right-width: none; // Comment out for random pattern effect
+//     border-right-style: none; // Comment out for random pattern effect
+//   }
+//   .quilt-square:nth-child(5){
+//     border-left-color: transparent !important;
+//   }
+//   .quilt-square:nth-child(2){
+//     border-top-color: transparent !important;
+//   }
+// }
+
+// END MULTI DIAMOND ////////////////////////////////////////////////////////////////
+
 
 #img-out {
   display: none;
