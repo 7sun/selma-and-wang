@@ -9,6 +9,13 @@ angular
 			  return (currentValue || 0) + 1;
 			});
 
+			var counterRef = ref.child("counter");
+			
+			counterRef.once('value', function(snapshot) {
+  			var val = snapshot.val();
+  			console.log(val)
+			});
+
   		$scope.addSquareColor = addSquareColor;
   		var dbsquares = [{topColor: "", rightColor: ""}, {topColor: "", rightColor: ""}, {topColor: "", rightColor: ""},
 								{topColor: "", rightColor: ""}, {topColor: "", rightColor: ""}, {topColor: "", rightColor: ""}]
@@ -20,6 +27,9 @@ angular
 	    var clickCountString = Math.floor(clickCount).toString();
 	    // Checks if clickCount is a whole number. If so, the squares top/left triangle color is set
 	    if (clickCount % 1 == 0){
+	    	// if (counter == 3){
+	    		console.log("Counter is: " + counter)
+	    	// }
 	      $('#answer-square-' + clickCountString).css({"borderTopColor": color});
 	      dbsquares[Math.floor(clickCount)].topColor = color;
 	      console.log(clickCount);
