@@ -5,6 +5,10 @@ angular
 			var patches = $firebase(ref).$asObject();
 			patches.$bindTo($scope, 'patches');
 
+			ref.child("counter").transaction(function(currentValue) {
+			  return (currentValue || 0) + 1;
+			});
+
   		$scope.addSquareColor = addSquareColor;
   		var dbsquares = [{topColor: "", rightColor: ""}, {topColor: "", rightColor: ""}, {topColor: "", rightColor: ""},
 								{topColor: "", rightColor: ""}, {topColor: "", rightColor: ""}, {topColor: "", rightColor: ""}]
