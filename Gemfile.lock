@@ -265,11 +265,8 @@ DEPENDENCIES
   faker
   figaro
   firebase
-<<<<<<< HEAD
-=======
   font-awesome-sass
   jbuilder (~> 2.0)
->>>>>>> master
   jquery-rails
   neat
   omniauth-facebook
