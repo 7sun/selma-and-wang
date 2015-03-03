@@ -1,13 +1,16 @@
-<h1>Join the adventure</h1>
-<%= link_to "Sign up with Facebook", "/auth/facebook"%>
+<div class="form">
+<div class="f1">Join the adventure</div> <br>
+<%= link_to "Sign up with Facebook", "/auth/facebook"%>  <i class="fa fa-facebook-official" style="color: white;"></i>
 
-<p>OR</p>
+<br><br>
 
 <%= form_for @user, method: 'POST', url: '/signup' do |u| %>
 	<%= u.text_field :first_name, placeholder: :first_name %>
 	<%= u.text_field :last_name, placeholder: :last_name %>
 	<%= u.text_field :email, placeholder: :email %>
 	<%= u.password_field :password, placeholder: :password %>
-	<%= u.password_field :password_confirmation, placeholder: 'confirm password' %>
+	<%= u.password_field :password_confirmation, placeholder: 'Confirm password' %>
 	<%= u.submit %>
 <% end %>
+</div>
+<img class="thingy2" src="<%= asset_path('testshape.svg')%>" alt="Logo Image">

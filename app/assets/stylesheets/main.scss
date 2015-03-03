@@ -1,26 +1,70 @@
-//
+// Fonts
 
-html {
-  height: 100%;
-}
+$font-stack: 'Oswald', Helvetica, sans-serif;
+
+// 
+
+$greenscreen: #A0E18F;
+$accent-one: #AEE5F1; // Light Blue
+$accent-two: #F25239; // Orange
+$accent-three: #B3BCBF; // Grey
+$accent-four: #FEBBCD; // Pink
+$grey: #333333; // Grey
 
 body {
-	background-color: #A0E18F;
+	background-color: $greenscreen;
 	margin: 40px;
-  padding-top: 40px;
+  // font-family: geomanistmedium;
+  // padding-top: 40px;
 }
 
 .bug {
-  width: 18%;
-  margin-left: 76%;
-  margin-top: -30px;
+  width: 12em;
+  right: 3%;
+  bottom: 30px;
   position: fixed;
   z-index: 9999999;
 }
 
-.scroll-on-page {
+.thingy {
+  width: 100%;
+  height: 100%;
+  left: 3%;
+  position: fixed;
+  z-index: -1;
+  margin-top: -40px;
+}
 
-  ///////////////////////////////////////////////////////////////////////////////////
+.thingy2 {
+  width: 100%;
+  height: 100%;
+  left: 3%;
+  position: fixed;
+  z-index: -1;
+  margin-top: -10px;
+  margin-left: -30px;
+}
+
+.loading-icon {
+  display: none;
+  background-color: transparentize(white, 0.3);
+  color: $greenscreen;
+  padding: .75em 1em;
+  border-radius: 5px;
+  margin-top: 24.5%;
+  margin-left: 45%;
+  position: fixed;
+}
+
+body.loading {
+    overflow: hidden;   
+}
+
+body.loading .loading-icon {
+    display: block;
+}
+
+.scroll-on-page {
   
   $base-line-height: 1.5em !default;
   $base-spacing: 1.5em !default;
@@ -30,6 +74,8 @@ body {
   $large-screen: em(860) !default;
   $base-font-color: $dark-gray !default;
   
+  // Typograpy //
+
   p {
     color: $base-font-color;
     line-height: $base-line-height;
@@ -38,16 +84,6 @@ body {
   a {
     color: $base-link-color;
     text-decoration: none;
-  }
-
-  //////////////////////////////////////////////////////////////////////////////////
-
-  display: inline-block;
-
-  aside {
-    @include media($large-screen) {
-      @include span-columns(4);
-    }
   }
 
   .scroll-on-page-link {
@@ -61,39 +97,96 @@ body {
       margin-bottom: $base-spacing;
     }
   }
+}
 
-  article {
-    h4 {
-      margin: 0 0 0.5em 0;
-    }
+// Storyboards //
 
-    section p:last-of-type {
-      margin-bottom: 2em; 
-    }
+section {
+  @include outer-container;
+  width: 100%;
+  margin-top: -50px;
 
-    @include media($large-screen) {
-      @include span-columns(8);
+  .scenarios {
+    // @include span-columns(12);
+    @include media(mobile); 
+    
+    height: 100%;
+    padding: 40px;
+
+    .scenarios:last-child {
+      // margin-bottom: 40px;
     }
+  
+  .b1 {
+    font-size: 11em;
+    text-align: center;
+    font-family: $font-stack, sans-serif;
+    line-height: 1.25em;
+    color: transparentize(white, 0.3);
+    margin-top: 100px;
+    margin-bottom: 36px;
+  }
+ }
+}
+
+// Canvas
+
+#myCanvas {
+  margin-left: -100px;
+  margin-top: -155px;
+  position: fixed;
+}
+
+// Forms
+
+.f1 {
+  font-family: $font-stack, sans-serif;
+  font-size: 2em;
+  line-height: 2em;
+  color: $grey;
+  border-bottom: 1px solid #ffffff; 
+}
+
+.form {
+  @include span-columns(6);
+  @include shift(3);
+  margin-top: 5em;
+  font-family: $font-stack, sans-serif;
+
+  a {
+    color: transparentize($grey, 0.3);
+  }
+
+  a:hover {
+    color: $grey;
+    transition: 2ms;
   }
 }
 
-.scenarios {
-	height: 100%;
-	margin-bottom: 5em;
-	padding: 40px;
-  border: solid 1px #acf199;
+input[type="text"] {
+  background-color: transparentize(white, 0.3);
+  border: none;
+  box-shadow: none;
+  outline: none !important;
 }
 
-.b1 {
-  font-size: 11em;
-	text-align: center;
-  margin-top: 70px;
-  margin-bottom: 36px;
-  }
+input[type="password"] {
+  background-color: transparentize(white, 0.3);
+  border: none;
+  box-shadow: none;
+  outline: none !important;
+}
 
-  #myCanvas {
-  	position: fixed;
-    margin-left: -115px;
-    margin-top: -155px;
-  }
+input[placeholder] {
+  color: #A9A9A9;
+  font-family: 'oswald';
+}
 
+input[type="submit"] {
+  background-color: transparentize($grey, 0.3);
+  font-family: 'oswald';
+}
+
+input[type="submit"]:hover {
+    background-color: $grey;
+  }
