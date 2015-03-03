@@ -1,30 +1,36 @@
-<div id="container">
+<div id="container" ng-app="SelmaApp">
   <!-- SOUNDCLOUD IFRAME -->
-  <iframe id="sc-widget" src=<%= "https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/190913112?client_id=#{ENV['SOUNDCLOUD_CLIENT_ID']}" %> width="500" height="170" scrolling="no" frameborder="no"></iframe>
+  <iframe id="sc-widget" src=<%= "https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/186967644?client_id=#{ENV['SOUNDCLOUD_CLIENT_ID']}" %> width="500" height="170" scrolling="no" frameborder="no"></iframe>
 
-  <!-- Question squares -->
-  <div id="questions" class="hidden">
-    <p>Which color do you imagine?</p>
-    <div id="square-1" class="square" onclick="addSquareColor('#AEE5F1')"></div>
-    <div id="square-2" class="square" onclick="addSquareColor('#F25239')"></div>
-    <div id="square-3" class="square" onclick="addSquareColor('#B3BCBF')"></div>
-    <div id="square-4" class="square" onclick="addSquareColor('#FEBBCD')"></div>
-  </div>
+  <div id="content-wrapper" ng-controller="patchController">
 
-  <!-- Dream tile squares. Hidden by default -->
-  <div id="dream-tile">
-    <div id="answer-square-1" class="answer-square"></div>
-    <div id="answer-square-2" class="answer-square"></div>
-    <div id="answer-square-3" class="answer-square"></div>
-    <div id="answer-square-4" class="answer-square"></div>
-    <div id="answer-square-5" class="answer-square"></div>
-    <div id="answer-square-6" class="answer-square"></div>
-  </div>
+      <!-- Question squares -->
+    <div id="questions" class="hidden">
+      <p>Which color do you imagine?</p>
+      <div id="square-1" class="square" ng-click="addSquareColor('#AEE5F1')"></div>
+      <div id="square-2" class="square" ng-click="addSquareColor('#F25239')"></div>
+      <div id="square-3" class="square" ng-click="addSquareColor('#B3BCBF')"></div>
+      <div id="square-4" class="square" ng-click="addSquareColor('#FEBBCD')"></div>
+      <!-- <div id="square-5" class="square" ng-click="addSquareColor('transparent')"></div> -->
+    </div>
 
+    <!-- Dream patch squares. Hidden by default -->
+    <!-- <div id="dream-patch" class="hidden"> -->
+    <div id="dream-patch">
+      <div ng-repeat="square in squares" id="answer-square-{{$index}}" class="answer-square"></div>
+    </div>
 
-  <a download='dreampatch.png' id='save'   class='button'> save </a>
-  <div id='img-out'></div>
+    <a download='dreampatch.png' id='save' class='button hidden'> save </a>
+    <div id='img-out'></div>
 
+    <!-- Full quilt of all users patches -->
+    <div id="quilt">
+      <div class="quilt-patch" ng-repeat="patch in patches">
+        <div class="quilt-square" ng-repeat="triangle in patch" style="border-top-color:{{triangle.topColor}};border-right-color:{{triangle.sideColor}};border-left-color:{{triangle.sideColor}};"></div>
+      </div>
+    </div>
+
+  </div><!-- Closes content-wrapper -->
 
 </div><!-- Closes container  -->
 
@@ -34,7 +40,7 @@
   $(function() { 
     var theCanvas
       $("#save").click(function() { 
-          html2canvas($("#dream-tile"), {
+          html2canvas($("#dream-patch"), {
               onrendered: function(canvas) {
                 save.href = canvas.toDataURL("image/png")              }
           })
@@ -44,9 +50,11 @@
   // Sets Soundcloud iframe as a player controllable by js. Also sets global variables.
   var widgetIframe = document.getElementById('sc-widget'),
       widget = SC.Widget(widgetIframe),
-      clickCount = 1,
+      clickCount = -0.5,
       track_position = "";
 
+<<<<<<< HEAD
+=======
   // Hides question square after user clicks a square
   $('.square').click(function(){
     $('#questions').addClass('hidden');
@@ -71,6 +79,7 @@
     }
   }
 
+>>>>>>> master
   // logs the position of the track in milliseconds
   function position(){
   	widget.getPosition(function(positionSC){
@@ -78,12 +87,17 @@
   	});
   }
 
-  // Listens to the track position and prompts the user with a new question ever 7 seconds
+  // Listens to the track position and prompts the user with a new question every 1 seconds
   widget.bind(SC.Widget.Events.PLAY_PROGRESS, function(eventData) {
     track_position = JSON.stringify(eventData.currentPosition);
     track_position = Math.floor(track_position/100);
+<<<<<<< HEAD
+    // console.log(track_position);
+    if (track_position % 10 == 0 && track_position > 0){
+=======
     console.log(track_position);
     if (track_position % 20 == 0 && track_position > 0){
+>>>>>>> master
       $('#questions').removeClass('hidden');
     };
   });
