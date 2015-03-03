@@ -13,37 +13,44 @@ https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js'></scrip
   <%= csrf_meta_tags %>
 </head>
 	<!-- logo -->
-	<!-- <img class="bug" src="<%= asset_path('SnW.svg')%>" alt="Logo Image"></a> -->
-	
+ <header>
+	<a href="/"><img class="bug" src="<%= asset_path('SnW_2a.svg')%>" alt="Logo Image"></a>
 	<!-- Navigation -->
 	<div class="navigation" role="banner">
  	 <div class="navigation-wrapper">
-    	<a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
+    	<a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu"><i class="fa fa-bars fa-2x nav-link"></i></a>
     	<nav role="navigation">
       	<ul id="js-navigation-menu" class="navigation-menu show">
         	<li class="nav-link"><a class="scroll-on-page-link" href="#scroll-link-1">1</a></li>
         	<li class="nav-link"><a class="scroll-on-page-link" href="#scroll-link-2">2</a></li>
         	<li class="nav-link"><a class="scroll-on-page-link" href="#scroll-link-3">3</a></li>
         	<li class="nav-link"><a class="scroll-on-page-link" href="#scroll-link-4">4</a></li>
-        	<li class="nav-link"><a class="scroll-on-page-link" href="#scroll-on-page-top">▲</a></li>
+        	<li class="nav-link"><a class="scroll-on-page-link" href="#scroll-on-page-top">▲</i></a></li>
+          <li class="nav-link"><a class="scroll-on-page-link" href="/music-player"><i class="fa fa-music"></i></a></li>
       	<% if current_user %>
         	<li class="nav-link"><%= link_to 'Log Out', logout_path %></li>
       	<% else %>
         	<li class="nav-link"><%= link_to 'Log In', login_path %></li>
         	<li class="nav-link"><%= link_to 'Sign Up', signup_path %></li>
       	<% end %>
-      	<div href="javascript:void(0)" class="navigation-tools">
-	      	<!-- Buttons -->
-					<button class="signup" id="a" >Happy</button>
-					<button class="signup" id="b" >Eh</button>
-					<button class="signup" id="c" >Kinda Happy</button>
-					<button class="signup" id="d" >Sad</button>
-				</div>
       	</ul>
       	</div>
     	</nav>
+      <!-- scroll buttons -->
+      <ul class="scroll-btn-container">
+        <li class="scroll-btn"><a class="scroll-on-page-link" onclick="cycle()"><i class="fa fa-chevron-up"></i></a></li>
+        <li class="scroll-btn"><a class="scroll-on-page-link" onclick="cycle()"><i class="fa fa-chevron-down"></i></a></li>
+      </ul>
+      <div class="votes-container">
+          <!-- Buttons -->
+          <button class="votes-btn v1" id="a" >: )</button>
+          <button class="votes-btn v2" id="b" >: |</button>
+          <button class="votes-btn v3" id="c" >: \</button>
+          <button class="votes-btn v4" id="d" >: (</button>
+        </div>
   	</div>
 	</div>
+</header> 
 
 <body>
 

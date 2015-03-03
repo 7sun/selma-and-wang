@@ -1,10 +1,14 @@
-<h2>Log in</h2>
-	<%= link_to "Log in with Facebook", "/auth/facebook"%>
+<div class="form">
+	<div class="f1">Log In</div>
+	<br>
+	<%= link_to " Log in with Facebook", "/auth/facebook"%>  <i class="fa fa-facebook-official" style="color: white;"></i>
 
-	<p>OR</p>
+	<br><br>
 
 	<%= form_for :user, url: login_path, method: :post do |u| %>
 		<%= u.text_field :email, placeholder: 'Email' %>
 		<%= u.password_field :password, placeholder: 'Password' %>
 		<%= u.submit 'Submit' %>
 	<% end %>
+	</div>
+	<img class="thingy" src="<%= asset_path('testshape2.svg')%>" alt="Logo Image">
