@@ -18,7 +18,7 @@ angular
 		console.log(patchRef);
 		console.log(patchRef.key());
 
-		patchRef.onDisconnect().update(dbDefaultSquares);
+		patchRef.onDisconnect().set(dbDefaultSquares);
 
 		// Checks if x exists in a range of numbers. Used in setTransparentTriangles.
 		function between(x, min, max){
