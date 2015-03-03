@@ -27,7 +27,6 @@
   $navigation-submenu-width: 12em;
   $horizontal-bar-mode: $large-screen;
 
-  // background-color: $navigation-background;
   min-height: $navigation-height;
   width: 100%;
   z-index: 999;
@@ -75,6 +74,12 @@
 
   // Nav menu
 
+  .nav-container {
+    background-color: $navigation-color;
+    font-size: 1.1em;
+    padding: .45em .65em;
+  }
+
   nav {
     float: none;
     min-height: $navigation-height;
@@ -109,7 +114,6 @@
   // The nav items
 
   ul li.nav-link {
-    // background: $navigation-background;
     display: block;
     line-height: $navigation-height;
     overflow: hidden;
