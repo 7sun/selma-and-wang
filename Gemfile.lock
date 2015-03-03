@@ -85,6 +85,8 @@ GEM
     firebase (0.2.3)
       httpclient
       json
+    font-awesome-rails (4.3.0.0)
+      railties (>= 3.2, < 5.0)
     font-awesome-sass (4.3.1)
       sass (~> 3.2)
     globalid (0.3.3)
