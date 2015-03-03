@@ -7,10 +7,18 @@ angular
 		var inverse;
 		var dbsquares = [{topColor: "", sideColor: ""}, {topColor: "", sideColor: ""}, {topColor: "", sideColor: ""},
 										{topColor: "", sideColor: ""}, {topColor: "", sideColor: ""}, {topColor: "", sideColor: ""}]
-
+		// default squares to send to firebase in case of client disconnet to maintain patternsync
+		var dbDefaultSquares = [{topColor: "#AEE5F1", sideColor: "#FEBBCD"}, {topColor: "#B3BCBF", sideColor: "#AEE5F1"}, {topColor: "#FEBBCD", sideColor: "#B3BCBF"},
+										{topColor: "#F25239", sideColor: "#FEBBCD"}, {topColor: "#AEE5F1", sideColor: "#B3BCBF"}, {topColor: "#AEE5F1", sideColor: "#B3BCBF"}]
 		var ref = new Firebase("https://selmaandwang.firebaseio.com/patches");
 		var patches = $firebase(ref).$asObject();
 		patches.$bindTo($scope, 'patches');
+
+		var patchRef = ref.push();
+		console.log(patchRef);
+		console.log(patchRef.key());
+
+		patchRef.onDisconnect().set(dbDefaultSquares);
 
 		// Checks if x exists in a range of numbers. Used in setTransparentTriangles.
 		function between(x, min, max){
@@ -106,7 +114,9 @@ angular
 	    if (clickCount >= 5.5 || (clickCount >= 5 && inverse == false) ){
 	    	$('#save').removeClass('hidden');
 	      $('#dream-patch').removeClass('hidden');
-	      ref.push(dbsquares);
+	      patchRef.update(dbsquares);
+	      patchRef.onDisconnect().cancel();
+
 	    }
 	  }
 
