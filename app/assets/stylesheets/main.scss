@@ -2,7 +2,7 @@
 
 $font-stack: 'Oswald', Helvetica, sans-serif;
 
-// 
+// Color Variables
 
 $greenscreen: #A0E18F;
 $accent-one: #AEE5F1; // Light Blue
@@ -10,6 +10,8 @@ $accent-two: #F25239; // Orange
 $accent-three: #B3BCBF; // Grey
 $accent-four: #FEBBCD; // Pink
 $grey: #333333; // Grey
+
+// SCSS
 
 body {
 	background-color: $greenscreen;
@@ -74,7 +76,7 @@ body.loading .loading-icon {
   $large-screen: em(860) !default;
   $base-font-color: $dark-gray !default;
   
-  // Typograpy //
+  // Typograpy
 
   p {
     color: $base-font-color;
@@ -159,7 +161,7 @@ section {
 
   a:hover {
     color: $grey;
-    transition: 2ms;
+    transition: .5s;
   }
 }
 
