@@ -181,12 +181,12 @@ input[type="password"] {
 
 input[placeholder] {
   color: #A9A9A9;
-  font-family: 'oswald';
+  font-family: $font-stack;
 }
 
 input[type="submit"] {
   background-color: transparentize($grey, 0.3);
-  font-family: 'oswald';
+  font-family: $font-stack;
 }
 
 input[type="submit"]:hover {
