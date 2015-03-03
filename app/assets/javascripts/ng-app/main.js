@@ -3,6 +3,7 @@ angular
 	.controller("patchController", ['$scope', '$firebase', function($scope, $firebase){
 		$scope.squares = [1,2,3,4,5,6];
 		$scope.addSquareColor = addSquareColor;
+		$scope.togglePlay = togglePlay;
 		var inverse;
 		var dbsquares = [{topColor: "", sideColor: ""}, {topColor: "", sideColor: ""}, {topColor: "", sideColor: ""},
 										{topColor: "", sideColor: ""}, {topColor: "", sideColor: ""}, {topColor: "", sideColor: ""}]
@@ -120,5 +121,11 @@ angular
 	      clickCount += 0.5;
 	    }
 	  })
+
+	  function togglePlay(){
+	  	$('.play-icon').toggleClass('fa-pause');
+	  	$('.play-icon').toggleClass('fa-play');
+	  	widget.toggle();
+	  }
 
 	}]);
