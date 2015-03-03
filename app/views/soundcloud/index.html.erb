@@ -48,26 +48,4 @@
       })
   }); 
 
-  // Sets Soundcloud iframe as a player controllable by js. Also sets global variables.
-  var widgetIframe = document.getElementById('sc-widget'),
-      widget = SC.Widget(widgetIframe),
-      clickCount = -0.5,
-      track_position = "";
-
-  // logs the position of the track in milliseconds
-  function position(){
-  	widget.getPosition(function(positionSC){
-  		console.log(Math.round(positionSC));
-  	});
-  }
-
-  // Listens to the track position and prompts the user with a new question every 1 seconds
-  widget.bind(SC.Widget.Events.PLAY_PROGRESS, function(eventData) {
-    track_position = JSON.stringify(eventData.currentPosition);
-    track_position = Math.floor(track_position/100);
-    if (track_position % 10 == 0 && track_position > 0){
-      $('#questions').removeClass('hidden');
-    };
-  });
-
 </script>
