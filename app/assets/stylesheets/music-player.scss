@@ -37,6 +37,31 @@
   visibility: hidden;
 }
 
+.music-player {
+  margin: 0 auto;
+  width: 370px;
+  height: 370px;
+  background-color: rgba(100, 100, 100, 0.4);
+  background-image: url(http://41.media.tumblr.com/7c4bf204321c53862755ab09c21fb8c8/tumblr_nc5yc1pmTZ1s2xh4ao2_500.jpg);
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: darkorange;
+  font-size: 140px;
+  box-shadow: 0 12px 0 #111;
+}
+
+.music-player:hover {
+  box-shadow: 0 12px 0 #111, inset 0 0 0 1000px rgba(200,200,200, 0.4);
+}
+
+.play-icon {
+  margin-top: 115px;
+}
+
+#sc-widget {
+  display: none;
+}
 
 //DREAM PATCH //////////////////////////////////////////////////////
 
