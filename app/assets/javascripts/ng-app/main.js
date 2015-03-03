@@ -1,54 +1,74 @@
 angular
 	.module("SelmaApp", ['firebase'])
 	.controller("patchController", ['$scope', '$firebase', function($scope, $firebase){
-			var ref = new Firebase("https://selmaandwang.firebaseio.com/patches");
-			var patches = $firebase(ref).$asObject();
-			patches.$bindTo($scope, 'patches');
+		$scope.squares = [1,2,3,4,5,6];
+		$scope.addSquareColor = addSquareColor;
+		var inverse;
+		var dbsquares = [{topColor: "", sideColor: ""}, {topColor: "", sideColor: ""}, {topColor: "", sideColor: ""},
+										{topColor: "", sideColor: ""}, {topColor: "", sideColor: ""}, {topColor: "", sideColor: ""}]
 
-			var counterRef = ref.child("counter");
+		var ref = new Firebase("https://selmaandwang.firebaseio.com/patches");
+		var patches = $firebase(ref).$asObject();
+		patches.$bindTo($scope, 'patches');
 
-			counterRef.once("value", function(snapshot) {
-				// sets local counter to match initial Firebase counter
-  			counter = snapshot.val() + 1;
-  			// console.log(counter);
-  			// Increases counter in Firebase by 1
-  			counterRef.transaction(function(currentValue) {
-			  	return (currentValue || 0) + 1;
-				});
+		// Checks if x exists in a range of numbers. Used in setTransparentTriangles.
+		function between(x, min, max){
+			return x >= min && x <= max;
+		}
 
-				setTransparentTriangles();
+		var counterRef = ref.child("counter");
+		counterRef.once("value", function(snapshot) {
+			// sets local counter to match initial Firebase counter
+			counter = snapshot.val() + 1;
+			// Increases counter in Firebase by 1
+			counterRef.transaction(function(currentValue) {
+		  	return (currentValue || 0) + 1;
 			});
+			setTransparentTriangles();
+		});
 
-  		$scope.addSquareColor = addSquareColor;
-  		var dbsquares = [{topColor: "", sideColor: ""}, {topColor: "", sideColor: ""}, {topColor: "", sideColor: ""},
-								{topColor: "", sideColor: ""}, {topColor: "", sideColor: ""}, {topColor: "", sideColor: ""}]
-  		$scope.squares = [1,2,3,4,5,6];
+		// Sets Soundcloud iframe as a player controllable by js. Also sets global variables.
+	  var widgetIframe = document.getElementById('sc-widget'),
+	      widget = SC.Widget(widgetIframe),
+	      clickCount = -0.5,
+	      track_position = "";
 
-  		function between(x, min, max){
-  			return x >= min && x <= max;
-  		}
+	  // logs the position of the track in milliseconds
+	  function position(){
+	  	widget.getPosition(function(positionSC){
+	  		console.log(Math.round(positionSC));
+	  	});
+	  }
 
-  		var inverse;
-  		
+	  // Listens to the track position and prompts the user with a new question every 1 second
+	  widget.bind(SC.Widget.Events.PLAY_PROGRESS, function(eventData) {
+	    track_position = JSON.stringify(eventData.currentPosition);
+	    track_position = Math.floor(track_position/100);
+	    if (track_position % 10 == 0 && track_position > 0){
+	      $('#questions').removeClass('hidden');
+	    };
+	  });
 
-  		function setTransparentTriangles(){
-  			console.log("outside func counter val: " + counter);
-	    	if ( between(counter, 1, 3) || between(counter, 7, 9) || between(counter, 16, 18) || between(counter, 22, 24) ){
-	    		$('#answer-square-0').css({"borderTopColor": "#A0E18F"});
-	    		$('.answer-square').css({"borderRight": "250px solid #A0E18F"});
-	    		inverse = false;
-	    	} else {
-	    		$('#answer-square-1').css({"borderTopColor": "#A0E18F"});
-	    		$('.answer-square').css({"borderLeft": "250px solid #A0E18F"});
-	    		inverse = true;
-	    	}
-	    	setInverse(inverse)
-	    }
+	  // Sets which triangles will be taken out of the patch. Switches to create diamond pattern
+		function setTransparentTriangles(){
+			console.log("outside func counter val: " + counter);
+    	if ( between(counter, 1, 3) || between(counter, 7, 9) || between(counter, 16, 18) || between(counter, 22, 24) ){
+    		$('#answer-square-0').css({"borderTopColor": "#A0E18F"});
+    		$('.answer-square').css({"borderRight": "250px solid #A0E18F"});
+    		inverse = false;
+    	} else {
+    		$('#answer-square-1').css({"borderTopColor": "#A0E18F"});
+    		$('.answer-square').css({"borderLeft": "250px solid #A0E18F"});
+    		inverse = true;
+    	}
+    	setInverse(inverse)
+    }
 
-	    function setInverse(value){
-	    	inverse = value;
-	    	console.log(inverse);
-	    }
+    // Sets inverse property of the patch to be globally available
+    function setInverse(value){
+    	inverse = value;
+    	console.log(inverse);
+    }
 
   	// Adds color to half of the square. Adds color to each half before increasing the count to the next integer
 	  function addSquareColor(color){
@@ -100,6 +120,5 @@ angular
 	      clickCount += 0.5;
 	    }
 	  })
-
 
 	}]);
