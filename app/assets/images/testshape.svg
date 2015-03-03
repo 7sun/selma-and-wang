@@ -2,11 +2,9 @@
 <!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1200 800" enable-background="new 0 0 1200 800" xml:space="preserve">
-<g>
-	<polyline fill="#90D0FF" points="1200,10 568.6,43.1 190.6,83.1 875,105 1105.6,575.6 1105.6,307.1 1200,10 	"/>
-	<polyline fill="#FFD0FF" points="190.6,83.1 40.6,311.6 0,728 577.6,575.6 1105.6,575.6 321,517 190.6,83.1 	"/>
-	<polyline fill="#80D8EE" points="190.6,83.1 190.6,83.1 686.3,143.1 1105.6,575.6 875,105 190.6,83.1 	"/>
-	<polyline fill="#D8D8EE" points="190.6,83.1 321,517 1105.6,575.6 190.6,83.1 	"/>
-	<polyline fill="#CDE9F7" points="190.6,83.1 190.6,83.1 1105.6,575.6 686.3,143.1 190.6,83.1 	"/>
-</g>
+<polyline opacity="0.15" fill="#FFFFFF" points="1200,10 568.6,43.1 190.6,83.1 875,105 1105.6,575.6 1105.6,307.1 1200,10 "/>
+<polyline opacity="0.2" fill="#FFFFFF" points="190.6,83.1 40.6,311.6 0,728 577.6,575.6 1105.6,575.6 321,517 190.6,83.1 "/>
+<polyline opacity="0.5" fill="#FFFFFF" points="190.6,83.1 190.6,83.1 686.3,143.1 1105.6,575.6 875,105 190.6,83.1 "/>
+<polyline opacity="0.4" fill="#FFFFFF" points="190.6,83.1 321,517 1105.6,575.6 190.6,83.1 "/>
+<polyline opacity="0.3" fill="#FFFFFF" points="190.6,83.1 190.6,83.1 1105.6,575.6 686.3,143.1 190.6,83.1 "/>
 </svg>

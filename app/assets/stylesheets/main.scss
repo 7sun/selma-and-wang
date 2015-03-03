@@ -5,6 +5,11 @@ $font-stack: 'Oswald', Helvetica, sans-serif;
 // 
 
 $greenscreen: #A0E18F;
+$accent-one: #AEE5F1; // Light Blue
+$accent-two: #F25239; // Orange
+$accent-three: #B3BCBF; // Grey
+$accent-four: #FEBBCD; // Pink
+$grey: #333333; // Grey
 
 body {
 	background-color: $greenscreen;
@@ -117,6 +122,7 @@ section {
     text-align: center;
     font-family: $font-stack, sans-serif;
     line-height: 1.25em;
+    color: transparentize(white, 0.3);
     margin-top: 100px;
     margin-bottom: 36px;
   }
@@ -137,6 +143,7 @@ section {
   font-family: $font-stack, sans-serif;
   font-size: 2em;
   line-height: 2em;
+  color: $grey;
   border-bottom: 1px solid #ffffff; 
 }
 
@@ -147,16 +154,23 @@ section {
   font-family: $font-stack, sans-serif;
 
   a {
-    color: transparentize(#F4661F, 0.3);
+    color: transparentize($grey, 0.3);
   }
 
   a:hover {
-    color: #F4661F;
+    color: $grey;
     transition: 2ms;
   }
 }
 
 input[type="text"] {
+  background-color: transparentize(white, 0.3);
+  border: none;
+  box-shadow: none;
+  outline: none !important;
+}
+
+input[type="password"] {
   background-color: transparentize(white, 0.3);
   border: none;
   box-shadow: none;
@@ -169,10 +183,10 @@ input[placeholder] {
 }
 
 input[type="submit"] {
-  background-color: transparentize(#F4661F, 0.3);
+  background-color: transparentize($grey, 0.3);
   font-family: 'oswald';
 }
 
 input[type="submit"]:hover {
-    background-color: #F4661F;
+    background-color: $grey;
   }
