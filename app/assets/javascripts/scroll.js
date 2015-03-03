@@ -26,6 +26,21 @@ jQuery(function(){
   jQuery.mark.jump();
 });
 
+//
+
+function cycle(){
+$('a.scroll-link-[href^="#"]').on('click', function(event) {
+    var target = $(this.href);
+    if( target.length ) {
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: target.offset().top
+        }, 725;
+    }
+  })
+console.log("Hi")
+}; 
+
 // Menu Collapse
 
 $(document).ready(function() {
@@ -42,22 +57,11 @@ $(document).ready(function() {
   });
 });
 
-// Modal
+// Loading
 
-$(function() {
-  $("#modal-1").on("change", function() {
-    if ($(this).is(":checked")) {
-      $("body").addClass("modal-open");
-    } else {
-      $("body").removeClass("modal-open");
-    }
-  });
+$body = $("body");
 
-  $(".modal-window").on("click", function() {
-    $(".modal-state:checked").prop("checked", false).change();
-  });
-
-  $(".modal-inner").on("click", function(e) {
-    e.stopPropagation();
-  });
+$(document).on({
+    ajaxStart: function() { $body.addClass("loading");    },
+     ajaxStop: function() { $body.removeClass("loading"); }    
 });

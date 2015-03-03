@@ -29,6 +29,9 @@ gem 'bourbon'
 gem 'bitters'
 gem 'neat'
 
+#for admin dashboard
+gem 'rails_admin'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 # Easy Facebook login
@@ -38,6 +41,7 @@ gem 'figaro'
 # Angularify
 gem 'angularjs-rails'
 
+gem 'font-awesome-sass'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
