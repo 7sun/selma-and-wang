@@ -28,18 +28,18 @@ jQuery(function(){
 
 //
 
-function cycle(){
-$('a.scroll-link-[href^="#"]').on('click', function(event) {
-    var target = $(this.href);
-    if( target.length ) {
-        event.preventDefault();
-        $('html, body').animate({
-            scrollTop: target.offset().top
-        }, 725;
-    }
-  })
-console.log("Hi")
-}; 
+// function cycle(){
+// $('a.scroll-link-[href^="#"]').on('click', function(event) {
+//     var target = $(this.href);
+//     if( target.length ) {
+//         event.preventDefault();
+//         $('html, body').animate({
+//             scrollTop: target.offset().top
+//         }, 725;
+//     }
+//   })
+// console.log("Hi")
+// }; 
 
 // Menu Collapse
 
