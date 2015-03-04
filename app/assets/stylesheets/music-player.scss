@@ -7,12 +7,7 @@ body {
   color: whitesmoke;
 }
 
-
-
 // INTRO VIEW //////////////////////////////////////////////////////////
-
-
-
 
 .headphones-container{
   i {
@@ -30,7 +25,7 @@ body {
   h2 {
     font-size: 72px;
     text-transform: uppercase;
-    padding-top: 30%;
+    padding-top: 70px;
   }
   h3 {
     font-size: 44px;
@@ -50,18 +45,26 @@ body {
 
 
 #questions {
-  width: 500px;
+  // width: 500px;
   text-align: center;
   color: white;
   margin: 40px auto;
+  h3 {
+    font-size: 54px;
+  }
 }
 
 .square {
-  width: 80px;
-  height: 80px;
-  display: inline-block;
-  margin: 0px 20px;
-  border-radius: 50%;
+  width: 400px;
+  height: 400px;
+  // display: inline-block;
+  margin: 20px;
+  // border-radius: 50%;
+  float: left
+}
+
+.square:nth-child(2n){
+  clear: both;
 }
 
 // .square:hover {
@@ -70,7 +73,7 @@ body {
 
 #square-1 {
   background-color: #AEE5F1;
-  box-shadow: 3px 5px #83d7e9;
+  box-shadow: 0px 5px #83d7e9;
   &:hover {
     background-color: #c4ecf5;
   }
@@ -78,7 +81,7 @@ body {
 
 #square-2 {
   background-color: #F25239;
-  box-shadow: 3px 5px #e92d0f;
+  box-shadow: 0px 5px #e92d0f;
   &:hover {
     background-color: #f46751;
   }
@@ -86,7 +89,7 @@ body {
 
 #square-3 {
   background-color: #B3BCBF;
-  box-shadow: 3px 5px #97a4a8;
+  box-shadow: 0px 5px #97a4a8;
   &:hover {
     background-color: #c1c8cb;
   }
@@ -94,7 +97,7 @@ body {
 
 #square-4 {
   background-color: #FEBBCD;
-  box-shadow: 3px 5px #fd89a8;
+  box-shadow: 0px 5px #fd89a8;
   &:hover {
     background-color: #fed4df;
   }
@@ -105,21 +108,21 @@ body {
 }
 
 .music-player {
-  margin: 0 auto;
-  width: 370px;
-  height: 370px;
+  margin: 0 auto 140px;
+  width: 400px;
+  height: 375px;
   background-color: rgba(100, 100, 100, 0.4);
   background-image: url(http://41.media.tumblr.com/7c4bf204321c53862755ab09c21fb8c8/tumblr_nc5yc1pmTZ1s2xh4ao2_500.jpg);
-  border-radius: 50%;
+  // border-radius: 50%;
   background-repeat: no-repeat;
   text-align: center;
   color: darkorange;
   font-size: 140px;
-  box-shadow: 6px 12px 0px #040301;
+  // box-shadow: 6px 12px 0px #040301;
 }
 
 .music-player:hover {
-  box-shadow: 6px 12px 0px #040301, inset 0 0 0 1000px rgba(200,200,200, 0.4);
+  box-shadow: inset 0 0 0 1000px rgba(200,200,200, 0.4);
 }
 
 .play-icon {
