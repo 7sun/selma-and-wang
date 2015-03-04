@@ -244,5 +244,28 @@
       color: $base-accent-color;
     }
    }
+  }
+
+.other-btn-container {
+  right: 3%;
+  bottom: 40px;
+  position: fixed;
+}
+
+.scroll-btn {
+    @include button(flat, $navigation-color);
+    font-size: 1.1em;
+    // margin-top: 27.5em;
+    padding: .45em .65em;
+
+  a {
+    color: #A0E18F;
+    display: inline-block;
+    font-weight: 400;
+  
+    &:hover {
+      color: $base-accent-color;
+    }
    }
+  }
 }
