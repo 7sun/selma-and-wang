@@ -1,6 +1,7 @@
 // breakpoints
 
 $mobile: new-breakpoint(max-width 600px 6);
+$mobile1: new-breakpoint(max-width 885px 6);
 
 // Fonts
 
@@ -114,22 +115,27 @@ body.loading .loading-icon {
     
     width: 100%;
     height: 100%;
-    padding-top: 75px;
+    padding-top: 65px;
 
     @include media($mobile) {
       @include span-columns(4);
     }
   
   .b1 {
-    font-size: 12em;
+    font-size: 17vw;
     text-align: center;
     font-family: $font-stack, sans-serif;
     line-height: 1.25em;
     color: transparentize(white, 0.3);
     margin-top: 80px;
-    @include media($mobile) {
-      font-size: 65px;
-    }
+    
+    // @include media($mobile1) {
+    //   font-size: 10em;
+    // }
+
+    // @include media($mobile) {
+    //   font-size: 5em;
+    // }
 
   }
 
@@ -142,12 +148,12 @@ body.loading .loading-icon {
     background-color: $navigation-color;
     padding: 10px;
     border-radius: 3px;
-    max-width: 720px;
+    max-width: 60vw;
 
-    @include media($mobile) {
-      @include span-columns(4);
-      @include shift(1);
-    }
+    // @include media($mobile) {
+    //   @include span-columns(4);
+    //   @include shift(1);
+    // }
   }
 
   .scn-btns-container {
@@ -166,16 +172,17 @@ body.loading .loading-icon {
       user-select: none;
       display: inline;
       text-align: center;
-      color: $greenscreen;
+      color: $accent-three;
       background-color: $navigation-color;
+      font-family: $font-stack;
       font-size: 1.25em;
       font-weight: 900;
       margin-top: 20px;
-      padding: 1.1em;
+      padding: 1em;
       text-transform: uppercase;
 
       &:hover {
-        background-color: white;
+        color: $grey;
       }
 
       @include media($mobile) {

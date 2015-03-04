@@ -37,19 +37,10 @@ $(document).ready(function() {
      pagination: false,               // You can either show or hide the pagination. Toggle true for show, false for hide.
      updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
      afterMove: function(index) {
-      //   if ($("article").eq(0)) {
-      //     $("body").css("background-color","#A0E18F");
-      //     console.log("0");
-      // } if ($("article").eq(1)) {
-      //     $("body").css("background-color","#f2c849");
-      //     console.log("1");
-      // } if ($("article").eq(2)) {
-      //     $("body").css("background-color","#bf3945");
-      //     console.log("2");
-      // } if ($("article").eq(3)) {
-      //     $("body").css("background-color","#000000");
-      //     console.log("3");
-      // }
+        // if ('#scroll-link-2') {
+        //   $("body").css("background-color","#2fcdb2");
+        //   console.log("2");
+        // };
      },                               // This option accepts a callback function. The function will be called before the page moves.
      beforeMove: function(index) {},   // This option accepts a callback function. The function will be called after the page moves.
      loop: false,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
@@ -81,8 +72,14 @@ $(document).ready(function() {
   });
 });
 
+// $(document).ready(function() {
+//   $( "#start" ).click(function() {
+//     $(".main").moveDown();
+//   });
+// });
+
 $(document).ready(function() {
-  $( "#start" ).click(function() {
+  $( ".scn-btns" ).click(function() {
     $(".main").moveDown();
   });
 });
