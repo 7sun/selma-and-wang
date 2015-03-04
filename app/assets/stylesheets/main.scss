@@ -1,6 +1,11 @@
+// breakpoints
+
+$mobile: new-breakpoint(max-width 600px 6);
+
 // Fonts
 
 $font-stack: 'Oswald', Helvetica, sans-serif;
+$body-text: 'Roboto Slab', serif;
 
 // Color Variables
 
@@ -10,7 +15,7 @@ $accent-two: #F25239; // Orange
 $accent-three: #B3BCBF; // Grey
 $accent-four: #FEBBCD; // Pink
 $grey: #333333; // Grey
-$navigation-color: transparentize(white, 0.3);
+$navigation-color: transparentize(white, 0.2);
 $navigation-color-hover: white;
 
 // SCSS
@@ -109,16 +114,40 @@ body.loading .loading-icon {
     
     width: 100%;
     height: 100%;
-    padding-top: 100px;
+    padding-top: 75px;
+
+    @include media($mobile) {
+      @include span-columns(4);
+    }
   
   .b1 {
-    font-size: 11em;
+    font-size: 12em;
     text-align: center;
     font-family: $font-stack, sans-serif;
     line-height: 1.25em;
     color: transparentize(white, 0.3);
-    margin-top: 100px;
-    margin-bottom: 36px;
+    margin-top: 80px;
+    @include media($mobile) {
+      font-size: 65px;
+    }
+
+  }
+
+  p {
+    display: block;
+    margin: auto;
+    margin-top: -5px;
+    font-family: $body-text;
+    text-align: center;
+    background-color: $navigation-color;
+    padding: 10px;
+    border-radius: 3px;
+    max-width: 720px;
+
+    @include media($mobile) {
+      @include span-columns(4);
+      @include shift(1);
+    }
   }
 
   .scn-btns-container {
@@ -132,13 +161,18 @@ body.loading .loading-icon {
       user-select: none;
       display: inline;
       text-align: center;
-      color: #A0E18F;
-      font-size: 0.8em;
+      color: $greenscreen;
+      background-color: $navigation-color;
+      font-size: 1.25em;
       font-weight: 900;
-      margin-top: -12px;
+      margin-top: 20px;
       padding: 1.1em;
       text-transform: uppercase;
-      // border-radius: 45px;
+
+      &:hover {
+        background-color: white;
+      }
+
     }
 
  }

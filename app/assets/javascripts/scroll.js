@@ -81,6 +81,12 @@ $(document).ready(function() {
   });
 });
 
+$(document).ready(function() {
+  $( "#start" ).click(function() {
+    $(".main").moveDown();
+  });
+});
+
 // Menu Collapse
 
 $(document).ready(function() {
