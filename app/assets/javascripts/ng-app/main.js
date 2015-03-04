@@ -15,9 +15,6 @@ angular
 		patches.$bindTo($scope, 'patches');
 
 		var patchRef = ref.push();
-		console.log(patchRef);
-		console.log(patchRef.key());
-
 		patchRef.onDisconnect().set(dbDefaultSquares);
 
 		// Checks if x exists in a range of numbers. Used in setTransparentTriangles.
@@ -60,7 +57,7 @@ angular
 
 	  // Sets which triangles will be taken out of the patch. Switches to create diamond pattern
 		function setTransparentTriangles(){
-			console.log("outside func counter val: " + counter);
+			console.log(counter);
     	if ( between(counter, 1, 3) || between(counter, 7, 9) || between(counter, 16, 18) || between(counter, 22, 24) ){
     		$('#answer-square-0').css({"borderTopColor": "#A0E18F"});
     		$('.answer-square').css({"borderRight": "250px solid #A0E18F"});
