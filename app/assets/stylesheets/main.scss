@@ -153,6 +153,11 @@ body.loading .loading-icon {
   .scn-btns-container {
     text-align: center;
 
+    @include media($mobile) {
+        @include span-columns(4);
+        @include shift(1);
+      }
+
   }
 
   .scn-btns {
@@ -171,6 +176,10 @@ body.loading .loading-icon {
 
       &:hover {
         background-color: white;
+      }
+
+      @include media($mobile) {
+        font-size: 1em;
       }
 
     }
@@ -202,6 +211,12 @@ body.loading .loading-icon {
   @include shift(3);
   margin-top: 5em;
   font-family: $font-stack, sans-serif;
+  
+  @include media($mobile) {
+    @include span-columns(4);
+    @include shift(1);
+    overflow: scroll;
+  }
 
   a {
     color: transparentize($grey, 0.3);
