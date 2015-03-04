@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require scroll.js
+//= require jquery.onepage-scroll.min.js
 //= require angular
 //= require angular-resource
 //= require_tree .
