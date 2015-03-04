@@ -60,11 +60,11 @@ angular
 			console.log(counter);
     	if ( between(counter, 1, 3) || between(counter, 7, 9) || between(counter, 16, 18) || between(counter, 22, 24) ){
     		$('#answer-square-0').css({"borderTopColor": "#A0E18F"});
-    		$('.answer-square').css({"borderRight": "250px solid #A0E18F"});
+    		$('.answer-square').css({"borderRight": "40vw solid #A0E18F"});
     		inverse = false;
     	} else {
     		$('#answer-square-1').css({"borderTopColor": "#A0E18F"});
-    		$('.answer-square').css({"borderLeft": "250px solid #A0E18F"});
+    		$('.answer-square').css({"borderLeft": "40vw solid #A0E18F"});
     		inverse = true;
     	}
     	setInverse(inverse)
@@ -83,11 +83,11 @@ angular
 			// Checks if clickCount is a whole number. If so, the squares top/left triangle color is set
 	    if (clickCount % 1 == 0){
 	    	if (inverse){
-	    		$('#answer-square-' + clickCountString).css({"borderLeft": "250px solid " + color});
+	    		$('#answer-square-' + clickCountString).css({"borderLeft": "40vw solid " + color});
 	    		dbsquares[Math.floor(clickCount)].sideColor = color;
 	    	} else {
-	    		// $('#answer-square-' + clickCountString).css({"borderRight": "250px solid transparent"});
-		      $('#answer-square-' + clickCountString).css({"borderTop": "250px solid " + color});
+	    		// $('#answer-square-' + clickCountString).css({"borderRight": "40vw solid transparent"});
+		      $('#answer-square-' + clickCountString).css({"borderTop": "40vw solid " + color});
 		      dbsquares[Math.floor(clickCount)].topColor = color;
 	    	}
 	      console.log(clickCount);
@@ -95,10 +95,10 @@ angular
 	      // Checks if clickCount end in 0.5. If so, the squares bottom/right triangle color is set 
 	    } else if (clickCount % 1 == 0.5){
 	    	if (inverse){
-	    		$('#answer-square-' + clickCountString).css({"borderTop": "250px solid " + color});
+	    		$('#answer-square-' + clickCountString).css({"borderTop": "40vw solid " + color});
 	    		dbsquares[Math.floor(clickCount)].topColor = color;
 	    	} else {
-	      	$('#answer-square-' + clickCountString).css({"borderRight": "250px solid " + color});
+	      	$('#answer-square-' + clickCountString).css({"borderRight": "40vw solid " + color});
 	      	dbsquares[Math.floor(clickCount)].sideColor = color;
 	      }
 	      console.log(clickCount);

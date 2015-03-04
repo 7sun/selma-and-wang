@@ -9,37 +9,50 @@ body {
 
 // INTRO VIEW //////////////////////////////////////////////////////////
 
+
+.content-wrapper {
+  .scenarios {
+    padding: 1vh 6vw;
+  }
+}
+
 .headphones-container{
   i {
-    font-size: 500px;
-    padding-top: 40px;
-    text-shadow: 0 10px 0 lightgray;
+    font-size: 55vw;
+    padding-top: 1vh;
+    text-shadow: 0 1.4vw 0 lightgray;
   }
+
   span {
   color: #F25239;
   }
+
   p {
-    font-size: 32px;
+    font-size: 3.5vw;
     color: #5a6465;
   }
+
   h2 {
-    font-size: 72px;
+    font-size: 8vw;
     text-transform: uppercase;
-    padding-top: 70px;
+    padding-top: 2vh;
   }
+
   h3 {
-    font-size: 44px;
-    padding: 80px 0px;
+    font-size: 5vw;
+    padding: 3vh 0px;
     color: #5a6465;
   }
+
   button {
-  width: 100%;
-  font-size: 64px;
+  width: 90vw;
+  font-size: 8vw;
   margin: 0 auto;
   font-weight: bold;
   background-color: #F25239;
   box-shadow: 0px 10px 0 #e92d0f;
   }
+
 }
 
 
@@ -72,34 +85,34 @@ body {
 // }
 
 #square-1 {
-  background-color: #AEE5F1;
-  box-shadow: 0px 5px #83d7e9;
+  background: linear-gradient(#AEE5F1, #98deed);
+  box-shadow: 0px 10px #83d7e9;
   &:hover {
-    background-color: #c4ecf5;
+    background: linear-gradient(#AEE5F1, #98deed);
   }
 }
 
 #square-2 {
-  background-color: #F25239;
-  box-shadow: 0px 5px #e92d0f;
+  background: linear-gradient(#F25239, #f03d21);
+  box-shadow: 0px 10px #e92d0f;
   &:hover {
-    background-color: #f46751;
+    background: linear-gradient(#F25239, #f03d21);
   }
 }
 
 #square-3 {
-  background-color: #B3BCBF;
-  box-shadow: 0px 5px #97a4a8;
+  background: linear-gradient(#B3BCBF, #a5b0b3);
+  box-shadow: 0px 10px #97a4a8;
   &:hover {
-    background-color: #c1c8cb;
+    background: linear-gradient(#B3BCBF, #a5b0b3);
   }
 }
 
 #square-4 {
-  background-color: #FEBBCD;
-  box-shadow: 0px 5px #fd89a8;
+  background: linear-gradient(#FEBBCD, #fea2bb);
+  box-shadow: 0px 10px #fd89a8;
   &:hover {
-    background-color: #fed4df;
+    background: linear-gradient(#FEBBCD, #fea2bb);
   }
 }
 
@@ -142,18 +155,16 @@ body {
 }
 
 #dream-patch {
-  margin: 50px;
-  height: 750px;
+  margin: 50px auto;
   padding-bottom: 50px;
-  // background-image: url(http://www.downtownla.com/images/5_0_aboutUS/lapl-bradbury.jpg);
-  // background-size: cover;
+  display: inline-block;
 }
 
 .answer-square {
   float: left;
-  width: 250px;
-  height: 250px;
-  border-top: 250px solid transparent;
+  width: 40vw;
+  height: 40vw;
+  border-top: 40vw solid transparent;
 }
 
 .answer-square:nth-child(2n+1){
@@ -163,7 +174,8 @@ body {
 
 #quilt {
   height: 600px;
-  margin: 50px 0px;
+  width: 600px;
+  margin: 50px auto;
   background-image: url(http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef014e8827bb78970d-640wi);
   background-size: cover;
   background-repeat: no-repeat;
@@ -363,4 +375,7 @@ body {
   color: peru;
   border: none;
   box-shadow: 0px 6px #e7ac1c;
+  display: block;
+  width: 40vw;
+  margin: 0 auto;
 }
