@@ -53,6 +53,7 @@ body {
   width: 100%;
   height: 100%;
   left: 3%;
+  top: 3%;
   position: fixed;
   z-index: -1;
   margin-top: -10px;
@@ -209,6 +210,26 @@ body.loading .loading-icon {
 
 // Forms
 
+.form-bk {
+  background: linear-gradient(90deg, $accent-one, $greenscreen);
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  height: 100%;
+  width: 100%;
+  z-index: -2;
+  position: absolute;
+}
+
+.form-bk2 {
+  background: linear-gradient(-90deg, $accent-four, $greenscreen);
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  height: 100%;
+  width: 100%;
+  z-index: -2;
+  position: absolute;
+}
+
 .f1 {
   font-family: $font-stack, sans-serif;
   font-size: 2em;
@@ -222,6 +243,7 @@ body.loading .loading-icon {
   @include shift(3);
   margin-top: 5em;
   font-family: $font-stack, sans-serif;
+  z-index: 999;
   
   @include media($mobile) {
     @include span-columns(4);
