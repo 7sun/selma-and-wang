@@ -1,4 +1,53 @@
-////////////////////////////////////////////////////////Music Page Styles
+//Music Page Styles//////////////////////////////////////////////////////
+
+$font-stack: 'Oswald', Helvetica, sans-serif;
+
+body {
+  font-family: $font-stack, sans-serif;
+  color: whitesmoke;
+}
+
+
+
+// INTRO VIEW //////////////////////////////////////////////////////////
+
+
+
+
+.headphones-container{
+  i {
+    font-size: 500px;
+    padding-top: 40px;
+    text-shadow: 0 10px 0 lightgray;
+  }
+  span {
+  color: #F25239;
+  }
+  p {
+    font-size: 32px;
+    color: #5a6465;
+  }
+  h2 {
+    font-size: 72px;
+    text-transform: uppercase;
+    padding-top: 30%;
+  }
+  h3 {
+    font-size: 44px;
+    padding: 80px 0px;
+    color: #5a6465;
+  }
+  button {
+  width: 100%;
+  font-size: 64px;
+  margin: 0 auto;
+  font-weight: bold;
+  background-color: #F25239;
+  box-shadow: 0px 10px 0 #e92d0f;
+  }
+}
+
+
 
 #questions {
   width: 500px;
@@ -15,24 +64,40 @@
   border-radius: 50%;
 }
 
-.square:hover {
-  border: 1px solid white;
-}
+// .square:hover {
+//   border: 1px solid white;
+// }
 
 #square-1 {
   background-color: #AEE5F1;
+  box-shadow: 3px 5px #83d7e9;
+  &:hover {
+    background-color: #c4ecf5;
+  }
 }
 
 #square-2 {
   background-color: #F25239;
+  box-shadow: 3px 5px #e92d0f;
+  &:hover {
+    background-color: #f46751;
+  }
 }
 
 #square-3 {
   background-color: #B3BCBF;
+  box-shadow: 3px 5px #97a4a8;
+  &:hover {
+    background-color: #c1c8cb;
+  }
 }
 
 #square-4 {
   background-color: #FEBBCD;
+  box-shadow: 3px 5px #fd89a8;
+  &:hover {
+    background-color: #fed4df;
+  }
 }
 
 .hidden {
@@ -50,11 +115,11 @@
   text-align: center;
   color: darkorange;
   font-size: 140px;
-  box-shadow: 0 12px 0 #111;
+  box-shadow: 6px 12px 0px #040301;
 }
 
 .music-player:hover {
-  box-shadow: 0 12px 0 #111, inset 0 0 0 1000px rgba(200,200,200, 0.4);
+  box-shadow: 6px 12px 0px #040301, inset 0 0 0 1000px rgba(200,200,200, 0.4);
 }
 
 .play-icon {
