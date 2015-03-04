@@ -37,12 +37,20 @@ $(document).ready(function() {
      pagination: false,               // You can either show or hide the pagination. Toggle true for show, false for hide.
      updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
      afterMove: function(index) {
-        if ('#scroll-link-3') {
-          $("body").css("background-color","#2fcdb2");
-          console.log("2");
-        } if ('#scroll-link-2') {
-          $("body").css("background-color","#bbcd08");
-        }
+      if (index == 1) {
+        $("body").css("background-color","#A0E18F");
+      } if (index == 2) {
+        $("body").css("background-color","#2fcdb2");
+      } if (index == 3) {
+        $("body").css("background-color","#cdc72d");
+      } if (index == 4){
+        $("body").css("background-color","#9fc7cd");
+      } if (index == 5){
+        $("body").css("background-color","#cd67af");
+      } if (index == 6) {
+        $("body").css("background-color","#A0E18F");
+      }
+      console.log(index);
      },                               // This option accepts a callback function. The function will be called before the page moves.
      beforeMove: function(index) {},   // This option accepts a callback function. The function will be called after the page moves.
      loop: false,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.

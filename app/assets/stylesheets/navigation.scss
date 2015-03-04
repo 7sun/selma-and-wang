@@ -5,6 +5,8 @@
   $accent-three: #B3BCBF; // Grey
   $large-screen: em(860) !default;
   $font-stack: 'Oswald', Helvetica, sans-serif;
+  $mobile: new-breakpoint(max-width 600px 6);
+  $mobile1: new-breakpoint(max-width 885px 6);
 
   top: 20px;
   left: 3%;
@@ -70,6 +72,11 @@
     &:focus,
     &:hover {
       color: $navigation-color-hover;
+    }
+
+      @include media($mobile) {
+        top: 3%;
+        margin-top: 0px;
     }
   }
 
@@ -228,6 +235,10 @@
   left: 3%;
   bottom: 40px;
   position: fixed;
+
+  @include media($mobile) {
+    bottom: 3%;
+  }
 }
 
 .scroll-btn {
@@ -251,7 +262,11 @@
   right: 3%;
   bottom: 40px;
   position: fixed;
-}
+
+    @include media($mobile) {
+      bottom: 3%;
+    }
+  }
 
 .scroll-btn {
     @include button(flat, $navigation-color);
