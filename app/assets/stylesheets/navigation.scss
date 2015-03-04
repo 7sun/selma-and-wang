@@ -2,6 +2,7 @@
 
   $base-accent-color: #3f3f3f !default;
   $dark-gray: #333 !default;
+  $accent-three: #B3BCBF; // Grey
   $large-screen: em(860) !default;
   $font-stack: 'Oswald', Helvetica, sans-serif;
 
@@ -236,7 +237,7 @@
     padding: .45em .65em;
 
   a {
-    color: #A0E18F;
+    color: $accent-three;
     display: inline-block;
     font-weight: 400;
   
@@ -259,7 +260,7 @@
     padding: .45em .65em;
 
   a {
-    color: #A0E18F;
+    color: $accent-three;
     display: inline-block;
     font-weight: 400;
   
