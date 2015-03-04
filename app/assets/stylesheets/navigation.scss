@@ -2,8 +2,11 @@
 
   $base-accent-color: #3f3f3f !default;
   $dark-gray: #333 !default;
+  $accent-three: #B3BCBF; // Grey
   $large-screen: em(860) !default;
   $font-stack: 'Oswald', Helvetica, sans-serif;
+  $mobile: new-breakpoint(max-width 600px 6);
+  $mobile1: new-breakpoint(max-width 885px 6);
 
   top: 20px;
   left: 3%;
@@ -69,6 +72,11 @@
     &:focus,
     &:hover {
       color: $navigation-color-hover;
+    }
+
+      @include media($mobile) {
+        top: 3%;
+        margin-top: 0px;
     }
   }
 
@@ -227,6 +235,10 @@
   left: 3%;
   bottom: 40px;
   position: fixed;
+
+  @include media($mobile) {
+    bottom: 3%;
+  }
 }
 
 .scroll-btn {
@@ -236,7 +248,7 @@
     padding: .45em .65em;
 
   a {
-    color: #A0E18F;
+    color: $accent-three;
     display: inline-block;
     font-weight: 400;
   
@@ -244,5 +256,32 @@
       color: $base-accent-color;
     }
    }
+  }
+
+.other-btn-container {
+  right: 3%;
+  bottom: 40px;
+  position: fixed;
+
+    @include media($mobile) {
+      bottom: 3%;
+    }
+  }
+
+.scroll-btn {
+    @include button(flat, $navigation-color);
+    font-size: 1.1em;
+    // margin-top: 27.5em;
+    padding: .45em .65em;
+
+  a {
+    color: $accent-three;
+    display: inline-block;
+    font-weight: 400;
+  
+    &:hover {
+      color: $base-accent-color;
+    }
    }
+  }
 }
