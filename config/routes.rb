@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'dots/counter'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'application#index'
 
@@ -12,7 +14,7 @@ Rails.application.routes.draw do
   get '/logout'       => 'sessions#destroy', as: 'logout'
   get 'music-player'  => 'soundcloud#index', as: 'soundcloud'
   get '/auth/:provider/callback', to: 'sessions#create_fb'
-
+  post '/dots' => 'dots#counter', as: :count
   # for tesing svg to canvas
   get '/testing' => 'application#testing'
   get 'dashboard' => 'application#dashboard'
