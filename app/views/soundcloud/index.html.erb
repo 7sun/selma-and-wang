@@ -1,7 +1,7 @@
 <div class="main">
 <div id="container" ng-app="SelmaApp">
   <!-- SOUNDCLOUD IFRAME -->
-  <iframe id="sc-widget" src=<%= "https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/186967644?client_id=#{ENV['SOUNDCLOUD_CLIENT_ID']}" %> width="0" height="0" scrolling="no" frameborder="no"></iframe>
+  <iframe id="sc-widget" src=<%= "https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/188155459?client_id=#{ENV['SOUNDCLOUD_CLIENT_ID']}" %> width="0" height="0" scrolling="no" frameborder="no"></iframe>
 
   <div id="content-wrapper" ng-controller="patchController">
 
@@ -51,7 +51,7 @@
     
     <article id="scroll-link-3" class="scenarios">
       <!-- Dream patch squares. Hidden by default -->
-      <!-- <div id="dream-patch" class="hidden"> -->
+      <div id="dream-patch" class="hidden">
       <!-- <h2>Your Patch</h2> -->
       <!-- <p>You created a patch for Grandma Alma's quilt!</p> -->
       <div id="dream-patch">  
@@ -75,7 +75,7 @@
           <div class="quilt-square" ng-repeat="triangle in patch" style="border-top-color:{{triangle.topColor}};border-right-color:{{triangle.sideColor}};border-left-color:{{triangle.sideColor}};"></div>
         </div>
       </div>
-      <%= link_to 'Home', root_path, class: 'back-button' %>
+      <%#= link_to 'Home', root_path, class: 'back-button' %>
     </article>
 
 
