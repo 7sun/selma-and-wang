@@ -174,8 +174,8 @@ body {
 //DREAM PATCH //////////////////////////////////////////////////////
 
 #container {
-  width: 600px;
-  margin: 100px auto;
+  // width: 600px;
+  margin: 1vh auto;
   text-align: center;
 }
 
@@ -186,9 +186,9 @@ body {
 
 .answer-square {
   float: left;
-  width: 20vw;
-  height: 20vw;
-  border-top: 20vw solid transparent;
+  width: 16.66667vw;
+  height: 16.66667vw;
+  border-top: 16.66667vw solid transparent;
 }
 
 .answer-square:nth-child(2n+1){
@@ -197,26 +197,28 @@ body {
 
 
 #quilt {
-  height: 600px;
-  width: 600px;
-  margin: 50px auto;
-  background-image: url(http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef014e8827bb78970d-640wi);
+  height: 100vw;
+  width: 100vw;
+  margin: 13vh auto;
+  // background-image: url(http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef014e8827bb78970d-640wi);
+  background-image: url(http://i.imgur.com/XmPZZpY.jpg); 
   background-size: cover;
-  background-repeat: no-repeat;
+  // background-repeat: no-repeat;
   overflow-y: hidden; // Hide to remove overflow for effect
+  background-position: 14px;
 }
 
 // SINGLE CENTER DIAMOND ////////////////////////////////////////////////////////
 
 .quilt-patch {
   float: left;
-  width: 100px;
+  width: 16.66667vw;
   .quilt-square {
     float: left;
-    width: 50px;
-    height: 50px;
-    border-top: 50px solid;
-    border-right: 50px solid;
+    width: 8.33333vw;
+    height: 8.33333vw;
+    border-top: 8.33333vw solid;
+    border-right: 8.33333vw solid;
   }
   .quilt-square:nth-child(6){
     border-right-color: transparent !important;
@@ -231,7 +233,7 @@ body {
 
 .quilt-patch:nth-child(n+4):nth-child(-n+6){
   .quilt-square {
-    border-left: 50px solid;
+    border-left: 8.33333vw solid;
     border-right-width: none; // Comment out for random pattern effect
     border-right-style: none; // Comment out for random pattern effect
   }
@@ -251,7 +253,7 @@ body {
 
 .quilt-patch:nth-child(n+10):nth-child(-n+12){
   .quilt-square {
-    border-left: 50px solid;
+    border-left: 8.33333vw solid;
     border-right-width: none; // Comment out for random pattern effect
     border-right-style: none; // Comment out for random pattern effect
   }
@@ -265,7 +267,7 @@ body {
 
 .quilt-patch:nth-child(n+13):nth-child(-n+15){
   .quilt-square {
-    border-left: 50px solid;
+    border-left: 8.33333vw solid;
     border-right-width: none; // Comment out for random pattern effect
     border-right-style: none; // Comment out for random pattern effect
   }
@@ -286,7 +288,7 @@ body {
 
 .quilt-patch:nth-child(n+19):nth-child(-n+21){
   .quilt-square {
-    border-left: 50px solid;
+    border-left: 8.33333vw solid;
     border-right-width: none; // Comment out for random pattern effect
     border-right-style: none; // Comment out for random pattern effect
   }
@@ -316,7 +318,7 @@ body {
 //   width: 100px;
 //   .quilt-square {
 //     float: left;
-//     width: 50px;
+//     width: 8.33333vw;
 //     height: 50px;
 //     border-top: 50px solid;
 //     border-right: 50px solid;
