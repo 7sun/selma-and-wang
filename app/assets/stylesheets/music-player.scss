@@ -10,9 +10,26 @@ body {
 // INTRO VIEW //////////////////////////////////////////////////////////
 
 
-.content-wrapper {
+#content-wrapper {
   .scenarios {
     padding: 1vh 0;
+  }
+  h2 {
+    font-size: 8vw;
+    text-transform: uppercase;
+    padding-top: 2vh;
+  }
+  p {
+    font-size: 3.5vw;
+    color: #5a6465;
+  }
+  button {
+    width: 70vw;
+    font-size: 6vw;
+    margin: 0 auto;
+    font-weight: bold;
+    background-color: #F25239;
+    box-shadow: 0px 10px 0 #e92d0f;
   }
 }
 
@@ -27,16 +44,16 @@ body {
   color: #F25239;
   }
 
-  p {
-    font-size: 3.5vw;
-    color: #5a6465;
-  }
+  // p {
+  //   font-size: 3.5vw;
+  //   color: #5a6465;
+  // }
 
-  h2 {
-    font-size: 8vw;
-    text-transform: uppercase;
-    padding-top: 2vh;
-  }
+  // h2 {
+  //   font-size: 8vw;
+  //   text-transform: uppercase;
+  //   padding-top: 2vh;
+  // }
 
   h3 {
     font-size: 5vw;
@@ -45,8 +62,8 @@ body {
   }
 
   button {
-  width: 90vw;
-  font-size: 8vw;
+  width: 70vw;
+  font-size: 6vw;
   margin: 0 auto;
   font-weight: bold;
   background-color: #F25239;
@@ -63,7 +80,7 @@ body {
   // margin: 40px auto;
   h3 {
     font-size: 4vw;
-    margin: 5vh 13vw 3vh;
+    margin: 5vh 18.2vw 3vh;
     color: #5a6465;
     padding: 4vw;
     background-color: rgba(255, 255, 255, 0.2);
@@ -163,16 +180,15 @@ body {
 }
 
 #dream-patch {
-  margin: 50px auto;
-  padding-bottom: 50px;
+  margin: 3vh auto;
   display: inline-block;
 }
 
 .answer-square {
   float: left;
-  width: 40vw;
-  height: 40vw;
-  border-top: 40vw solid transparent;
+  width: 20vw;
+  height: 20vw;
+  border-top: 20vw solid transparent;
 }
 
 .answer-square:nth-child(2n+1){
@@ -377,13 +393,15 @@ body {
 }
 
 #save {
-  font-size: 24px;
-  background-color: #EEC561;
-  padding: 6px;
-  color: peru;
-  border: none;
-  box-shadow: 0px 6px #e7ac1c;
+  font-size: 3vw;
+  padding: 1vh;
+  color: #5a6465;
   display: block;
   width: 40vw;
-  margin: 0 auto;
+  margin: 0 auto 4vh;
+  background-color: rgba(255, 255, 255, 0.2);
 }
+
+
+
+
