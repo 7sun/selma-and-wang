@@ -46,11 +46,11 @@ angular
 	  	});
 	  }
 
-	  // Listens to the track position and prompts the user with a new question every 1 second
+	  // Listens to the track position and prompts the user with a new question every 8 second
 	  widget.bind(SC.Widget.Events.PLAY_PROGRESS, function(eventData) {
 	    track_position = JSON.stringify(eventData.currentPosition);
 	    track_position = Math.floor(track_position/100);
-	    if (track_position % 10 == 0 && track_position > 0){
+	    if (track_position % 80 == 0 && track_position > 0){
 	      $('#questions').removeClass('hidden');
 	    };
 	  });
