@@ -208,6 +208,17 @@ body {
   // background-repeat: no-repeat;
   overflow-y: hidden; // Hide to remove overflow for effect
   background-position: 1.5vw;
+  // The most recently added patch pulses
+  .quilt-patch:nth-last-child(2) {
+    opacity: 0.0;
+    @include animation(pulsate 8s ease-out);
+    @include animation-iteration-count(infinite); 
+  }
+  @-webkit-keyframes pulsate {
+      0% {@include transform(scale(0.1, 0.1) opacity 0.0)}
+      50% {opacity: 1.0;}
+      100% {@include transform(scale(1.2, 1.2) opacity 0.0)}
+  }
 }
 
 
@@ -417,6 +428,8 @@ div:nth-of-type(n+22):nth-of-type(-n+24){
 .back-button {
   color: #5a6465;
 }
+
+
 
 
 
