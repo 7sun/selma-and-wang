@@ -1,37 +1,144 @@
-////////////////////////////////////////////////////////Music Page Styles
+//Music Page Styles//////////////////////////////////////////////////////
+
+$font-stack: 'Oswald', Helvetica, sans-serif;
+
+body {
+  font-family: $font-stack, sans-serif;
+  color: whitesmoke;
+}
+
+// INTRO VIEW //////////////////////////////////////////////////////////
+
+
+#content-wrapper {
+  .scenarios {
+    padding: 5vh 0;
+  }
+  h2 {
+    font-size: 8vw;
+    text-transform: uppercase;
+    padding-top: 2vh;
+  }
+  p {
+    font-size: 3.5vw;
+    color: #5a6465;
+    margin-left: 8vw;
+    margin-right: 8vw;
+  }
+  button {
+    width: 70vw;
+    font-size: 6vw;
+    margin: 0 auto;
+    font-weight: bold;
+    background-color: #F25239;
+    box-shadow: 0px 10px 0 #e92d0f;
+  }
+}
+
+.headphones-container{
+  i {
+    font-size: 55vw;
+    padding-top: 1vh;
+    text-shadow: 0 1.4vw 0 lightgray;
+  }
+
+  span {
+  color: #F25239;
+  }
+
+  // p {
+  //   font-size: 3.5vw;
+  //   color: #5a6465;
+  // }
+
+  // h2 {
+  //   font-size: 8vw;
+  //   text-transform: uppercase;
+  //   padding-top: 2vh;
+  // }
+
+  h3 {
+    font-size: 5vw;
+    padding: 3vh 0px;
+    color: #5a6465;
+  }
+
+  button {
+  width: 70vw;
+  font-size: 6vw;
+  margin: 0 auto;
+  font-weight: bold;
+  background-color: #F25239;
+  box-shadow: 0px 10px 0 #e92d0f;
+  }
+
+}
+
+
 
 #questions {
-  width: 500px;
+  // width: 500px;
   text-align: center;
-  color: white;
-  margin: 40px auto;
+  // margin: 40px auto;
+  h3 {
+    font-size: 4vw;
+    margin: 5vh 18.2vw 3vh;
+    color: #5a6465;
+    padding: 4vw;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.squares {
+  margin: 0 auto;
+  width: 70vw;
 }
 
 .square {
-  width: 80px;
-  height: 80px;
-  display: inline-block;
-  margin: 0px 20px;
+  width: 17vh;
+  height: 17vh;
+  margin: 1.2vh;
+  float: left;
 }
 
-.square:hover {
-  border: 1px solid white;
+.square:nth-child(3n){
+  clear: left;
 }
+
+// .square:hover {
+//   border: 1px solid white;
+// }
 
 #square-1 {
-  background-color: #AEE5F1;
+  background: linear-gradient(#AEE5F1, #98deed);
+  box-shadow: 0px 10px #83d7e9;
+  &:hover {
+    background: linear-gradient(#AEE5F1, #98deed);
+  }
 }
 
 #square-2 {
-  background-color: #F25239;
+  background: linear-gradient(#F25239, #f03d21);
+  box-shadow: 0px 10px #e92d0f;
+  &:hover {
+    background: linear-gradient(#F25239, #f03d21);
+  }
 }
 
 #square-3 {
-  background-color: #B3BCBF;
+  background: linear-gradient(#B3BCBF, #a5b0b3);
+  box-shadow: 0px 10px #97a4a8;
+  &:hover {
+    background: linear-gradient(#B3BCBF, #a5b0b3);
+  }
 }
 
 #square-4 {
-  background-color: #FEBBCD;
+  background: linear-gradient(#FEBBCD, #fea2bb);
+  box-shadow: 0px 10px #fd89a8;
+  &:hover {
+    background: linear-gradient(#FEBBCD, #fea2bb);
+  }
 }
 
 .hidden {
@@ -39,25 +146,27 @@
 }
 
 .music-player {
-  margin: 0 auto;
-  width: 370px;
-  height: 370px;
-  background-color: rgba(100, 100, 100, 0.4);
-  background-image: url(http://41.media.tumblr.com/7c4bf204321c53862755ab09c21fb8c8/tumblr_nc5yc1pmTZ1s2xh4ao2_500.jpg);
-  border-radius: 50%;
+  margin: -4vh auto 7vh;
+  width: 400px;
+  height: 375px;
+  // background-color: rgba(100, 100, 100, 0.4);
+  // background-image: url(http://41.media.tumblr.com/7c4bf204321c53862755ab09c21fb8c8/tumblr_nc5yc1pmTZ1s2xh4ao2_500.jpg);
+  // border-radius: 50%;
   background-repeat: no-repeat;
   text-align: center;
-  color: darkorange;
-  font-size: 140px;
-  box-shadow: 0 12px 0 #111;
+  i {
+    color: darkorange;
+    font-size: 19vh;
+  }
+  // box-shadow: 6px 12px 0px #040301;
 }
 
 .music-player:hover {
-  box-shadow: 0 12px 0 #111, inset 0 0 0 1000px rgba(200,200,200, 0.4);
+  // box-shadow: inset 0 0 0 1000px rgba(200,200,200, 0.4);
 }
 
 .play-icon {
-  margin-top: 115px;
+  margin-top: 6vh;
 }
 
 #sc-widget {
@@ -67,24 +176,21 @@
 //DREAM PATCH //////////////////////////////////////////////////////
 
 #container {
-  width: 600px;
-  margin: 100px auto;
+  // width: 600px;
+  margin: 1vh auto;
   text-align: center;
 }
 
 #dream-patch {
-  margin: 50px;
-  height: 750px;
-  padding-bottom: 50px;
-  // background-image: url(http://www.downtownla.com/images/5_0_aboutUS/lapl-bradbury.jpg);
-  // background-size: cover;
+  margin: 3vh auto;
+  display: inline-block;
 }
 
 .answer-square {
   float: left;
-  width: 250px;
-  height: 250px;
-  border-top: 250px solid transparent;
+  width: 20vw;
+  height: 20vw;
+  border-top: 20vw solid transparent;
 }
 
 .answer-square:nth-child(2n+1){
@@ -93,40 +199,46 @@
 
 
 #quilt {
-  height: 600px;
-  margin: 50px 0px;
-  background-image: url(http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef014e8827bb78970d-640wi);
+  height: 95vw;
+  width: 96vw;
+  margin: 9vh auto;
+  // background-image: url(http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef014e8827bb78970d-640wi);
+  background-image: url(http://i.imgur.com/XmPZZpY.jpg); 
   background-size: cover;
-  background-repeat: no-repeat;
+  // background-repeat: no-repeat;
   overflow-y: hidden; // Hide to remove overflow for effect
+  background-position: 14px;
 }
+
 
 // SINGLE CENTER DIAMOND ////////////////////////////////////////////////////////
 
+// Patches 1-3
 .quilt-patch {
   float: left;
-  width: 100px;
+  width: 16vw;
   .quilt-square {
     float: left;
-    width: 50px;
-    height: 50px;
-    border-top: 50px solid;
-    border-right: 50px solid;
+    width: 8vw;
+    height: 8vw;
+    border-top: 8vw solid;
+    border-right: 8vw solid;
   }
   .quilt-square:nth-child(6){
     border-right-color: transparent !important;
   }
 }
 
-.quilt-patch:nth-child(n+1):nth-child(-n+3){
+div:nth-of-type(n+1):nth-of-type(-n+3){
   .quilt-square:nth-child(1){
     border-top-color: transparent !important;
   }
 }
 
-.quilt-patch:nth-child(n+4):nth-child(-n+6){
+// Patches 4-6
+div:nth-of-type(n+4):nth-of-type(-n+6){
   .quilt-square {
-    border-left: 50px solid;
+    border-left: 8vw solid;
     border-right-width: none; // Comment out for random pattern effect
     border-right-style: none; // Comment out for random pattern effect
   }
@@ -138,15 +250,17 @@
   }
 }
 
-.quilt-patch:nth-child(n+7):nth-child(-n+9){
+// Patches 7-9
+div:nth-of-type(n+7):nth-of-type(-n+9){
   .quilt-square:nth-child(1){
     border-top-color: transparent !important;
   }
 }
 
-.quilt-patch:nth-child(n+10):nth-child(-n+12){
+// Patches 10-12
+div:nth-of-type(n+10):nth-of-type(-n+12){
   .quilt-square {
-    border-left: 50px solid;
+    border-left: 8vw solid;
     border-right-width: none; // Comment out for random pattern effect
     border-right-style: none; // Comment out for random pattern effect
   }
@@ -158,9 +272,10 @@
   }
 }
 
-.quilt-patch:nth-child(n+13):nth-child(-n+15){
+// Patches 13-15
+div:nth-of-type(n+13):nth-of-type(-n+15){
   .quilt-square {
-    border-left: 50px solid;
+    border-left: 8vw solid;
     border-right-width: none; // Comment out for random pattern effect
     border-right-style: none; // Comment out for random pattern effect
   }
@@ -170,18 +285,19 @@
   .quilt-square:nth-child(5){
     border-left-color: transparent !important;
   }
-
 }
 
-.quilt-patch:nth-child(n+16):nth-child(-n+18){
+// Patches 16-18
+div:nth-of-type(n+16):nth-of-type(-n+18){
   .quilt-square:nth-child(1){
     border-top-color: transparent !important;
   }
 }
 
-.quilt-patch:nth-child(n+19):nth-child(-n+21){
+// Patches 19-21
+div:nth-of-type(n+19):nth-of-type(-n+21){
   .quilt-square {
-    border-left: 50px solid;
+    border-left: 8vw solid;
     border-right-width: none; // Comment out for random pattern effect
     border-right-style: none; // Comment out for random pattern effect
   }
@@ -193,15 +309,16 @@
   }
 }
 
-.quilt-patch:nth-child(n+22):nth-child(-n+24){
+// Patches 22-24
+div:nth-of-type(n+22):nth-of-type(-n+24){
   .quilt-square:nth-child(1){
     border-top-color: transparent !important;
   }
 }
 
-.quilt-square:nth-child(2n+1){
-  clear: left;
-}
+// .quilt-square:nth-child(2n+1){
+//   clear: left;
+// }
 
 
 // MULTI DIAMOND ////////////////////////////////////////////////////////
@@ -211,7 +328,7 @@
 //   width: 100px;
 //   .quilt-square {
 //     float: left;
-//     width: 50px;
+//     width: 8vw;
 //     height: 50px;
 //     border-top: 50px solid;
 //     border-right: 50px solid;
@@ -224,7 +341,7 @@
 //   }
 // }
 
-// .quilt-patch:nth-child(n+1):nth-child(even):nth-child(-n+6){
+// figure:nth-of-type(n+1):nth-child(even):nth-child(-n+6){
 //   .quilt-square {
 //     border-left: 50px solid;
 //     border-right-width: none; // Comment out for random pattern effect
@@ -288,10 +405,15 @@
 }
 
 #save {
-  font-size: 24px;
-  background-color: #EEC561;
-  padding: 6px;
-  color: peru;
-  border: none;
-  box-shadow: 0px 6px #e7ac1c;
+  font-size: 3vw;
+  padding: 1vh;
+  color: #5a6465;
+  display: block;
+  width: 40vw;
+  margin: 0 auto 4vh;
+  background-color: rgba(255, 255, 255, 0.2);
 }
+
+
+
+

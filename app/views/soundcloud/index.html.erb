@@ -1,41 +1,70 @@
+<div class="main">
 <div id="container" ng-app="SelmaApp">
   <!-- SOUNDCLOUD IFRAME -->
-  <iframe id="sc-widget" src=<%= "https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/186967644?client_id=#{ENV['SOUNDCLOUD_CLIENT_ID']}" %> width="1" height="1" scrolling="no" frameborder="no"></iframe>
+  <iframe id="sc-widget" src=<%= "https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/186967644?client_id=#{ENV['SOUNDCLOUD_CLIENT_ID']}" %> width="0" height="0" scrolling="no" frameborder="no"></iframe>
 
   <div id="content-wrapper" ng-controller="patchController">
 
-    <div class="music-player"><i class="fa fa-play play-icon" ng-click="togglePlay()"></i></div>
+    
 
-      <!-- Question squares -->
-    <div id="questions" class="hidden">
-      <p>Which color do you imagine?</p>
-      <div id="square-1" class="square" ng-click="addSquareColor('#AEE5F1')"></div>
-      <div id="square-2" class="square" ng-click="addSquareColor('#F25239')"></div>
-      <div id="square-3" class="square" ng-click="addSquareColor('#B3BCBF')"></div>
-      <div id="square-4" class="square" ng-click="addSquareColor('#FEBBCD')"></div>
-      <!-- <div id="square-5" class="square" ng-click="addSquareColor('transparent')"></div> -->
-    </div>
-
-    <!-- Dream patch squares. Hidden by default -->
-    <!-- <div id="dream-patch" class="hidden"> -->
-    <div id="dream-patch">
-      <div ng-repeat="square in squares" id="answer-square-{{$index}}" class="answer-square"></div>
-    </div>
-
-    <a download='dreampatch.png' id='save' class='button hidden'> save </a>
-    <div id='img-out'></div>
-
-    <!-- Full quilt of all users patches -->
-    <div id="quilt">
-      <div class="quilt-patch" ng-repeat="patch in patches">
-        <div class="quilt-square" ng-repeat="triangle in patch" style="border-top-color:{{triangle.topColor}};border-right-color:{{triangle.sideColor}};border-left-color:{{triangle.sideColor}};"></div>
+    <article id="scroll-link-1" class="scenarios">
+      <div class="headphones-container">
+        <h2>Hear <span>Color</span></h2>
+        <p>Selma has synesthesia, which allows her to see colors when she hears music. See the world through her ears.</p>
+        <i class="fa fa-headphones"></i>
+        <h3>Plug in headphones to begin</h3>
+        <button class="listen-btn">Listen</button>
       </div>
-    </div>
+    </article>
+
+    <article  id="scroll-link-2" class="scenarios">
+      <div class="music-player">
+        <i class="fa fa-play play-icon" ng-click="togglePlay()"></i>
+      </div>
+
+        <!-- Question squares -->
+      <div id="questions" class="hidden">
+        <h3>Which color do you imagine?</h3>
+        <div class="squares">
+          <div id="square-1" class="square" ng-click="addSquareColor('#AEE5F1')"></div>
+          <div id="square-2" class="square" ng-click="addSquareColor('#F25239')"></div>
+          <div id="square-3" class="square" ng-click="addSquareColor('#B3BCBF')"></div>
+          <div id="square-4" class="square" ng-click="addSquareColor('#FEBBCD')"></div>
+          <!-- <div id="square-5" class="square" ng-click="addSquareColor('transparent')"></div> -->
+        </div>
+      </div>
+    </article>
+
+    <article id="scroll-link-3" class="scenarios">
+      <!-- Dream patch squares. Hidden by default -->
+      <!-- <div id="dream-patch" class="hidden"> -->
+      <h2>Your Patch</h2>
+      <p>You created a patch for Grandma Alma's quilt!
+      <div id="dream-patch">  
+        <section ng-repeat="square in squares" id="answer-square-{{$index}}" class="answer-square"></section>
+      </div>
+
+      <a download='dreampatch.png' id='save' class='button hidden'>Download Wallpaper</a>
+      <div id='img-out'></div>
+      <button>Add to Quilt</button>
+    </article>
+
+    <article id="scroll-link-4" class="scenarios">
+      <!-- Full quilt of all users patches -->
+      <div id="quilt">
+        <div class="quilt-patch" ng-repeat="patch in patches">
+          <div class="quilt-square" ng-repeat="triangle in patch" style="border-top-color:{{triangle.topColor}};border-right-color:{{triangle.sideColor}};border-left-color:{{triangle.sideColor}};"></div>
+        </div>
+      </div>
+    </article>
+
+
 
   </div><!-- Closes content-wrapper -->
 
 </div><!-- Closes container  -->
 
+</div> 
 
 <script type="text/javascript">
 
