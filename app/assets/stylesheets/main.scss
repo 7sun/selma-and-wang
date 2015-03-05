@@ -1,4 +1,4 @@
-// breakpoints
+// Breakpoints
 
 $mobile: new-breakpoint(max-width 600px 6);
 $mobile1: new-breakpoint(max-width 885px 6);
@@ -6,7 +6,7 @@ $mobile1: new-breakpoint(max-width 885px 6);
 // Fonts
 
 $font-stack: 'Oswald', Helvetica, sans-serif;
-$body-text: 'Roboto Slab', serif;
+// $body-text: 'Roboto Slab', serif;
 
 // Color Variables
 
@@ -19,13 +19,12 @@ $grey: #333333; // Grey
 $navigation-color: transparentize(white, 0.2);
 $navigation-color-hover: white;
 
-// SCSS
+// Specific Styles
 
 body {
-	background-color: $greenscreen;
+	background: $greenscreen;
+  transition:background-color 0.5s ease;
 	margin: 40px;
-  // font-family: geomanistmedium;
-  // padding-top: 40px;
 }
 
 .bug {
@@ -34,6 +33,10 @@ body {
   top: 30px;
   position: fixed;
   z-index: 9999999;
+
+  & :hover {
+    opacity: 1;
+  }
 
   @include media($mobile) {
     top: 3%;
@@ -53,11 +56,14 @@ body {
   width: 100%;
   height: 100%;
   left: 3%;
+  top: 3%;
   position: fixed;
   z-index: -1;
   margin-top: -10px;
   margin-left: -30px;
 }
+
+// Loading icon *currently disabled, see: 'scroll.js'
 
 .loading-icon {
   display: none;
@@ -66,15 +72,15 @@ body {
   padding: .75em 1em;
   border-radius: 5px;
   margin-top: 24.5%;
-  margin-left: 45%;
+  margin-left: 47%;
   position: fixed;
 }
 
-body.loading {
+#myCanvas .loading {
     overflow: hidden;   
 }
 
-body.loading .loading-icon {
+#myCanvas .loading .loading-icon {
     display: block;
 }
 
@@ -113,7 +119,7 @@ body.loading .loading-icon {
   }
 }
 
-// Storyboards //
+// Storyboards
 
   .scenarios {
     width: 100vh;
@@ -132,34 +138,27 @@ body.loading .loading-icon {
     text-align: center;
     font-family: $font-stack, sans-serif;
     line-height: 1.25em;
-    color: transparentize(white, 0.3);
-    margin-top: 80px;
-    
-    // @include media($mobile1) {
-    //   font-size: 10em;
-    // }
-
-    // @include media($mobile) {
-    //   font-size: 5em;
-    // }
-
+    color: $navigation-color;
+    margin-top: 70px;
   }
 
   p {
     display: block;
     margin: auto;
     margin-top: -5px;
-    font-family: $body-text;
+    font-family: $font-stack;
+    font-size: 1.25em;
     text-align: center;
+    text-transform: uppercase;
     background-color: $navigation-color;
     padding: 10px;
     border-radius: 3px;
-    max-width: 60vw;
+    max-width: 50vw;
 
-    // @include media($mobile) {
-    //   @include span-columns(4);
-    //   @include shift(1);
-    // }
+    @include media($mobile) {
+      max-width: 75vw;
+      font-size: 1em;
+    }
   }
 
   .scn-btns-container {
@@ -170,7 +169,7 @@ body.loading .loading-icon {
         @include shift(1);
       }
 
-  }
+  } // Feedback buttons
 
   .scn-btns {
       @include button(flat, $navigation-color);
@@ -199,8 +198,7 @@ body.loading .loading-icon {
 
  }
 
-
-// Canvas
+// Paper.js Canvas
 
 #myCanvas {
   margin-left: -100px;
@@ -209,7 +207,31 @@ body.loading .loading-icon {
   z-index: -1;
 }
 
+.button_to {
+  display: inline;
+}
+
 // Forms
+
+.form-bk {
+  background: linear-gradient(90deg, $accent-one, $greenscreen);
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  height: 100%;
+  width: 100%;
+  z-index: -2;
+  position: absolute;
+}
+
+.form-bk2 {
+  background: linear-gradient(-90deg, #3cbfbc, $greenscreen);
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  height: 100%;
+  width: 100%;
+  z-index: -2;
+  position: absolute;
+}
 
 .f1 {
   font-family: $font-stack, sans-serif;
@@ -224,6 +246,7 @@ body.loading .loading-icon {
   @include shift(3);
   margin-top: 5em;
   font-family: $font-stack, sans-serif;
+  z-index: 999;
   
   @include media($mobile) {
     @include span-columns(4);
@@ -240,6 +263,8 @@ body.loading .loading-icon {
     transition: .5s;
   }
 }
+
+// Removes defualt styling
 
 input[type="text"] {
   background-color: transparentize(white, 0.3);
