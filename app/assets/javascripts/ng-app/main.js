@@ -113,9 +113,17 @@ angular
 	      $('#dream-patch').removeClass('hidden');
 	      patchRef.update(dbsquares);
 	      patchRef.onDisconnect().cancel();
-
+	      // prepCanvas();
 	    }
 	  }
+
+	  // function prepCanvas(){
+   //  	html2canvas($("#dream-patch"), {
+   //    	onrendered: function(canvas) {
+   //      	save.href = canvas.toDataURL("image/png")              
+   //    	}
+   //   	})
+   //  }
 
 		// Hides question square after user clicks a square and increases click count.
 	  $('.square').click(function(){
