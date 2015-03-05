@@ -32,8 +32,8 @@ body {
   p {
     // Web View until '@include media()'
     display: block;
-    margin: auto;
-    margin-top: -5px;
+    margin: 20px auto;
+    // margin-top: -5px;
     font-family: $font-stack;
     font-size: 1.25em;
     text-align: center;
@@ -84,6 +84,7 @@ body {
 
   .squares {
     display: inline-flex;
+    margin: 0 auto 50px;
 
   .square {
     width: 17vh;
@@ -194,15 +195,27 @@ body {
   // The most recently added patch pulses
   .quilt-patch:nth-last-child(2) {
     opacity: 0.0;
-    @include animation(pulsate 8s ease-out);
-    @include animation-iteration-count(infinite); 
+  //   @include animation(pulsate 8s ease-out);
+  //   @include animation-iteration-count(infinite); 
+  }
+  // @include keyframes(pulsate) {
+  //     0% {@include transform(scale(0.1, 0.1) opacity 0.0)}
+  //     50% {opacity: 1.0;}
+  //     100% {@include transform(scale(1.2, 1.2) opacity 0.0)}
+  // }
+}
+
+.pulse {
+    opacity: 0.0;
+    @include animation(pulsate 5s ease-out);
+    @include animation-fill-mode(forwards);
+    // @include animation-iteration-count(infinite); 
   }
   @include keyframes(pulsate) {
       0% {@include transform(scale(0.1, 0.1) opacity 0.0)}
-      50% {opacity: 1.0;}
-      100% {@include transform(scale(1.2, 1.2) opacity 0.0)}
+      100% {opacity: 1.0;}
+      // 100% {@include transform(scale(1.2, 1.2) opacity 0.0)}
   }
-}
 
 
 // SINGLE CENTER DIAMOND ////////////////////////////////////////////////////////
