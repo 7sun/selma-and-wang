@@ -146,9 +146,9 @@ body {
 }
 
 .music-player {
-  margin: -4vh auto 7vh;
-  width: 400px;
-  height: 375px;
+  // margin: -4vh auto 7vh;
+  // width: 400px;
+  // height: 375px;
   // background-color: rgba(100, 100, 100, 0.4);
   // background-image: url(http://41.media.tumblr.com/7c4bf204321c53862755ab09c21fb8c8/tumblr_nc5yc1pmTZ1s2xh4ao2_500.jpg);
   // border-radius: 50%;
@@ -201,13 +201,13 @@ body {
 #quilt {
   height: 95vw;
   width: 96vw;
-  margin: 9vh auto;
+  margin: 4vh auto;
   // background-image: url(http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef014e8827bb78970d-640wi);
   background-image: url(http://i.imgur.com/XmPZZpY.jpg); 
   background-size: cover;
   // background-repeat: no-repeat;
   overflow-y: hidden; // Hide to remove overflow for effect
-  background-position: 14px;
+  background-position: 1.5vw;
 }
 
 
@@ -229,7 +229,7 @@ body {
   }
 }
 
-div:nth-of-type(n+1):nth-of-type(-n+3){
+.quilt-patch:nth-child(n+1):nth-child(-n+3){
   .quilt-square:nth-child(1){
     border-top-color: transparent !important;
   }
@@ -414,6 +414,9 @@ div:nth-of-type(n+22):nth-of-type(-n+24){
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+.back-button {
+  color: #5a6465;
+}
 
 
 
