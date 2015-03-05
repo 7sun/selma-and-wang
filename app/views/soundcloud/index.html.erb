@@ -12,7 +12,7 @@
         <h2>Hear <span>Color</span></h2>
         <p>Selma has synesthesia, which allows her to see colors when she hears music. See the world through her ears.</p>
         <i class="fa fa-headphones"></i>
-        <h3>Plug in headphones to begin</h3>
+        <h3>Plug in headphones to begin.</h3>
         <button class="listen-btn">Listen</button>
       </div>
     </article>
@@ -51,11 +51,14 @@
 
     <article id="scroll-link-4" class="scenarios">
       <!-- Full quilt of all users patches -->
+      <h2>Grandma's Quilt</h2>
+      <p>Watch for other dreamers to add their patches.</p>
       <div id="quilt">
-        <div class="quilt-patch" ng-repeat="patch in patches">
+        <div class="quilt-patch" ng-repeat="patch in patches | limitTo: 20">
           <div class="quilt-square" ng-repeat="triangle in patch" style="border-top-color:{{triangle.topColor}};border-right-color:{{triangle.sideColor}};border-left-color:{{triangle.sideColor}};"></div>
         </div>
       </div>
+      <%= link_to 'Home', root_path, class: 'back-button' %>
     </article>
 
 
