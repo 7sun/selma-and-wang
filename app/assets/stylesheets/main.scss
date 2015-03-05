@@ -148,17 +148,18 @@ body.loading .loading-icon {
     display: block;
     margin: auto;
     margin-top: -5px;
-    font-family: $body-text;
+    font-family: $font-stack;
+    font-size: 1.25em;
     text-align: center;
+    text-transform: uppercase;
     background-color: $navigation-color;
     padding: 10px;
     border-radius: 3px;
-    max-width: 60vw;
+    max-width: 50vw;
 
-    // @include media($mobile) {
-    //   @include span-columns(4);
-    //   @include shift(1);
-    // }
+    @include media($mobile) {
+      font-size: 1em;
+    }
   }
 
   .scn-btns-container {
