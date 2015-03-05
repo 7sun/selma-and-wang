@@ -54,7 +54,7 @@
       <h2>Grandma's Quilt</h2>
       <p>Watch for other dreamers to add their patches.</p>
       <div id="quilt">
-        <div class="quilt-patch" ng-repeat="patch in patches | limitTo: 20">
+        <div class="quilt-patch" ng-repeat="patch in patches">
           <div class="quilt-square" ng-repeat="triangle in patch" style="border-top-color:{{triangle.topColor}};border-right-color:{{triangle.sideColor}};border-left-color:{{triangle.sideColor}};"></div>
         </div>
       </div>
