@@ -40,15 +40,15 @@ $(document).ready(function() {
       if (index == 1) {
         $("body").css("background-color","#A0E18F");
       } if (index == 2) {
-        $("body").css("background-color","#2fcdb2");
+        $("body").css("background-color","#9fe1c3");
       } if (index == 3) {
-        $("body").css("background-color","#cdc72d");
+        $("body").css("background-color","#9bcae1");
       } if (index == 4){
-        $("body").css("background-color","#9fc7cd");
+        $("body").css("background-color","#c8a3e1");
       } if (index == 5){
-        $("body").css("background-color","#cd67af");
+        $("body").css("background-color","#e1858e");
       } if (index == 6) {
-        $("body").css("background-color","#A0E18F");
+        $("body").css("background-color","#e1b888");
       }
       console.log(index);
      },                               // This option accepts a callback function. The function will be called before the page moves.
@@ -112,10 +112,10 @@ $(document).ready(function() {
 
 // Loading
 
-$body = $("body");
+// $myCanvas = $("#myCanvas");
 
-$(document).on({
-    ajaxStart: function() { $body.addClass("loading");   },
-    ajaxStop:  function() { $body.removeClass("loading");}    
-});
+// $(document).load({
+//     ajaxStart: function() { $myCanvas.addClass("loading");   },
+//     ajaxStop:  function() { $myCanvas.removeClass("loading");}    
+// });
 

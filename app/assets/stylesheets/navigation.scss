@@ -8,10 +8,11 @@
   $mobile: new-breakpoint(max-width 600px 6);
   $mobile1: new-breakpoint(max-width 885px 6);
 
-  top: 20px;
+  top: 5px;
   left: 3%;
   position: fixed;
   font-family: $font-stack, sans-serif;
+  font-weight: 700;
 
   a {
     text-decoration: none;
@@ -126,7 +127,7 @@
     line-height: $navigation-height;
     overflow: hidden;
     font-size: 1.2em;
-    font-weight: 900;
+    font-weight: 700;
     text-align: left;
     text-transform: uppercase;
     float: left;
