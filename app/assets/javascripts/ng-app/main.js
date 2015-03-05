@@ -46,11 +46,11 @@ angular
 	  	});
 	  }
 
-	  // Listens to the track position and prompts the user with a new question every 1 second
+	  // Listens to the track position and prompts the user with a new question every 10 second
 	  widget.bind(SC.Widget.Events.PLAY_PROGRESS, function(eventData) {
 	    track_position = JSON.stringify(eventData.currentPosition);
 	    track_position = Math.floor(track_position/100);
-	    if (track_position % 10 == 0 && track_position > 0){
+	    if (track_position % 100 == 0 && track_position > 0){
 	      $('#questions').removeClass('hidden');
 	    };
 	  });
@@ -59,12 +59,12 @@ angular
 		function setTransparentTriangles(){
 			console.log(counter);
     	if ( between(counter, 1, 3) || between(counter, 7, 9) || between(counter, 16, 18) || between(counter, 22, 24) ){
-    		$('#answer-square-0').css({"borderTopColor": "#A0E18F"});
-    		$('.answer-square').css({"borderRight": "20vw solid #A0E18F"});
+    		$('#answer-square-0').css({"borderTopColor": "#9BCAE1"});
+    		$('.answer-square').css({"borderRight": "20vw solid #9BCAE1"});
     		inverse = false;
     	} else {
-    		$('#answer-square-1').css({"borderTopColor": "#A0E18F"});
-    		$('.answer-square').css({"borderLeft": "20vw solid #A0E18F"});
+    		$('#answer-square-1').css({"borderTopColor": "#9BCAE1"});
+    		$('.answer-square').css({"borderLeft": "20vw solid #9BCAE1"});
     		inverse = true;
     	}
     	setInverse(inverse)
