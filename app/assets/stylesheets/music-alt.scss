@@ -1,0 +1,440 @@
+//Music Page Styles//////////////////////////////////////////////////////
+
+$mobile: new-breakpoint(max-width 600px 6);
+$greenscreen: #A0E18F;
+$accent-one: #AEE5F1; // Light Blue
+$accent-two: #F25239; // Orange
+$accent-three: #B3BCBF; // Grey
+$accent-four: #FEBBCD; // Pink
+$grey: #333333; // Grey
+$navigation-color: transparentize(white, 0.2);
+$navigation-color-hover: white;
+$font-stack: 'Oswald', Helvetica, sans-serif;
+
+body {
+  font-family: $font-stack, sans-serif;
+  color: whitesmoke;
+}
+
+// INTRO VIEW //////////////////////////////////////////////////////////
+
+// #content-wrapper {
+
+// Section 1 - Intro
+
+  .scenarios {
+    // padding: 5vh 0;
+    width: 100vh;
+    height: 100vw;
+    padding: 40px;
+    // margin-top: 70px;
+
+  p {
+    // Web View until '@include media()'
+    display: block;
+    margin: 20px auto;
+    // margin-top: -5px;
+    font-family: $font-stack;
+    font-size: 1.25em;
+    text-align: center;
+    text-transform: uppercase;
+    color: $grey;
+    background-color: $navigation-color;
+    padding: 10px;
+    border-radius: 3px;
+    max-width: 50vw;
+  }
+  button {
+      // 
+      @include button(flat, $navigation-color);
+      appearance: none;
+      user-select: none;
+      display: inline;
+      text-align: center;
+      color: $accent-three;
+      background-color: $navigation-color;
+      font-family: $font-stack;
+      font-size: 1.25em;
+      font-weight: 900;
+      margin-top: 20px;
+      padding: 1em;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $grey;
+      }
+    }
+  }
+
+.headphones-container{
+
+  span {
+  color: #F25239;
+  }
+}
+
+// Section 2 - Player //////////////////////
+
+#questions {
+
+  // @include outer-container;
+  // @include span-columns(8);
+  // text-align: center;
+  // margin-left: 15vw;
+
+  .squares {
+    display: inline-flex;
+    margin: 0 auto 50px;
+
+  .square {
+    width: 17vh;
+    height: 17vh;
+    margin: 1.2vh;
+    // float: left;
+  }
+ }
+}
+
+#square-1 {
+  background: linear-gradient(#AEE5F1, #98deed);
+  box-shadow: 0px 10px #83d7e9;
+  &:hover {
+    background: linear-gradient(#AEE5F1, #98deed);
+  }
+}
+
+#square-2 {
+  background: linear-gradient(#F25239, #f03d21);
+  box-shadow: 0px 10px #e92d0f;
+  &:hover {
+    background: linear-gradient(#F25239, #f03d21);
+  }
+}
+
+#square-3 {
+  background: linear-gradient(#B3BCBF, #a5b0b3);
+  box-shadow: 0px 10px #97a4a8;
+  &:hover {
+    background: linear-gradient(#B3BCBF, #a5b0b3);
+  }
+}
+
+#square-4 {
+  background: linear-gradient(#FEBBCD, #fea2bb);
+  box-shadow: 0px 10px #fd89a8;
+  &:hover {
+    background: linear-gradient(#FEBBCD, #fea2bb);
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.music-player {
+  margin: 5vh auto -30vh;
+  width: 400px;
+  height: 375px;
+  background-repeat: no-repeat;
+  text-align: center;
+  
+  i {
+    color: darkorange;
+    font-size: 19vh;
+  }
+}
+
+.music-player:hover {}
+
+#sc-widget {
+  display: none;
+}
+
+//DREAM PATCH //////////////////////////////////////////////////////
+
+#container {
+  // width: 600px;
+  margin: 1vh auto;
+  text-align: center;
+}
+
+#dream-patch {
+  // margin: -2vh auto;
+  margin: 54px auto 0px;
+  display: inline-block;
+  height: 580px;
+}
+
+.answer-square {
+  float: left;
+  // width: 20vw;
+  // height: 20vw;
+  // border-top: 20vw solid transparent;
+  width: 140px;
+  height: 140px;
+  border-top: 140px solid transparent;
+}
+
+.answer-square:nth-child(2n+1){
+  clear: left;
+}
+
+
+#quilt {
+  // height: 95vw;
+  // width: 96vw;
+  height: 504px;
+  width: 504px;
+  margin: 9vh auto;
+  // background-image: url(http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef014e8827bb78970d-640wi);
+  background-image: url(http://i.imgur.com/XmPZZpY.jpg); 
+  background-size: cover;
+  // background-repeat: no-repeat;
+  overflow-y: hidden; // Hide to remove overflow for effect
+  background-position: 8px;
+  // The most recently added patch pulses
+  .quilt-patch:nth-last-child(2) {
+    opacity: 0.0;
+  //   @include animation(pulsate 8s ease-out);
+  //   @include animation-iteration-count(infinite); 
+  }
+  // @include keyframes(pulsate) {
+  //     0% {@include transform(scale(0.1, 0.1) opacity 0.0)}
+  //     50% {opacity: 1.0;}
+  //     100% {@include transform(scale(1.2, 1.2) opacity 0.0)}
+  // }
+}
+
+.pulse {
+    opacity: 0.0;
+    @include animation(pulsate 5s ease-out);
+    @include animation-fill-mode(forwards);
+    // @include animation-iteration-count(infinite); 
+  }
+  @include keyframes(pulsate) {
+      0% {@include transform(scale(0.1, 0.1) opacity 0.0)}
+      100% {opacity: 1.0;}
+      // 100% {@include transform(scale(1.2, 1.2) opacity 0.0)}
+  }
+
+
+// SINGLE CENTER DIAMOND ////////////////////////////////////////////////////////
+
+// Patches 1-3
+.quilt-patch {
+  float: left;
+  // width: 16vw;
+  width: 84px;
+  .quilt-square {
+    float: left;
+    // width: 8vw;
+    // height: 8vw;
+    // border-top: 8vw solid;
+    // border-right: 8vw solid;
+    width: 42px;
+    height: 42px;
+    border-top: 42px solid;
+    border-right: 42px solid;
+  }
+  .quilt-square:nth-child(6){
+    border-right-color: transparent !important;
+  }
+}
+
+.quilt-patch:nth-child(n+1):nth-child(-n+3){
+  .quilt-square:nth-child(1){
+    border-top-color: transparent !important;
+  }
+}
+
+// Patches 4-6
+div:nth-of-type(n+4):nth-of-type(-n+6){
+  .quilt-square {
+    // border-left: 8vw solid;
+    border-left: 42px solid;
+    border-right-width: none; // Comment out for random pattern effect
+    border-right-style: none; // Comment out for random pattern effect
+  }
+  .quilt-square:nth-child(5){
+    border-left-color: transparent !important;
+  }
+  .quilt-square:nth-child(2){
+    border-top-color: transparent !important;
+  }
+}
+
+// Patches 7-9
+div:nth-of-type(n+7):nth-of-type(-n+9){
+  .quilt-square:nth-child(1){
+    border-top-color: transparent !important;
+  }
+}
+
+// Patches 10-12
+div:nth-of-type(n+10):nth-of-type(-n+12){
+  .quilt-square {
+    // border-left: 8vw solid;
+    border-left: 42px solid;
+    border-right-width: none; // Comment out for random pattern effect
+    border-right-style: none; // Comment out for random pattern effect
+  }
+  .quilt-square:nth-child(5){
+    border-left-color: transparent !important;
+  }
+  .quilt-square:nth-child(2){
+    border-top-color: transparent !important;
+  }
+}
+
+// Patches 13-15
+div:nth-of-type(n+13):nth-of-type(-n+15){
+  .quilt-square {
+    // border-left: 8vw solid;
+    border-left: 42px solid;
+    border-right-width: none; // Comment out for random pattern effect
+    border-right-style: none; // Comment out for random pattern effect
+  }
+  .quilt-square:nth-child(2){
+    border-top-color: transparent !important;
+  }
+  .quilt-square:nth-child(5){
+    border-left-color: transparent !important;
+  }
+}
+
+// Patches 16-18
+div:nth-of-type(n+16):nth-of-type(-n+18){
+  .quilt-square:nth-child(1){
+    border-top-color: transparent !important;
+  }
+}
+
+// Patches 19-21
+div:nth-of-type(n+19):nth-of-type(-n+21){
+  .quilt-square {
+    // border-left: 8vw solid;
+    border-left: 42px solid;
+    border-right-width: none; // Comment out for random pattern effect
+    border-right-style: none; // Comment out for random pattern effect
+  }
+  .quilt-square:nth-child(5){
+    border-left-color: transparent !important;
+  }
+  .quilt-square:nth-child(2){
+    border-top-color: transparent !important;
+  }
+}
+
+// Patches 22-24
+div:nth-of-type(n+22):nth-of-type(-n+24){
+  .quilt-square:nth-child(1){
+    border-top-color: transparent !important;
+  }
+}
+
+// .quilt-square:nth-child(2n+1){
+//   clear: left;
+// }
+
+
+// MULTI DIAMOND ////////////////////////////////////////////////////////
+
+// .quilt-patch {
+//   float: left;
+//   width: 100px;
+//   .quilt-square {
+//     float: left;
+//     width: 8vw;
+//     height: 50px;
+//     border-top: 50px solid;
+//     border-right: 50px solid;
+//   }
+//   .quilt-square:nth-child(6){
+//     border-right-color: transparent !important;
+//   }
+//   .quilt-square:nth-child(1){
+//     border-top-color: transparent !important;
+//   }
+// }
+
+// figure:nth-of-type(n+1):nth-child(even):nth-child(-n+6){
+//   .quilt-square {
+//     border-left: 50px solid;
+//     border-right-width: none; // Comment out for random pattern effect
+//     border-right-style: none; // Comment out for random pattern effect
+//   }
+//   .quilt-square:nth-child(5){
+//     border-left-color: transparent !important;
+//   }
+//   .quilt-square:nth-child(2){
+//     border-top-color: transparent !important;
+//   }
+// }
+
+// .quilt-patch:nth-child(n+7):nth-child(odd):nth-child(-n+12){
+//   .quilt-square {
+//     border-left: 50px solid;
+//     border-right-width: none; // Comment out for random pattern effect
+//     border-right-style: none; // Comment out for random pattern effect
+//   }
+//   .quilt-square:nth-child(5){
+//     border-left-color: transparent !important;
+//   }
+//   .quilt-square:nth-child(2){
+//     border-top-color: transparent !important;
+//   }
+// }
+
+// .quilt-patch:nth-child(n+13):nth-child(even):nth-child(-n+18){
+//   .quilt-square {
+//     border-left: 50px solid;
+//     border-right-width: none; // Comment out for random pattern effect
+//     border-right-style: none; // Comment out for random pattern effect
+//   }
+//   .quilt-square:nth-child(5){
+//     border-left-color: transparent !important;
+//   }
+//   .quilt-square:nth-child(2){
+//     border-top-color: transparent !important;
+//   }
+// }
+
+// .quilt-patch:nth-child(n+19):nth-child(odd):nth-child(-n+24){
+//   .quilt-square {
+//     border-left: 50px solid;
+//     border-right-width: none; // Comment out for random pattern effect
+//     border-right-style: none; // Comment out for random pattern effect
+//   }
+//   .quilt-square:nth-child(5){
+//     border-left-color: transparent !important;
+//   }
+//   .quilt-square:nth-child(2){
+//     border-top-color: transparent !important;
+//   }
+// }
+
+// END MULTI DIAMOND ////////////////////////////////////////////////////////
+
+
+#img-out {
+  display: none;
+}
+
+#save {
+  // font-size: 3vw; Hidden for web view
+  padding: 1vh;
+  color: #5a6465;
+  display: block;
+  // width: 32vw;
+  width: 280px;
+  margin: auto;
+  /* margin-bottom: 399px; */
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: 9999;
+  position: relative;
+  margin-top: -143px;
+}
+
+
+
+
