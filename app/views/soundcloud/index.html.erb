@@ -54,13 +54,12 @@
       <div id="dream-patch" class="hidden">
       <!-- <h2>Your Patch</h2> -->
       <!-- <p>You created a patch for Grandma Alma's quilt!</p> -->
-      <div id="dream-patch">  
         <section ng-repeat="square in squares" id="answer-square-{{$index}}" class="answer-square"></section>
       </div>
       <div class="patchbox">
       <a download='dreampatch.png' id='save' class='scn-btns hidden'>Download Wallpaper</a>
       <div id='img-out'></div>
-      <button>Add to Quilt</button>
+      <button id="to-quilt">Add to Quilt</button>
       </div>
     </article>
 

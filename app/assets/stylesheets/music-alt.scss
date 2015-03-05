@@ -228,7 +228,7 @@ body {
   }
 }
 
-div:nth-of-type(n+1):nth-of-type(-n+3){
+.quilt-patch:nth-child(n+1):nth-child(-n+3){
   .quilt-square:nth-child(1){
     border-top-color: transparent !important;
   }

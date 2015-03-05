@@ -94,6 +94,12 @@ $(document).ready(function() {
   });
 });
 
+$(document).ready(function() {
+  $( "#to-quilt" ).click(function() {
+    $(".main").moveDown();
+  });
+});
+
 // Menu Collapse
 
 $(document).ready(function() {
