@@ -191,7 +191,7 @@ angular
 
 	
 /* Define the number of leaves to be used in the animation */
-const NUMBER_OF_LEAVES = 100;
+const NUMBER_OF_LEAVES = 300;
 
 /* 
     Called when the "Falling Leaves" page is completely loaded.
@@ -262,7 +262,7 @@ function createALeaf()
     /* Randomly choose a leaf image and assign it to the newly created element */
     // image.src = 'images/realLeaf' + randomInteger(1, 5) + '.png';
     
-    leafDiv.style.top = (Math.floor(Math.random() * (-1400 + -100) -100)).toString() + "px"
+    leafDiv.style.top = (Math.floor(Math.random() * (-5000 + -20) -20)).toString() + "px"
 
     /* Position the leaf at a random location along the screen */
     leafDiv.style.left = pixelValue(randomInteger(0, 1400));
@@ -275,7 +275,7 @@ function createALeaf()
     image.style.webkitAnimationName = spinAnimationName;
     
     /* Figure out a random duration for the fade and drop animations */
-    var fadeAndDropDuration = durationValue(randomFloat(42, 64));
+    var fadeAndDropDuration = durationValue(randomFloat(56, 74));
     
     /* Figure out another random duration for the spin animation */
     var spinDuration = durationValue(randomFloat(4, 8));
