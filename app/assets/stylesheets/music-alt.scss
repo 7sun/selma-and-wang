@@ -332,89 +332,11 @@ div:nth-of-type(n+22):nth-of-type(-n+24){
   }
 }
 
+// alt-quilt-patterns
+
 // .quilt-square:nth-child(2n+1){
 //   clear: left;
 // }
-
-
-// MULTI DIAMOND ////////////////////////////////////////////////////////
-
-// .quilt-patch {
-//   float: left;
-//   width: 100px;
-//   .quilt-square {
-//     float: left;
-//     width: 8vw;
-//     height: 50px;
-//     border-top: 50px solid;
-//     border-right: 50px solid;
-//   }
-//   .quilt-square:nth-child(6){
-//     border-right-color: transparent !important;
-//   }
-//   .quilt-square:nth-child(1){
-//     border-top-color: transparent !important;
-//   }
-// }
-
-// figure:nth-of-type(n+1):nth-child(even):nth-child(-n+6){
-//   .quilt-square {
-//     border-left: 50px solid;
-//     border-right-width: none; // Comment out for random pattern effect
-//     border-right-style: none; // Comment out for random pattern effect
-//   }
-//   .quilt-square:nth-child(5){
-//     border-left-color: transparent !important;
-//   }
-//   .quilt-square:nth-child(2){
-//     border-top-color: transparent !important;
-//   }
-// }
-
-// .quilt-patch:nth-child(n+7):nth-child(odd):nth-child(-n+12){
-//   .quilt-square {
-//     border-left: 50px solid;
-//     border-right-width: none; // Comment out for random pattern effect
-//     border-right-style: none; // Comment out for random pattern effect
-//   }
-//   .quilt-square:nth-child(5){
-//     border-left-color: transparent !important;
-//   }
-//   .quilt-square:nth-child(2){
-//     border-top-color: transparent !important;
-//   }
-// }
-
-// .quilt-patch:nth-child(n+13):nth-child(even):nth-child(-n+18){
-//   .quilt-square {
-//     border-left: 50px solid;
-//     border-right-width: none; // Comment out for random pattern effect
-//     border-right-style: none; // Comment out for random pattern effect
-//   }
-//   .quilt-square:nth-child(5){
-//     border-left-color: transparent !important;
-//   }
-//   .quilt-square:nth-child(2){
-//     border-top-color: transparent !important;
-//   }
-// }
-
-// .quilt-patch:nth-child(n+19):nth-child(odd):nth-child(-n+24){
-//   .quilt-square {
-//     border-left: 50px solid;
-//     border-right-width: none; // Comment out for random pattern effect
-//     border-right-style: none; // Comment out for random pattern effect
-//   }
-//   .quilt-square:nth-child(5){
-//     border-left-color: transparent !important;
-//   }
-//   .quilt-square:nth-child(2){
-//     border-top-color: transparent !important;
-//   }
-// }
-
-// END MULTI DIAMOND ////////////////////////////////////////////////////////
-
 
 #img-out {
   display: none;
@@ -434,6 +356,55 @@ div:nth-of-type(n+22):nth-of-type(-n+24){
   position: relative;
   margin-top: -143px;
 }
+
+
+// #leaf { 
+//   position: absolute;
+//   width: 100px;
+//   height: 50px;
+//   top: 0;
+//   left: 0; 
+//   background-color: cornflowerblue;
+// }
+
+
+// @include keyframes(bounce) {
+//  from {
+//    left: 0px;
+//  }
+//  to {
+//    left: 200px;
+//  }
+// }
+
+// @include keyframes(pulse) {
+//  0% {
+//    opacity: 1.0;
+//    @include transform(scale(1.0) rotate(0deg));
+//  }
+//  33% {
+//    opacity: 0.75;
+//    @include transform(scale(1.1) rotate(-5deg));
+//  }
+//  67% {
+//    opacity: 0.5;
+//    @include transform(scale(1.1) rotate(5deg));
+//  }
+//  100% {
+//    opacity: 1.0;
+//    @include transform(scale(1.0) rotate(0deg));
+//  }
+// }
+
+// #leaf {
+//  @include animation-name(bounce);
+//  @include animation-duration(4s);
+//  @include animation-iteration-count(infinite);
+//  @include animation-direction(alternate); @include animation-name(pulse);
+//  @include animation-duration(4s);
+//  @include animation-direction(alternate);
+//  @include animation-timing-function(ease-in-out);
+// }
 
 
 
