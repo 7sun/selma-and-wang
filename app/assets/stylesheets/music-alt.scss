@@ -90,6 +90,7 @@ body {
     width: 17vh;
     height: 17vh;
     margin: 1.2vh;
+    border-radius: 5px;
     // float: left;
   }
  }
@@ -183,15 +184,18 @@ body {
 #quilt {
   // height: 95vw;
   // width: 96vw;
-  height: 504px;
-  width: 504px;
-  margin: 9vh auto;
   // background-image: url(http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef014e8827bb78970d-640wi);
-  background-image: url(http://i.imgur.com/XmPZZpY.jpg); 
-  background-size: cover;
   // background-repeat: no-repeat;
   overflow-y: hidden; // Hide to remove overflow for effect
-  background-position: 8px;
+  height: 504px;
+  width: 514px;
+  margin: 9vh auto;
+  background-image: url(http://i.imgur.com/XmPZZpY.jpg);
+  background-size: cover;
+  overflow-y: hidden;
+  background-position: 8px 2px;
+  border-radius: 5px;
+  border: 5px solid #F25239;
   // The most recently added patch pulses
   .quilt-patch:nth-last-child(2) {
     opacity: 0.0;

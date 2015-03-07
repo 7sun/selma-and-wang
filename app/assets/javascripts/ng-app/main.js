@@ -191,7 +191,7 @@ angular
 
 	
 /* Define the number of leaves to be used in the animation */
-const NUMBER_OF_LEAVES = 300;
+const NUMBER_OF_LEAVES = 400;
 
 /* 
     Called when the "Falling Leaves" page is completely loaded.
@@ -253,14 +253,29 @@ function durationValue(value)
     function determines which of these spin animations should be applied to each leaf.
     
 */
-function createALeaf()
-{
+function createALeaf() {
     /* Start by creating a wrapper div, and an empty img element */
     var leafDiv = document.createElement('div');
     var image = document.createElement('div');
     
-    /* Randomly choose a leaf image and assign it to the newly created element */
-    // image.src = 'images/realLeaf' + randomInteger(1, 5) + '.png';
+    /* Randomly choose a leaf color and assign it to the newly created element */
+
+    function pickLeafColor(){
+    	var number = Math.floor(Math.random() * (5 - 1)) + 1;
+    	if (number == 1){
+    		return "cornflowerblue";
+    	}
+    	else if (number == 2){
+    		return "gold";
+    	}
+    	else if (number == 3){
+    		return "darkorange";
+    	}
+    	else if (number == 4){
+    		return "aquamarine";
+    	}
+    }
+    image.style.backgroundColor = pickLeafColor();
     
     leafDiv.style.top = (Math.floor(Math.random() * (-5000 + -20) -20)).toString() + "px"
 
@@ -300,35 +315,4 @@ window.addEventListener('load', init, false);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	}]);
+}]);

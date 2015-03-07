@@ -25,12 +25,25 @@
    directly inside the leafContainer div. In other words, it matches the 'img' elements
    inside the leafDivs which are created in the createALeaf() function.
 */
+
+
+  
+//   @mixin leaf-color($num:random(3)) {
+
+//   @if $num == 1 {
+//     background-color: cornflowerblue;
+//   } @else if $num == 2 {
+//     background-color: tomato;
+//   }
+// }
+
+
 #leafContainer > div > div {
      position: absolute;
       width: 15px;
       height: 22px;
       border-radius: 50%;
-     background-color: cornflowerblue;
+      // @include leaf-color;
 
     /* We use the following properties to adjust the clockwiseSpin or counterclockwiseSpinAndFlip
        animations on each leaf.
