@@ -96,6 +96,38 @@ body {
  }
 }
 
+.pop-up {
+  @include animation(popUp 0.4s ease-out 1 normal);
+}
+
+@include keyframes(popUp) {
+  0%{
+    @include transform(scale(0));
+  }
+  80%{
+    @include transform(scale(1.08));
+  }
+  100%{
+    @include transform(scale(1));
+  }
+}
+
+.expand {
+  @include animation(expand 0.2s ease-out 1 normal);
+}
+
+@include keyframes(expand) {
+  0%{
+    @include transform(scaleX(0));
+  }
+  100%{
+    @include transform(scaleX(1));
+  }
+}
+
+
+// square show animation
+
 #square-1 {
   background: linear-gradient(#AEE5F1, #98deed);
   box-shadow: 0px 10px #83d7e9;
@@ -360,55 +392,6 @@ div:nth-of-type(n+22):nth-of-type(-n+24){
   position: relative;
   margin-top: -143px;
 }
-
-
-// #leaf { 
-//   position: absolute;
-//   width: 100px;
-//   height: 50px;
-//   top: 0;
-//   left: 0; 
-//   background-color: cornflowerblue;
-// }
-
-
-// @include keyframes(bounce) {
-//  from {
-//    left: 0px;
-//  }
-//  to {
-//    left: 200px;
-//  }
-// }
-
-// @include keyframes(pulse) {
-//  0% {
-//    opacity: 1.0;
-//    @include transform(scale(1.0) rotate(0deg));
-//  }
-//  33% {
-//    opacity: 0.75;
-//    @include transform(scale(1.1) rotate(-5deg));
-//  }
-//  67% {
-//    opacity: 0.5;
-//    @include transform(scale(1.1) rotate(5deg));
-//  }
-//  100% {
-//    opacity: 1.0;
-//    @include transform(scale(1.0) rotate(0deg));
-//  }
-// }
-
-// #leaf {
-//  @include animation-name(bounce);
-//  @include animation-duration(4s);
-//  @include animation-iteration-count(infinite);
-//  @include animation-direction(alternate); @include animation-name(pulse);
-//  @include animation-duration(4s);
-//  @include animation-direction(alternate);
-//  @include animation-timing-function(ease-in-out);
-// }
 
 
 

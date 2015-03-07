@@ -50,12 +50,14 @@ angular
 	  	});
 	  }
 
-	  // Listens to the track position and prompts the user with a new question every 8 second
+	  // Listens to the track position and prompts the user with a new question every 1 second
 	  widget.bind(SC.Widget.Events.PLAY_PROGRESS, function(eventData) {
 	    track_position = JSON.stringify(eventData.currentPosition);
 	    track_position = Math.floor(track_position/100);
-	    if (track_position % 80 == 0 && track_position > 0){
+	    if (track_position % 30 == 0 && track_position > 0){
 	      $('#questions').removeClass('hidden');
+	      $('#questions p').addClass('expand');
+	      $('.square').addClass('pop-up');
 	    };
 	  });
 
@@ -138,6 +140,8 @@ angular
 		// Hides question square after user clicks a square and increases click count.
 	  $('.square').click(function(){
 	    $('#questions').addClass('hidden');
+	    $('#questions p').removeClass('expand');
+	    $('.square').removeClass('pop-up');
 	    if (inverse && (clickCount == 1.0 || clickCount == 3.5)){
 	      clickCount += 1.0;
 	    } else if (inverse == false && (clickCount == -0.5 || clickCount == 5.0)){
@@ -152,42 +156,6 @@ angular
 	  	$('.play-icon').toggleClass('fa-play');
 	  	widget.toggle();
 	  }
-
-
-	  // ////////////////////////////////////////Floating leaf animation test
-
-		// var isUpdatingLeaf = false;
-		// var velocityPerFrame = 2;       // in pixels per tick
-		// var leftBound = 500;            // left boundry of parent, in pixels
-		// var zagAmplitude = 100;         // in total width of zigzag motion
-		// var totalSteps = 0;
-
-		// function startLeaf() {
-		//     isUpdatingLeaf = true;
-		//     leafUpdate();
-		//     console.log("start ran");
-		// }
-
-		// function stopLeaf() {
-		//     isUpdatingLeaf = false;
-		//     console.log("stop ran");
-		// }
-
-		// function leafUpdate() {
-		//     totalSteps += 1; // increase our angle counter
-		//     var leaf = $('#leaf'); // grab our leaf using jQuery
-		//     var leafx = leaf.position().top + velocityPerFrame; // move the leaf down by our velocity
-		//     var leafy = Math.cos(totalSteps / 1000 * Math.PI * 2) * zagAmplitude + leftBound; // use a cosine to model it's left right behavior
-		//     leaf.css({top: leafx + 'px', left: leafy + 'px'});  // update the leaf's css to match
-
-		//     if(isUpdatingLeaf) {
-		//         // still updating? let's refresh in 33 miliseconds
-		//         setTimeout(leafUpdate, 33);
-		//     }
-		//     console.log("update ran");
-		// }
-
-		// startLeaf();
 
 	
 /* Define the number of leaves to be used in the animation */
@@ -307,11 +275,11 @@ function createALeaf() {
 
     /* Return this img element so it can be added to the document */
     return leafDiv;
-}
+	}
 
 
-/* Calls the init function when the "Falling Leaves" page is full loaded */
-window.addEventListener('load', init, false);
+	/* Calls the init function when the "Falling Leaves" page is full loaded */
+	window.addEventListener('load', init, false);
 
 
 
