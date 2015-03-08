@@ -26,18 +26,6 @@
    inside the leafDivs which are created in the createALeaf() function.
 */
 
-
-  
-//   @mixin leaf-color($num:random(3)) {
-
-//   @if $num == 1 {
-//     background-color: cornflowerblue;
-//   } @else if $num == 2 {
-//     background-color: tomato;
-//   }
-// }
-
-
 #leafContainer > div > div {
      position: absolute;
       width: 15px;

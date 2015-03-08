@@ -123,6 +123,8 @@ angular
 	    if (clickCount >= 5.5 || (clickCount >= 5 && inverse == false) ){
 	    	$('#save').removeClass('hidden');
 	      $('#dream-patch').removeClass('hidden');
+	      $('#scroll-link-2 button').removeClass('hidden');
+	      $('#to-quilt').removeClass('hidden');
 	      patchRef.update(dbsquares);
 	      patchRef.onDisconnect().cancel();
 	      // prepCanvas();
