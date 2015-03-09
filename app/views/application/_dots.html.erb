@@ -1,56 +1,27 @@
  <script type="text/paperscript" canvas="myCanvas">
  // assigning colors to dots
-  document.getElementById("a").addEventListener("click",function(){
-    pick('yellow')
+ function assigncolor(id, color) {
+  document.getElementById(id).addEventListener("click",function(){
+    pick(color)
     });
-  document.getElementById("b").addEventListener("click",function(){
-    pick('dodgerblue')
-    });
-  document.getElementById("c").addEventListener("click",function(){
-    pick('peachpuff')
-    });
-  document.getElementById("d").addEventListener("click",function(){
-    pick('tomato')
-    });
-  document.getElementById("e").addEventListener("click",function(){
-    pick('yellow')
-    });
-  document.getElementById("f").addEventListener("click",function(){
-    pick('dodgerblue')
-    });
-  document.getElementById("g").addEventListener("click",function(){
-    pick('peachpuff')
-    });
-  document.getElementById("h").addEventListener("click",function(){
-    pick('tomato')
-    });
-  document.getElementById("i").addEventListener("click",function(){
-    pick('yellow')
-    });
-  document.getElementById("j").addEventListener("click",function(){
-    pick('dodgerblue')
-    });
-  document.getElementById("k").addEventListener("click",function(){
-    pick('peachpuff')
-    });
-  document.getElementById("l").addEventListener("click",function(){
-    pick('tomato')
-    });
-  document.getElementById("m").addEventListener("click",function(){
-    pick('yellow')
-    });
-  document.getElementById("n").addEventListener("click",function(){
-    pick('dodgerblue')
-    });
-  document.getElementById("o").addEventListener("click",function(){
-    pick('peachpuff')
-    });
-  document.getElementById("p").addEventListener("click",function(){
-    pick('tomato')
-    });
-
-
-
+  };
+  assigncolor('a','yellow')
+  assigncolor('b', 'dodgerblue')
+  assigncolor('c','peachpuff')
+  assigncolor('d', 'tomato')
+  assigncolor('e', 'yellow')
+  assigncolor('f', 'dodgerblue')
+  assigncolor('g', 'peachpuff')
+  assigncolor('h', 'tomato')
+  assigncolor('i', 'yellow')
+  assigncolor('j', 'dodgerblue')
+  assigncolor('k', 'peachpuff')
+  assigncolor('h', 'tomato')
+  assigncolor('l', 'yellow')
+  assigncolor('m', 'dodgerblue')
+  assigncolor('n', 'peachpuff')
+  assigncolor('o', 'tomato')
+   
 // settinig up the new firebase
   var myDataRef = new Firebase('https://selmaandwang.firebaseio.com/dots'); 
    var user;
