@@ -359,6 +359,7 @@ input[type="submit"]:hover {
     visibility: hidden;
     z-index: 99999999999;
     position: absolute;
+    overflow: auto;
 
     @include media($large-screen) {
       padding-top: 10em;
@@ -461,5 +462,5 @@ input[type="submit"]:hover {
 }
 
 .modal-open {
-  overflow: hidden;
+  overflow: scroll;
 }

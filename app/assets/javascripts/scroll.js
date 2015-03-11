@@ -49,6 +49,8 @@ $(document).ready(function() {
         $("body").css("background-color","#e1858e");
       } if (index == 6) {
         $("body").css("background-color","#e1b888");
+      } if (index == 7) {
+        $("body").css("background-color","#5ab9ad");
       }
      },                               
      beforeMove: function(index) {},  // This option accepts a callback function. The function will be called after the page moves.
