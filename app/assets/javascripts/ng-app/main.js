@@ -1,6 +1,10 @@
 angular
 	.module("SelmaApp", ['firebase'])
 	.controller("patchController", ['$scope', '$firebase', function($scope, $firebase){
+		// $scope.startLeaf = startLeaf;
+		// $scope.startLeaf = stopLeaf;
+		// $scope.leafUpdate = leafUpdate;
+
 		$scope.squares = [1,2,3,4,5,6];
 		$scope.addSquareColor = addSquareColor;
 		$scope.togglePlay = togglePlay;
@@ -46,12 +50,14 @@ angular
 	  	});
 	  }
 
-	  // Listens to the track position and prompts the user with a new question every 8 second
+	  // Listens to the track position and prompts the user with a new question every 1 second
 	  widget.bind(SC.Widget.Events.PLAY_PROGRESS, function(eventData) {
 	    track_position = JSON.stringify(eventData.currentPosition);
 	    track_position = Math.floor(track_position/100);
-	    if (track_position % 80 == 0 && track_position > 0){
+	    if (track_position % 30 == 0 && track_position > 0){
 	      $('#questions').removeClass('hidden');
+	      $('#questions p').addClass('expand');
+	      $('.square').addClass('pop-up');
 	    };
 	  });
 
@@ -117,6 +123,8 @@ angular
 	    if (clickCount >= 5.5 || (clickCount >= 5 && inverse == false) ){
 	    	$('#save').removeClass('hidden');
 	      $('#dream-patch').removeClass('hidden');
+	      $('#scroll-link-2 button').removeClass('hidden');
+	      $('#to-quilt').removeClass('hidden');
 	      patchRef.update(dbsquares);
 	      patchRef.onDisconnect().cancel();
 	      // prepCanvas();
@@ -134,6 +142,8 @@ angular
 		// Hides question square after user clicks a square and increases click count.
 	  $('.square').click(function(){
 	    $('#questions').addClass('hidden');
+	    $('#questions p').removeClass('expand');
+	    $('.square').removeClass('pop-up');
 	    if (inverse && (clickCount == 1.0 || clickCount == 3.5)){
 	      clickCount += 1.0;
 	    } else if (inverse == false && (clickCount == -0.5 || clickCount == 5.0)){
@@ -149,4 +159,130 @@ angular
 	  	widget.toggle();
 	  }
 
-	}]);
+	
+/* Define the number of leaves to be used in the animation */
+const NUMBER_OF_LEAVES = 400;
+
+/* 
+    Called when the "Falling Leaves" page is completely loaded.
+*/
+function init()
+{
+    /* Get a reference to the element that will contain the leaves */
+    var container = document.getElementById('leafContainer');
+    /* Fill the empty container with new leaves */
+    for (var i = 0; i < NUMBER_OF_LEAVES; i++) 
+    {
+        container.appendChild(createALeaf());
+    }
+}
+
+
+/*
+    Receives the lowest and highest values of a range and
+    returns a random integer that falls within that range.
+*/
+function randomInteger(low, high)
+{
+    return low + Math.floor(Math.random() * (high - low));
+}
+
+
+/*
+   Receives the lowest and highest values of a range and
+   returns a random float that falls within that range.
+*/
+function randomFloat(low, high)
+{
+    return low + Math.random() * (high - low);
+}
+
+
+/*
+    Receives a number and returns its CSS pixel value.
+*/
+function pixelValue(value)
+{
+    return value + 'px';
+}
+
+
+/*
+    Returns a duration value for the falling animation.
+*/
+
+function durationValue(value)
+{
+    return value + 's';
+}
+
+
+/*
+    Uses an img element to create each leaf. "Leaves.css" implements two spin 
+    animations for the leaves: clockwiseSpin and counterclockwiseSpinAndFlip. This
+    function determines which of these spin animations should be applied to each leaf.
+    
+*/
+function createALeaf() {
+    /* Start by creating a wrapper div, and an empty img element */
+    var leafDiv = document.createElement('div');
+    var image = document.createElement('div');
+    
+    /* Randomly choose a leaf color and assign it to the newly created element */
+
+    function pickLeafColor(){
+    	var number = Math.floor(Math.random() * (5 - 1)) + 1;
+    	if (number == 1){
+    		return "cornflowerblue";
+    	}
+    	else if (number == 2){
+    		return "gold";
+    	}
+    	else if (number == 3){
+    		return "darkorange";
+    	}
+    	else if (number == 4){
+    		return "aquamarine";
+    	}
+    }
+    image.style.backgroundColor = pickLeafColor();
+    
+    leafDiv.style.top = (Math.floor(Math.random() * (-5000 + -20) -20)).toString() + "px"
+
+    /* Position the leaf at a random location along the screen */
+    leafDiv.style.left = pixelValue(randomInteger(0, 1400));
+    
+    /* Randomly choose a spin animation */
+    var spinAnimationName = (Math.random() < 0.5) ? 'clockwiseSpin' : 'counterclockwiseSpinAndFlip';
+    
+    /* Set the -webkit-animation-name property with these values */
+    leafDiv.style.webkitAnimationName = 'fade, drop';
+    image.style.webkitAnimationName = spinAnimationName;
+    
+    /* Figure out a random duration for the fade and drop animations */
+    var fadeAndDropDuration = durationValue(randomFloat(56, 74));
+    
+    /* Figure out another random duration for the spin animation */
+    var spinDuration = durationValue(randomFloat(4, 8));
+    /* Set the -webkit-animation-duration property with these values */
+    leafDiv.style.webkitAnimationDuration = fadeAndDropDuration + ', ' + fadeAndDropDuration;
+
+    var leafDelay = durationValue(randomFloat(0, 5));
+    leafDiv.style.webkitAnimationDelay = leafDelay + ', ' + leafDelay;
+
+    image.style.webkitAnimationDuration = spinDuration;
+
+    // add the <img> to the <div>
+    leafDiv.appendChild(image);
+
+    /* Return this img element so it can be added to the document */
+    return leafDiv;
+	}
+
+
+	/* Calls the init function when the "Falling Leaves" page is full loaded */
+	window.addEventListener('load', init, false);
+
+
+
+}]);
