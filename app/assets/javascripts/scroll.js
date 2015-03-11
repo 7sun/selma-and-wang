@@ -50,7 +50,6 @@ $(document).ready(function() {
       } if (index == 6) {
         $("body").css("background-color","#e1b888");
       }
-      console.log(index);
      },                               
      beforeMove: function(index) {},  // This option accepts a callback function. The function will be called after the page moves.
      loop: false,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
@@ -132,3 +131,22 @@ $(document).ready(function() {
 //     ajaxStop:  function() { $myCanvas.removeClass("loading");}    
 // });
 
+// Modal
+
+$(function() {
+  $("#modal-1").on("change", function() {
+    if ($(this).is(":checked")) {
+      $("body").addClass("modal-open");
+    } else {
+      $("body").removeClass("modal-open");
+    }
+  });
+
+  $(".modal-window").on("click", function() {
+    $(".modal-state:checked").prop("checked", false).change();
+  });
+
+  $(".modal-inner").on("click", function(e) {
+    e.stopPropagation();
+  });
+});
