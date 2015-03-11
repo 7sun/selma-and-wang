@@ -65,14 +65,14 @@ angular
 		function setTransparentTriangles(){
 			console.log(counter);
     	if ( between(counter, 1, 3) || between(counter, 7, 9) || between(counter, 16, 18) || between(counter, 22, 24) ){
-    		$('#answer-square-0').css({"borderTopColor": "#9BCAE1"});
+    		$('#answer-square-0').css({"borderTopColor": "transparent"});
     		// $('.answer-square').css({"borderRight": "20vw solid #9BCAE1"});
-    		$('.answer-square').css({"borderRight": "140px solid #9BCAE1"});
+    		$('.answer-square').css({"borderRight": "140px solid transparent"});
     		inverse = false;
     	} else {
-    		$('#answer-square-1').css({"borderTopColor": "#9BCAE1"});
+    		$('#answer-square-1').css({"borderTopColor": "transparent"});
     		// $('.answer-square').css({"borderLeft": "20vw solid #9BCAE1"});
-    		$('.answer-square').css({"borderLeft": "140px solid #9BCAE1"});
+    		$('.answer-square').css({"borderLeft": "140px solid transparent"});
     		inverse = true;
     	}
     	setInverse(inverse)
