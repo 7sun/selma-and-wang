@@ -90,7 +90,8 @@
 
   $(function() { 
     var theCanvas
-      $("#save").click(function() { 
+      $("#save").click(function() {
+          $('#dream-patch').css('backgroundColor', '#9BCAE1');
           html2canvas($("#dream-patch"), {
               onrendered: function(canvas) {
                 save.href = canvas.toDataURL("image/png")              

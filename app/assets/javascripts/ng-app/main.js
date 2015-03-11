@@ -54,7 +54,7 @@ angular
 	  widget.bind(SC.Widget.Events.PLAY_PROGRESS, function(eventData) {
 	    track_position = JSON.stringify(eventData.currentPosition);
 	    track_position = Math.floor(track_position/100);
-	    if (track_position % 30 == 0 && track_position > 0){
+	    if (track_position % 10 == 0 && track_position > 0){
 	      $('#questions').removeClass('hidden');
 	      $('#questions p').addClass('expand');
 	      $('.square').addClass('pop-up');
@@ -125,7 +125,7 @@ angular
 	      $('#dream-patch').removeClass('hidden');
 	      $('#scroll-link-2 button').removeClass('hidden');
 	      $('#to-quilt').removeClass('hidden');
-	      patchRef.update(dbsquares);
+	      patchRef.set(dbsquares);
 	      patchRef.onDisconnect().cancel();
 	      // prepCanvas();
 	    }
