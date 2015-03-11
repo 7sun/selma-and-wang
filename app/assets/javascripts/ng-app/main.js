@@ -46,11 +46,11 @@ angular
 	  	});
 	  }
 
-	  // Listens to the track position and prompts the user with a new question every 1 second
+	  // Listens to the track position and prompts the user with a new question every 8 second
 	  widget.bind(SC.Widget.Events.PLAY_PROGRESS, function(eventData) {
 	    track_position = JSON.stringify(eventData.currentPosition);
 	    track_position = Math.floor(track_position/100);
-	    if (track_position % 10 == 0 && track_position > 0){
+	    if (track_position % 80 == 0 && track_position > 0){
 	      $('#questions').removeClass('hidden');
 	    };
 	  });
@@ -59,12 +59,14 @@ angular
 		function setTransparentTriangles(){
 			console.log(counter);
     	if ( between(counter, 1, 3) || between(counter, 7, 9) || between(counter, 16, 18) || between(counter, 22, 24) ){
-    		$('#answer-square-0').css({"borderTopColor": "#A0E18F"});
-    		$('.answer-square').css({"borderRight": "20vw solid #A0E18F"});
+    		$('#answer-square-0').css({"borderTopColor": "#9BCAE1"});
+    		// $('.answer-square').css({"borderRight": "20vw solid #9BCAE1"});
+    		$('.answer-square').css({"borderRight": "140px solid #9BCAE1"});
     		inverse = false;
     	} else {
-    		$('#answer-square-1').css({"borderTopColor": "#A0E18F"});
-    		$('.answer-square').css({"borderLeft": "20vw solid #A0E18F"});
+    		$('#answer-square-1').css({"borderTopColor": "#9BCAE1"});
+    		// $('.answer-square').css({"borderLeft": "20vw solid #9BCAE1"});
+    		$('.answer-square').css({"borderLeft": "140px solid #9BCAE1"});
     		inverse = true;
     	}
     	setInverse(inverse)
@@ -83,11 +85,13 @@ angular
 			// Checks if clickCount is a whole number. If so, the squares top/left triangle color is set
 	    if (clickCount % 1 == 0){
 	    	if (inverse){
-	    		$('#answer-square-' + clickCountString).css({"borderLeft": "20vw solid " + color});
+	    		// $('#answer-square-' + clickCountString).css({"borderLeft": "20vw solid " + color});
+	    		$('#answer-square-' + clickCountString).css({"borderLeft": "140px solid " + color});
 	    		dbsquares[Math.floor(clickCount)].sideColor = color;
 	    	} else {
-	    		// $('#answer-square-' + clickCountString).css({"borderRight": "20vw solid transparent"});
-		      $('#answer-square-' + clickCountString).css({"borderTop": "20vw solid " + color});
+	    		// $('#answer-square-' + clickCountString).css({"borderRight": "20vw solid transparent"}); NOT NEEDED FOR CURRENT BUILD
+		      // $('#answer-square-' + clickCountString).css({"borderTop": "20vw solid " + color});
+		      $('#answer-square-' + clickCountString).css({"borderTop": "140px solid " + color});
 		      dbsquares[Math.floor(clickCount)].topColor = color;
 	    	}
 	      console.log(clickCount);
@@ -95,10 +99,12 @@ angular
 	      // Checks if clickCount end in 0.5. If so, the squares bottom/right triangle color is set 
 	    } else if (clickCount % 1 == 0.5){
 	    	if (inverse){
-	    		$('#answer-square-' + clickCountString).css({"borderTop": "20vw solid " + color});
+	    		// $('#answer-square-' + clickCountString).css({"borderTop": "20vw solid " + color});
+	    		$('#answer-square-' + clickCountString).css({"borderTop": "140px solid " + color});
 	    		dbsquares[Math.floor(clickCount)].topColor = color;
 	    	} else {
-	      	$('#answer-square-' + clickCountString).css({"borderRight": "20vw solid " + color});
+	      	// $('#answer-square-' + clickCountString).css({"borderRight": "20vw solid " + color});
+	      	$('#answer-square-' + clickCountString).css({"borderRight": "140px solid " + color});
 	      	dbsquares[Math.floor(clickCount)].sideColor = color;
 	      }
 	      console.log(clickCount);
