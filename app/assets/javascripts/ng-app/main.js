@@ -156,12 +156,19 @@ angular
 	  function togglePlay(){
 	  	$('.play-icon').toggleClass('fa-pause');
 	  	$('.play-icon').toggleClass('fa-play');
-	  	widget.toggle();
 	  }
+
+	 //  document.querySelector('.play-icon').addEventListener('click', function () {
+  //   		widget.toggle();
+  //   		console.log("play toggled");
+		// }, false);
 
 	
 /* Define the number of leaves to be used in the animation */
 const NUMBER_OF_LEAVES = 400;
+
+
+
 
 /* 
     Called when the "Falling Leaves" page is completely loaded.

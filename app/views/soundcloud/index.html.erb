@@ -1,7 +1,7 @@
 <div class="main">
 <div id="container" ng-app="SelmaApp">
   <!-- SOUNDCLOUD IFRAME -->
-  <iframe id="sc-widget" src=<%= "https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/188155459?client_id=#{ENV['SOUNDCLOUD_CLIENT_ID']}" %> width="0" height="0" scrolling="no" frameborder="no"></iframe>
+<!--   <iframe id="sc-widget" src=<%= "https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/188155459?client_id=#{ENV['SOUNDCLOUD_CLIENT_ID']}" %> width="300" height="300" scrolling="no" frameborder="no"></iframe> -->
 
   <div id="content-wrapper" ng-controller="patchController">
     <div id="leafContainer"></div>
@@ -30,6 +30,7 @@
     <!-- Section 2 - Player -->
     
     <article  id="scroll-link-2" class="scenarios">
+        <iframe id="sc-widget" src=<%= "https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/188155459?client_id=#{ENV['SOUNDCLOUD_CLIENT_ID']}" %> width="300" height="300" scrolling="no" frameborder="no"></iframe>
       <div class="music-player">
         <i class="fa fa-play play-icon" ng-click="togglePlay()"></i>
       </div>
@@ -98,6 +99,49 @@
               }
           })
       })
-  }); 
+  });
+
+    var audioReady = function () {
+    this.load('/audios/music.mp3');
+    var play_pause = document.querySelector('.play-icon');
+    play_pause.addEventListener('click', playPause.bind(this));
+  }
+
+  var playPause = function () {
+    if (this.playing) {
+      this.pause();
+      this.volume(0);
+      console.log(this.position, this.duration, this.load_percent, this.volume());
+    } else {
+      this.play();
+      this.volume(1);
+    }
+    // or simply call this.playPause();
+  }
+
+  var initAudio = function () {
+    var audio5js = new Audio5js({
+      swf_path: '/statics/swf/audio5js.swf',
+      throw_errors: true,
+      format_time: true,
+      ready: audioReady
+    });
+  }
+
+  initAudio();
+
+
+    // var audio5js = new Audio5js({
+    //   ready: function () {
+    //     this.load('/audios/music.mp3');
+    //     document.querySelector('.play-icon').addEventListener('click',
+    //       audio5js.playPause);
+    //   }
+    // });
+
+    //   document.querySelector('.play-icon').addEventListener('click', function () {
+    //    audio5js.playPause();
+    //    console.log("play toggled");
+    // }, false);
 
 </script>
