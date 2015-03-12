@@ -83,7 +83,7 @@ body {
   // margin-left: 15vw;
 
   .squares {
-    display: inline-flex;
+    // display: inline;
     margin: 0 auto 50px;
 
   .square {
@@ -91,6 +91,7 @@ body {
     height: 17vh;
     margin: 1.2vh;
     border-radius: 5px;
+    display: inline-block;
     // float: left;
   }
  }
