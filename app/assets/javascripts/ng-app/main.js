@@ -3,10 +3,10 @@ angular
 	.controller("patchController", ['$scope', '$firebase', function($scope, $firebase){
 		$scope.squares = [1,2,3,4,5,6];
 		$scope.addSquareColor = addSquareColor;
-		$scope.togglePlay = togglePlay;
 		var inverse;
 		var dbsquares = [{topColor: "", sideColor: ""}, {topColor: "", sideColor: ""}, {topColor: "", sideColor: ""},
 										{topColor: "", sideColor: ""}, {topColor: "", sideColor: ""}, {topColor: "", sideColor: ""}]
+
 		// default squares to send to firebase in case of client disconnet to maintain patternsync
 		var dbDefaultSquares = [{topColor: "#AEE5F1", sideColor: "#FEBBCD"}, {topColor: "#B3BCBF", sideColor: "#AEE5F1"}, {topColor: "#FEBBCD", sideColor: "#B3BCBF"},
 										{topColor: "#F25239", sideColor: "#FEBBCD"}, {topColor: "#AEE5F1", sideColor: "#B3BCBF"}, {topColor: "#AEE5F1", sideColor: "#B3BCBF"}]
@@ -33,40 +33,17 @@ angular
 			setTransparentTriangles();
 		});
 
-		// Sets Soundcloud iframe as a player controllable by js. Also sets global variables.
-	  var widgetIframe = document.getElementById('sc-widget'),
-	      widget = SC.Widget(widgetIframe),
-	      clickCount = -0.5,
-	      track_position = "";
-
-	  // logs the position of the track in milliseconds
-	  function position(){
-	  	widget.getPosition(function(positionSC){
-	  		console.log(Math.round(positionSC));
-	  	});
-	  }
-
-	  // Listens to the track position and prompts the user with a new question every 8 second
-	  widget.bind(SC.Widget.Events.PLAY_PROGRESS, function(eventData) {
-	    track_position = JSON.stringify(eventData.currentPosition);
-	    track_position = Math.floor(track_position/100);
-	    if (track_position % 80 == 0 && track_position > 0){
-	      $('#questions').removeClass('hidden');
-	    };
-	  });
-
 	  // Sets which triangles will be taken out of the patch. Switches to create diamond pattern
 		function setTransparentTriangles(){
-			console.log(counter);
     	if ( between(counter, 1, 3) || between(counter, 7, 9) || between(counter, 16, 18) || between(counter, 22, 24) ){
-    		$('#answer-square-0').css({"borderTopColor": "#9BCAE1"});
+    		$('#answer-square-0').css({"borderTopColor": "transparent"});
     		// $('.answer-square').css({"borderRight": "20vw solid #9BCAE1"});
-    		$('.answer-square').css({"borderRight": "140px solid #9BCAE1"});
+    		$('.answer-square').css({"borderRight": "140px solid transparent"});
     		inverse = false;
     	} else {
-    		$('#answer-square-1').css({"borderTopColor": "#9BCAE1"});
+    		$('#answer-square-1').css({"borderTopColor": "transparent"});
     		// $('.answer-square').css({"borderLeft": "20vw solid #9BCAE1"});
-    		$('.answer-square').css({"borderLeft": "140px solid #9BCAE1"});
+    		$('.answer-square').css({"borderLeft": "140px solid transparent"});
     		inverse = true;
     	}
     	setInverse(inverse)
@@ -117,23 +94,19 @@ angular
 	    if (clickCount >= 5.5 || (clickCount >= 5 && inverse == false) ){
 	    	$('#save').removeClass('hidden');
 	      $('#dream-patch').removeClass('hidden');
-	      patchRef.update(dbsquares);
+	      $('#scroll-link-2 button').removeClass('hidden');
+	      $('#to-quilt').removeClass('hidden');
+	      patchRef.set(dbsquares);
 	      patchRef.onDisconnect().cancel();
 	      // prepCanvas();
 	    }
 	  }
 
-	  // function prepCanvas(){
-   //  	html2canvas($("#dream-patch"), {
-   //    	onrendered: function(canvas) {
-   //      	save.href = canvas.toDataURL("image/png")              
-   //    	}
-   //   	})
-   //  }
-
 		// Hides question square after user clicks a square and increases click count.
 	  $('.square').click(function(){
 	    $('#questions').addClass('hidden');
+	    $('#questions p').removeClass('expand');
+	    $('.square').removeClass('pop-up');
 	    if (inverse && (clickCount == 1.0 || clickCount == 3.5)){
 	      clickCount += 1.0;
 	    } else if (inverse == false && (clickCount == -0.5 || clickCount == 5.0)){
@@ -143,10 +116,13 @@ angular
 	    }
 	  })
 
-	  function togglePlay(){
-	  	$('.play-icon').toggleClass('fa-pause');
-	  	$('.play-icon').toggleClass('fa-play');
-	  	widget.toggle();
-	  }
+		  // function prepCanvas(){
+   //  	html2canvas($("#dream-patch"), {
+   //    	onrendered: function(canvas) {
+   //      	save.href = canvas.toDataURL("image/png")              
+   //    	}
+   //   	})
+   //  }
 
-	}]);
+
+}]);

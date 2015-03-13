@@ -1,9 +1,8 @@
 <div class="main">
 <div id="container" ng-app="SelmaApp">
-  <!-- SOUNDCLOUD IFRAME -->
-  <iframe id="sc-widget" src=<%= "https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/188155459?client_id=#{ENV['SOUNDCLOUD_CLIENT_ID']}" %> width="0" height="0" scrolling="no" frameborder="no"></iframe>
 
   <div id="content-wrapper" ng-controller="patchController">
+    <div id="leafContainer"></div>
 
     
     <!-- Section 1 - Intro -->
@@ -30,7 +29,7 @@
     
     <article  id="scroll-link-2" class="scenarios">
       <div class="music-player">
-        <i class="fa fa-play play-icon" ng-click="togglePlay()"></i>
+        <i class="fa fa-play play-icon"></i>
       </div>
 
         <!-- Question squares -->
@@ -44,7 +43,7 @@
           <!-- <div id="square-5" class="square" ng-click="addSquareColor('transparent')"></div> -->
         </div>
       </div>
-      <button class="scn-btns">See your patch</button>
+      <button class="scn-btns hidden">See your patch</button>
     </article>
 
     <!-- Section 3 - Patch -->
@@ -59,7 +58,7 @@
       <div class="patchbox">
       <a download='dreampatch.png' id='save' class='hidden'>Download Wallpaper</a>
       <div id='img-out'></div>
-      <button id="to-quilt">Add to Quilt</button>
+      <button id="to-quilt" class="hidden">Add to Quilt</button>
       </div>
     </article>
 
@@ -89,13 +88,58 @@
 
   $(function() { 
     var theCanvas
-      $("#save").click(function() { 
+      $("#save").click(function() {
+          $('#dream-patch').css('backgroundColor', '#9BCAE1');
           html2canvas($("#dream-patch"), {
               onrendered: function(canvas) {
                 save.href = canvas.toDataURL("image/png")              
               }
           })
       })
-  }); 
+  });
+
+  var clickCount = -0.5;
+
+  var audioReady = function () {
+    // loads audio track from public directory
+    this.load('/audios/music.mp3');
+    // maps trigger to play button
+    var play_pause = document.querySelector('.play-icon');
+    play_pause.addEventListener('click', playPause.bind(this));
+    var current_position;
+    // Binds playback counter to a constantly running number
+    this.on('timeupdate', function (position, duration) {
+      track_position = Math.floor(position);
+      if (track_position % 3 == 0 && track_position > 0 && track_position != current_position){
+        // Checks to make sure color squares do not load more than once for the same time position
+        current_position = track_position;
+        $('#questions').removeClass('hidden');
+        $('#questions p').addClass('expand');
+        $('.square').addClass('pop-up');
+      };
+    }, this);
+  }
+
+  var playPause = function () {
+    // sets to full volume
+    this.volume(1);
+    // toggles icon from play to pause
+    this.playPause();
+    $('.play-icon').toggleClass('fa-pause');
+      $('.play-icon').toggleClass('fa-play');
+    // console.log(this.position, this.duration, this.load_percent, this.volume());
+  }
+
+  var initAudio = function () {
+    // initiliazes audio player and sets backup default as audio5js.swf
+    var audio5js = new Audio5js({
+      swf_path: '/statics/swf/audio5js.swf',
+      throw_errors: true,
+      format_time: false,
+      ready: audioReady
+    });
+  }
+
+  initAudio();
 
 </script>
