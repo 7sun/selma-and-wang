@@ -1,6 +1,6 @@
 <div class="main">
 <div id="container" ng-app="SelmaApp">
-
+<%= @soundcloud_id %>
   <div id="content-wrapper" ng-controller="patchController">
     <div id="leafContainer"></div>
 
@@ -28,7 +28,7 @@
     <!-- Section 2 - Player -->
     
     <article  id="scroll-link-2" class="scenarios">
-      <div class="music-player">
+      <div class="music-player"> 
         <i class="fa fa-play play-icon"></i>
       </div>
 
@@ -98,48 +98,49 @@
       })
   });
 
-  var clickCount = -0.5;
+  // var clickCount = -0.5;
 
-  var audioReady = function () {
-    // loads audio track from public directory
-    this.load('/audios/music.mp3');
-    // maps trigger to play button
-    var play_pause = document.querySelector('.play-icon');
-    play_pause.addEventListener('click', playPause.bind(this));
-    var current_position;
-    // Binds playback counter to a constantly running number
-    this.on('timeupdate', function (position, duration) {
-      track_position = Math.floor(position);
-      if (track_position % 3 == 0 && track_position > 0 && track_position != current_position){
-        // Checks to make sure color squares do not load more than once for the same time position
-        current_position = track_position;
-        $('#questions').removeClass('hidden');
-        $('#questions p').addClass('expand');
-        $('.square').addClass('pop-up');
-      };
-    }, this);
-  }
+  // var audioReady = function () {
+  //   // loads audio track from public directory
+  //   var soundcloudID = <%= ENV["SOUNDCLOUD_CLIENT_ID"] %>
+  //   this.load("https://api.soundcloud.com/tracks/188155459/stream?client_id=" + soundcloudID);
+  //   // maps trigger to play button
+  //   var play_pause = document.querySelector('.play-icon');
+  //   play_pause.addEventListener('click', playPause.bind(this));
+  //   var current_position;
+  //   // Binds playback counter to a constantly running number
+  //   this.on('timeupdate', function (position, duration) {
+  //     track_position = Math.floor(position);
+  //     if (track_position % 3 == 0 && track_position > 0 && track_position != current_position){
+  //       // Checks to make sure color squares do not load more than once for the same time position
+  //       current_position = track_position;
+  //       $('#questions').removeClass('hidden');
+  //       $('#questions p').addClass('expand');
+  //       $('.square').addClass('pop-up');
+  //     };
+  //   }, this);
+  // }
 
-  var playPause = function () {
-    // sets to full volume
-    this.volume(1);
-    // toggles icon from play to pause
-    this.playPause();
-    $('.play-icon').toggleClass('fa-pause');
-      $('.play-icon').toggleClass('fa-play');
-    // console.log(this.position, this.duration, this.load_percent, this.volume());
-  }
+  // var playPause = function () {
+  //   // sets to full volume
+  //   this.volume(1);
+  //   // toggles icon from play to pause
+  //   this.playPause();
+  //   $('.play-icon').toggleClass('fa-pause');
+  //     $('.play-icon').toggleClass('fa-play');
+  //   // console.log(this.position, this.duration, this.load_percent, this.volume());
+  // }
 
-  var initAudio = function () {
-    // initiliazes audio player and sets backup default as audio5js.swf
-    var audio5js = new Audio5js({
-      swf_path: '/statics/swf/audio5js.swf',
-      throw_errors: true,
-      format_time: false,
-      ready: audioReady
-    });
-  }
+  // var initAudio = function () {
+  //   // initiliazes audio player and sets backup default as audio5js.swf
+  //   var audio5js = new Audio5js({
+  //     swf_path: '/statics/swf/audio5js.swf',
+  //     throw_errors: true,
+  //     format_time: false,
+  //     ready: audioReady
+  //   });
+  // }
 
-  initAudio();
+  // initAudio();
 
 </script>
