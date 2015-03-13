@@ -1,6 +1,6 @@
 // Breakpoints
 
-$mobile: new-breakpoint(max-width 600px 6);
+$mobile: new-breakpoint(max-width 640px 6);
 $mobile1: new-breakpoint(max-width 885px 6);
 
 // Fonts
@@ -106,7 +106,8 @@ body {
     margin-bottom: 1vh;
 
     @include media($mobile){
-      margin-top: 28vh;
+      font-size: 15vw;
+      margin-top: 20vh;
     }
   }
 
