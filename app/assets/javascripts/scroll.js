@@ -51,6 +51,8 @@ $(document).ready(function() {
         $("body").css("background-color","#e1b888");
       } if (index == 7) {
         $("body").css("background-color","#5ab9ad");
+      } if (index == 8) {
+        $("body").css("background-color","#b98bb9");
       }
      },                               
      beforeMove: function(index) {},  // This option accepts a callback function. The function will be called after the page moves.
@@ -63,7 +65,7 @@ $(document).ready(function() {
   });
 });
 
-// One Page scroll for buttons
+// On Page scroll for buttons
 
 $(document).ready(function() {
   $( "#going-down" ).click(function() {
@@ -89,6 +91,12 @@ $(document).ready(function() {
   });
 });
 
+$(document).ready(function() {
+  $( "#going-about" ).click(function() {
+     $(".main").moveTo(7);
+  });
+});
+
 // $(document).ready(function() {
 //   $( "#start" ).click(function() {
 //     $(".main").moveDown();
@@ -110,19 +118,19 @@ $(document).ready(function() {
 
 // Menu Collapse
 
-$(document).ready(function() {
-  var menuToggle = $('#js-mobile-menu').unbind();
-  $('#js-navigation-menu').removeClass("show");
+// $(document).ready(function() {
+//   var menuToggle = $('#js-mobile-menu').unbind();
+//   $('#js-navigation-menu').removeClass("show");
 
-  menuToggle.on('click', function(e) {
-    e.preventDefault();
-    $('#js-navigation-menu').slideToggle(function(){
-      if($('#js-navigation-menu').is(':hidden')) {
-        $('#js-navigation-menu').removeAttr('style');
-      }
-    });
-  });
-});
+//   menuToggle.on('click', function(e) {
+//     e.preventDefault();
+//     $('#js-navigation-menu').slideToggle(function(){
+//       if($('#js-navigation-menu').is(':hidden')) {
+//         $('#js-navigation-menu').removeAttr('style');
+//       }
+//     });
+//   });
+// });
 
 // Loading
 

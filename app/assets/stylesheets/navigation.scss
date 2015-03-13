@@ -1,8 +1,8 @@
 .navigation {  
 
   $base-accent-color: #3f3f3f !default;
-  $dark-gray: #333 !default;
-  $accent-three: #B3BCBF; // Grey
+  $dark-gray: #262 !default;
+  $accent-three: #8c8c8c; // Grey
   $large-screen: em(860) !default;
   $font-stack: 'Oswald', Helvetica, sans-serif;
   $mobile: new-breakpoint(max-width 600px 6);
@@ -286,5 +286,15 @@
       color: $base-accent-color;
     }
    }
+  }
+
+  .info-btn-container {
+    left: 3%;
+    top: 40px;
+    position: fixed;
+
+    @include media($mobile) {
+      top: 3%;
+    }
   }
 }
