@@ -294,12 +294,13 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: $grey;
   }
+
 @-webkit-keyframes pulse {
  0% {
  -webkit-transform: scale(1, 1);
 }
  50% {
- -webkit-transform: scale(1.1, 1.1);
+ -webkit-transform: scale(1.15, 1.15);
 }
  100% {
  -webkit-transform: scale(1, 1);
@@ -311,7 +312,7 @@ input[type="submit"]:hover {
  transform: scale(1, 1);
 }
  50% {
- transform: scale(1.1, 1.1);
+ transform: scale(1.15, 1.15);
 }
  100% {
 transform: scale(1, 1);
@@ -319,7 +320,6 @@ transform: scale(1, 1);
 }
 
 .fa-play {
-	background: red;
 	width: 20px;
 	height: 20px;
 	-webkit-animation: pulse 1s linear infinite;
