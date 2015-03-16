@@ -24,16 +24,12 @@
 	<!-- Navigation -->
 	<div class="navigation" role="banner">
  	 <div class="navigation-wrapper">
-    	<a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu"><i class="fa fa-bars fa-2x nav-link"></i></a>
+    	<!-- <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu"><i class="fa fa-bars fa-2x nav-link"></i></a> -->
     	<nav role="navigation">
-      	<ul id="js-navigation-menu" class="navigation-menu show">
-      	<% if current_user %>
-        	<li class="nav-link"><%= link_to 'Log Out', logout_path %></li>
-      	<% else %>
-        	<li class="nav-link"><%= link_to 'Log In', login_path %></li>
-        	<li class="nav-link"><%= link_to 'Sign Up', signup_path %></li>
-      	<% end %>
-      	</ul>
+        <ul class="info-btn-container">
+          <li class="scroll-btn"><a class="scroll-on-page-link" id="going-home"><i class="fa fa-home"></i></i></a></li>
+          <li class="scroll-btn"><a class="scroll-on-page-link" href="/music-player" id=""><i class="fa fa-music"></i></a></li>
+        </ul>
       	</div>
     	</nav>
       <!-- scroll buttons -->
@@ -43,12 +39,26 @@
       </ul>
       <!-- Link Buttons -->
       <ul class="other-btn-container">
-        <li class="scroll-btn"><a class="scroll-on-page-link" href="/music-player" id=""><i class="fa fa-music"></i></a></li>
-        <li class="scroll-btn"><a class="scroll-on-page-link" id="going-home"><i class="fa fa-home"></i></i></a></li>
+        <li for="modal-1" class="scroll-btn"><a class="modal-trigger scroll-on-page-link"><label for="modal-1"><i class="fa fa-envelope-o"></i></label></a></li>
+        <li class="scroll-btn"><a class="scroll-on-page-link" id="going-about"><i class="fa fa-question-circle"></i></a></li>
       </ul>
   	</div>
 	</div>
 </header> 
+
+<!-- Modal -->
+  <div class="modal">
+    <input class="modal-state" id="modal-1" type="checkbox" />
+      <div class="modal-window">
+        <div class="modal-inner">
+            <label class="modal-close" for="modal-1"></label>
+              <h1>Modal Title</h1>
+                <p class="modal-intro">Intro text lorem ipsum dolor sit ametm, quas, eaque facilis aliquid cupiditate tempora cumque ipsum accusantium illo modi commodi  minima.</p>
+                <p class="modal-content">Body text lorem ipsum dolor ipsum dolor sit sit possimus amet, consectetur adipisicing elit. Itaque, placeat, explicabo, veniam quos aperiam molestias eriam molestias molestiae suscipit ipsum enim quasi sit possimus quod atque nobis voluptas earum odit accusamus quibusdam. Body text lorem ipsum dolor ipsum dolor sit sit possimus amet.</p>
+        </div>
+      </div>
+  </div>
+<!-- Modal end -->
 
 <body>
 

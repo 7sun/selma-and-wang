@@ -1,6 +1,6 @@
 // Breakpoints
 
-$mobile: new-breakpoint(max-width 600px 6);
+$mobile: new-breakpoint(max-width 640px 6);
 $mobile1: new-breakpoint(max-width 885px 6);
 
 // Fonts
@@ -84,53 +84,16 @@ body {
     display: block;
 }
 
-.scroll-on-page {
-  
-  $base-line-height: 1.5em !default;
-  $base-spacing: 1.5em !default;
-  $base-accent-color: #F4661F !default;
-  $base-link-color: $base-accent-color !default;
-  $dark-gray: #333 !default;
-  $large-screen: em(860) !default;
-  $base-font-color: $dark-gray !default;
-  
-  // Typograpy
-
-  p {
-    color: $base-font-color;
-    line-height: $base-line-height;
-  }
-
-  a {
-    color: $base-link-color;
-    text-decoration: none;
-  }
-
-  .scroll-on-page-link {
-    border-bottom: 1px solid transparentize($base-link-color, 0.8);
-    display: block;
-    margin-right: $base-spacing;
-    outline: none;
-    padding: ($base-spacing / 2) 0;
-
-    &:last-child {
-      margin-bottom: $base-spacing;
-    }
-  }
-}
-
 // Storyboards
 
   .scenarios {
+    
     width: 100vh;
     height: 100vw;
     padding: 40px;
-    // width: 100%;
-    // height: 100%;
-    // padding-top: 65px;
 
     @include media($mobile) {
-      @include span-columns(4);
+      @include span-columns(6);
     }
   
   .b1 {
@@ -139,26 +102,53 @@ body {
     font-family: $font-stack, sans-serif;
     line-height: 1.25em;
     color: $navigation-color;
-    margin-top: 70px;
+    margin-top: 10vh;
+    margin-bottom: 1vh;
+
+    @include media($mobile){
+      font-size: 15vw;
+      margin-top: 20vh;
+    }
   }
 
-  p {
+  // p {
+  //   @include outer-container;
+  //   display: block;
+  //   margin: auto;
+  //   margin-top: -5px;
+  //   font-family: $font-stack;
+  //   font-size: 5vw;
+  //   text-align: center;
+  //   // text-transform: uppercase;
+  //   color: $grey;
+  //   background-color: $navigation-color;
+  //   padding: 10px;
+  //   border-radius: 3px;
+  //   max-width: 75vw;
+
+  //   @include media($mobile) {
+  //     font-size: 16px;
+  //   }
+
+  // }
+
+  .p1 {
+    @include outer-container;
     display: block;
     margin: auto;
-    margin-top: -5px;
+    margin-top: -1vh;
     font-family: $font-stack;
-    font-size: 1.25em;
+    font-size: 2vw;
     text-align: center;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     color: $grey;
     background-color: $navigation-color;
     padding: 10px;
     border-radius: 3px;
-    max-width: 50vw;
+    max-width: 65vw;
 
     @include media($mobile) {
-      max-width: 75vw;
-      font-size: 1em;
+      font-size: .75em;
     }
   }
 
@@ -168,6 +158,7 @@ body {
     @include media($mobile) {
         @include span-columns(4);
         @include shift(1);
+        max-width: 50vw;
       }
 
   } // Feedback buttons
@@ -192,7 +183,7 @@ body {
       }
 
       @include media($mobile) {
-        font-size: 1em;
+        font-size: 3.5vw;
       }
 
     }
@@ -295,5 +286,172 @@ input[type="submit"]:hover {
     background-color: $grey;
   }
 
+// Modal
 
+.modal {
+  ///////////////////////////////////////////////////////////////////////////////////
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 3px !default;
+  $base-background-color: white !default;
+  $base-font-size: 1em !default;
+  $base-line-height: 1.5em !default;
+  $base-accent-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $light-gray: #DDD !default;
+  $medium-screen: em(640) !default;
+  $large-screen: em(860) !default;
+  $base-font-color: $dark-gray !default;
 
+  h1 {
+    margin: 0;
+  }
+
+  p {
+    color: $base-font-color;
+    line-height: $base-line-height;
+  }
+  //////////////////////////////////////////////////////////////////////////////////
+
+  $modal-padding: 3em;
+  $modal-background: $base-background-color;
+  $modal-close-color: $light-gray;
+  $modal-image-height: 135px;
+  $modal-image-width: $modal-image-height;
+  $modal-trigger-image-width: 300px;
+
+  label {
+    cursor: pointer;
+    margin-bottom: 0;
+  }
+
+  label img {
+    border-radius: $modal-trigger-image-width / 2;
+    display: block;
+    max-width: $modal-trigger-image-width;
+  }
+
+  .modal-state {
+    display: none;
+  }
+
+  .modal-trigger {
+    // @include button(flat, $base-accent-color);
+    // padding: 0.8em 1em;
+    display: inline-block;
+  }
+
+  .modal-window { // overlay
+    @include transition(opacity 0.25s ease);
+    @include position(fixed, 0px 0px 0px 0px);
+    background: rgba(0,0,0, 0.85);
+    opacity: 0;
+    padding-top: 0.6em;
+    text-align: left;
+    visibility: hidden;
+    z-index: 99999999999;
+    position: absolute;
+    overflow: auto;
+
+    @include media($large-screen) {
+      padding-top: 10em;
+    }
+
+    .modal-bg {
+      @include position(absolute, 0px 0px 0px 0px);
+      cursor: pointer;
+    }
+  }
+
+  .modal-close {
+    @include position(absolute, ($modal-padding /2) ($modal-padding /2) null null);
+    @include size(1.5em);
+    background: $modal-background;
+    cursor: pointer;
+
+    &:after,
+    &:before {
+      @include position(absolute, 3px 3px 0 50%);
+      @include transform(rotate(45deg));
+      @include size(0.15em 1.5em);
+      background: $modal-close-color;
+      content: '';
+      display: block;
+      margin: -3px 0 0 -1px;
+    }
+
+    &:hover:after,
+    &:hover:before {
+      background: darken($modal-close-color, 10%);
+    }
+
+    &:before {
+      @include transform(rotate(-45deg));
+    }
+  }
+
+  .modal-inner {
+    @include transition(opacity 0.25s ease);
+    background: $modal-background;
+    border-radius: $base-border-radius;
+    margin-top: 0;
+    margin: auto;
+    max-height: 95%;
+    overflow: auto;
+    padding: $modal-padding / 2;
+    position: relative;
+    width: 95%;
+
+    @include media($medium-screen) {
+      max-height: 70%;
+      padding: $modal-padding;
+      width: 60%;
+    }
+
+    @include media($large-screen) {
+      width: 50%;
+    }
+
+    h1 {
+      color: $base-font-color;
+      margin-bottom: 0.6em;
+      text-align: left;
+      text-transform: capitalize;
+    }
+
+    .modal-intro {
+      font-weight: 800;
+    }
+
+    .modal-content {
+      color: $base-font-color;
+
+      @include media($medium-screen) {
+        @include columns(2 8em);
+      }
+    }
+
+    a.cta {
+      color: white;
+      display: inline-block;
+      margin-right: 0.5em;
+      margin-top: 1em;
+
+      &:last-child {
+        padding: 0 2em;
+      }
+    }
+  }
+
+  .modal-state:checked + .modal-window {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal-state:checked + .modal-window .modal-inner {
+    top: 0.5em;
+  }
+}
+
+.modal-open {
+  overflow: scroll;
+}
