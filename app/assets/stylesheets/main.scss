@@ -455,3 +455,40 @@ input[type="submit"]:hover {
 .modal-open {
   overflow: scroll;
 }
+@-webkit-keyframes pulse {
+ 0% {
+ -webkit-transform: scale(1, 1);
+}
+ 50% {
+ -webkit-transform: scale(1.15, 1.15);
+}
+ 100% {
+ -webkit-transform: scale(1, 1);
+};
+}
+
+@keyframes pulse {
+ 0% {
+ transform: scale(1, 1);
+}
+ 50% {
+ transform: scale(1.15, 1.15);
+}
+ 100% {
+transform: scale(1, 1);
+};
+}
+
+.fa-play {
+	width: 20px;
+	height: 20px;
+	-webkit-animation: pulse 1s linear infinite;
+	animation: pulse 1s linear infinite;
+}
+
+.fa-play:hover {
+	-webkit-animation: none;
+	animation:none;
+}
+
+
