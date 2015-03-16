@@ -10,7 +10,7 @@
       <div class="headphones-container">
 
         <div class="b1">HEAR <span>COLOR</span></div class="b1">
-        <p>Selma has synesthesia, which allows her to see colors when she hears music. See the world through her ears.<br><span>
+        <p>Selma has synesthesia, which allows her to see colors when she hears music. See the world through her ears by making a patch for her Grandma's quilt.<br><span>
         <i class="fa fa-headphones fa-2x"></i>
         Plug in headphones to begin</span></p>
         <button class="scn-btns">Listen</button>
@@ -31,6 +31,7 @@
       <div class="music-player"> 
         <i class="fa fa-play play-icon"></i>
       </div>
+      <div class="answer-square"></div>
 
         <!-- Question squares -->
       <div id="questions" class="hidden">
@@ -40,7 +41,6 @@
           <div id="square-2" class="square" ng-click="addSquareColor('#F25239')"></div>
           <div id="square-3" class="square" ng-click="addSquareColor('#B3BCBF')"></div>
           <div id="square-4" class="square" ng-click="addSquareColor('#FEBBCD')"></div>
-          <!-- <div id="square-5" class="square" ng-click="addSquareColor('transparent')"></div> -->
         </div>
       </div>
       <button class="scn-btns hidden">See your patch</button>
@@ -73,7 +73,7 @@
           <div class="quilt-square" ng-repeat="triangle in patch" style="border-top-color:{{triangle.topColor}};border-right-color:{{triangle.sideColor}};border-left-color:{{triangle.sideColor}};"></div>
         </div>
       </div>
-      <%#= link_to 'Home', root_path, class: 'back-button' %>
+      <%= link_to 'Home', root_path, class: 'scn-btns' %>
     </article>
 
 

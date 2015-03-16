@@ -37,7 +37,7 @@ body {
     font-family: $font-stack;
     font-size: 1.25em;
     text-align: center;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     color: $grey;
     background-color: $navigation-color;
     padding: 10px;
@@ -70,6 +70,7 @@ body {
 
   span {
   color: #F25239;
+  text-transform: uppercase;
   }
 }
 
