@@ -1,6 +1,6 @@
 $(function(){  
 
-  var clickCount = -0.5;
+  // var clickCount = -0.5;
 
   var audioReady = function () {
     // sets soundcloud api id
@@ -13,10 +13,11 @@ $(function(){
     // Binds playback counter to a constantly running number
     this.on('timeupdate', function (position, duration) {
       track_position = Math.floor(position);
+      console.log(track_position);
       if (track_position % 3 == 0 && track_position > 0 && track_position != current_position){
         // Checks to make sure color squares do not load more than once for the same time position
         current_position = track_position;
-        $('#questions').removeClass('httpsidden');
+        $('#questions').removeClass('hidden');
         $('#questions p').addClass('expand');
         $('.square').addClass('pop-up');
       };
