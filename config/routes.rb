@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'notes/index'
+
+  get 'notes/new'
+
+  get 'notes/create'
+
   get 'dots/counter'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
