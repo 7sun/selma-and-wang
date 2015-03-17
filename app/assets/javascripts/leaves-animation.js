@@ -87,22 +87,32 @@ $(function(){
 	    /* Randomly choose a spin animation */
 	    var spinAnimationName = (Math.random() < 0.5) ? 'clockwiseSpin' : 'counterclockwiseSpinAndFlip';
 	    
-	    /* Set the -webkit-animation-name property with these values */
+	    /* Set the animation-name property with these values */
 	    leafDiv.style.webkitAnimationName = 'fade, drop';
+	    // leafDiv.style.animationName = 'fade, drop';
+	    leafDiv.style.MozAnimationName = 'fade, drop';
 	    leafColor.style.webkitAnimationName = spinAnimationName;
+	    // leafColor.style.animationName = spinAnimationName;
+	    leafColor.style.MozAnimationName = spinAnimationName;
 	    
 	    /* Figure out a random duration for the fade and drop animations */
 	    var fadeAndDropDuration = durationValue(randomFloat(56, 74));
 	    
 	    /* Figure out another random duration for the spin animation */
 	    var spinDuration = durationValue(randomFloat(4, 8));
-	    /* Set the -webkit-animation-duration property with these values */
+	    /* Set the animation-duration property with these values */
 	    leafDiv.style.webkitAnimationDuration = fadeAndDropDuration + ', ' + fadeAndDropDuration;
+	    // leafDiv.style.animationDuration = fadeAndDropDuration + ', ' + fadeAndDropDuration;
+	    leafDiv.style.MozAnimationDuration = fadeAndDropDuration + ', ' + fadeAndDropDuration;
 
 	    var leafDelay = durationValue(randomFloat(0, 5));
 	    leafDiv.style.webkitAnimationDelay = leafDelay + ', ' + leafDelay;
+	    // leafDiv.style.animationDelay = leafDelay + ', ' + leafDelay;
+	    leafDiv.style.MozAnimationDelay = leafDelay + ', ' + leafDelay;
 
 	    leafColor.style.webkitAnimationDuration = spinDuration;
+	    // leafColor.style.animationDuration = spinDuration;
+	    leafColor.style.MozAnimationDuration = spinDuration;
 
 	    // add the <img> to the <div>
 	    leafDiv.appendChild(leafColor);
