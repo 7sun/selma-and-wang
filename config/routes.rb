@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'dots/counter'
+  resources :notes
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'application#index'

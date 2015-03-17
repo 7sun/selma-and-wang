@@ -1,0 +1,10 @@
+<div class='notes-containter'>
+<% @note.each do |n| %>
+<div class="item"> 
+  From: <%= n.name %>
+  <br>
+  <br>
+  <%= n.text %>
+</div>
+<% end %>
+</div>

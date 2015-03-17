@@ -10,6 +10,7 @@
   <%= javascript_include_tag 'application' %>
   <script src="https://cdn.firebase.com/libs/angularfire/0.9.2/angularfire.min.js"></script>
   <script src='https://cdn.jsdelivr.net/filesaver.js/0.2/FileSaver.js'></script>
+  <script src="/path/to/masonry.pkgd.min.js"></script>
   <meta name="viewport" content="width=device-width">
   <!-- <meta name="viewport" content="maximum-scale=1"> -->
   <%= favicon_link_tag 'selmaicon.ico' %>
@@ -52,9 +53,11 @@
       <div class="modal-window">
         <div class="modal-inner">
             <label class="modal-close" for="modal-1"></label>
-              <h1>Modal Title</h1>
-                <p class="modal-intro">Intro text lorem ipsum dolor sit ametm, quas, eaque facilis aliquid cupiditate tempora cumque ipsum accusantium illo modi commodi  minima.</p>
-                <p class="modal-content">Body text lorem ipsum dolor ipsum dolor sit sit possimus amet, consectetur adipisicing elit. Itaque, placeat, explicabo, veniam quos aperiam molestias eriam molestias molestiae suscipit ipsum enim quasi sit possimus quod atque nobis voluptas earum odit accusamus quibusdam. Body text lorem ipsum dolor ipsum dolor sit sit possimus amet.</p>
+              <%= form_for Note.new() do |f| %>
+                <%= f.text_field :name %>
+                <%= f.text_area :text %>
+                <%= f.submit %>
+              <% end %>
         </div>
       </div>
   </div>
