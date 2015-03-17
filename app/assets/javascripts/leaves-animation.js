@@ -1,7 +1,7 @@
 $(function(){
 
 	/* Define the number of leaves to be used in the animation */
-	const NUMBER_OF_LEAVES = 400;
+	const NUMBER_OF_LEAVES = 300;
 
 	/* 
 	    Called when the "Falling Leaves" page is completely loaded.
@@ -40,7 +40,7 @@ $(function(){
 	*/
 	function pixelValue(value)
 	{
-	    return value + 'px';
+	    return value + 'vw';
 	}
 
 	/*
@@ -82,7 +82,7 @@ $(function(){
 	    leafDiv.style.top = (Math.floor(Math.random() * (-5000 + -20) -20)).toString() + "px"
 
 	    /* Position the leaf at a random location along the screen */
-	    leafDiv.style.left = pixelValue(randomInteger(0, 1400));
+	    leafDiv.style.left = pixelValue(randomInteger(-5, 105));
 	    
 	    /* Randomly choose a spin animation */
 	    var spinAnimationName = (Math.random() < 0.5) ? 'clockwiseSpin' : 'counterclockwiseSpinAndFlip';
