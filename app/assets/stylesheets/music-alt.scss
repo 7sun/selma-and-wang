@@ -49,26 +49,26 @@ body {
       max-width: 29.2vh;
     }
   }
-  button {
-      // 
-      @include button(flat, $navigation-color);
-      appearance: none;
-      user-select: none;
-      display: inline;
-      text-align: center;
-      color: $accent-three;
-      background-color: $navigation-color;
-      font-family: $font-stack;
-      font-size: 1.25em;
-      font-weight: 900;
-      margin-top: 20px;
-      padding: 1em;
-      text-transform: uppercase;
+  // button {
+  //     // 
+  //     @include button(flat, $navigation-color);
+  //     appearance: none;
+  //     user-select: none;
+  //     display: inline;
+  //     text-align: center;
+  //     color: $accent-three;
+  //     background-color: $navigation-color;
+  //     font-family: $font-stack;
+  //     font-size: 1.25em;
+  //     font-weight: 900;
+  //     margin-top: 20px;
+  //     padding: 1em;
+  //     text-transform: uppercase;
 
-      &:hover {
-        color: $grey;
-      }
-    }
+  //     &:hover {
+  //       color: $grey;
+  //     }
+  //   }
   }
 
 .headphones-container{
@@ -215,19 +215,20 @@ body {
 
 #dream-patch {
   // margin: -2vh auto;
-  margin: 40px auto 160px;
+    margin: 8vh auto 2vh;
   display: inline-block;
-  height: 420px;
+  // height: 420px;
+  height: 45vh;
 }
 
 .answer-square {
   float: left;
-  // width: 20vw;
-  // height: 20vw;
-  // border-top: 20vw solid transparent;
-  width: 140px;
-  height: 140px;
-  border-top: 140px solid transparent;
+  width: 15vh;
+  height: 15vh;
+  border-top: 15vh solid transparent;
+  // width: 140px;
+  // height: 140px;
+  // border-top: 140px solid transparent;
 }
 
 .answer-square:nth-child(2n+1){
@@ -405,14 +406,21 @@ div:nth-of-type(n+22):nth-of-type(-n+24){
   padding: 1vh;
   color: #5a6465;
   display: block;
-  // width: 32vw;
-  width: 280px;
+  width: 30vh;
+  // width: 280px;
   margin: auto;
   /* margin-bottom: 399px; */
   background-color: rgba(255, 255, 255, 0.2);
   z-index: 9999;
   position: relative;
-  margin-top: -143px;
+  // margin-top: -143px;
+  font-size: 1.25em;
+}
+
+@include media($mobile){
+  #save {
+    font-size: 3.5vw;
+  }
 }
 
 

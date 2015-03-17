@@ -39,12 +39,12 @@ angular
     	if ( between(counter, 1, 3) || between(counter, 7, 9) || between(counter, 16, 18) || between(counter, 22, 24) ){
     		$('#answer-square-0').css({"borderTopColor": "transparent"});
     		// $('.answer-square').css({"borderRight": "20vw solid #9BCAE1"});
-    		$('.answer-square').css({"borderRight": "140px solid transparent"});
+    		$('.answer-square').css({"borderRight": "15vh solid transparent"});
     		inverse = false;
     	} else {
     		$('#answer-square-1').css({"borderTopColor": "transparent"});
     		// $('.answer-square').css({"borderLeft": "20vw solid #9BCAE1"});
-    		$('.answer-square').css({"borderLeft": "140px solid transparent"});
+    		$('.answer-square').css({"borderLeft": "15vh solid transparent"});
     		inverse = true;
     	}
     	setInverse(inverse)
@@ -64,12 +64,12 @@ angular
 	    if (clickCount % 1 == 0){
 	    	if (inverse){
 	    		// $('#answer-square-' + clickCountString).css({"borderLeft": "20vw solid " + color});
-	    		$('#answer-square-' + clickCountString).css({"borderLeft": "140px solid " + color});
+	    		$('#answer-square-' + clickCountString).css({"borderLeft": "15vh solid " + color});
 	    		dbsquares[Math.floor(clickCount)].sideColor = color;
 	    	} else {
 	    		// $('#answer-square-' + clickCountString).css({"borderRight": "20vw solid transparent"}); NOT NEEDED FOR CURRENT BUILD
 		      // $('#answer-square-' + clickCountString).css({"borderTop": "20vw solid " + color});
-		      $('#answer-square-' + clickCountString).css({"borderTop": "140px solid " + color});
+		      $('#answer-square-' + clickCountString).css({"borderTop": "15vh solid " + color});
 		      dbsquares[Math.floor(clickCount)].topColor = color;
 	    	}
 	      console.log(clickCount);
@@ -78,11 +78,11 @@ angular
 	    } else if (clickCount % 1 == 0.5){
 	    	if (inverse){
 	    		// $('#answer-square-' + clickCountString).css({"borderTop": "20vw solid " + color});
-	    		$('#answer-square-' + clickCountString).css({"borderTop": "140px solid " + color});
+	    		$('#answer-square-' + clickCountString).css({"borderTop": "15vh solid " + color});
 	    		dbsquares[Math.floor(clickCount)].topColor = color;
 	    	} else {
 	      	// $('#answer-square-' + clickCountString).css({"borderRight": "20vw solid " + color});
-	      	$('#answer-square-' + clickCountString).css({"borderRight": "140px solid " + color});
+	      	$('#answer-square-' + clickCountString).css({"borderRight": "15vh solid " + color});
 	      	dbsquares[Math.floor(clickCount)].sideColor = color;
 	      }
 	      console.log(clickCount);
