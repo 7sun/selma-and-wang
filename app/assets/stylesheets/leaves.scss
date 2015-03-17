@@ -16,9 +16,9 @@
        Each of these properties takes two values. These values respectively match a setting
        for fade and drop.
     */
-    -webkit-animation-iteration-count: infinite, infinite;
-    -webkit-animation-direction: normal, normal;
-    -webkit-animation-timing-function: linear, ease-in;
+    @include animation-iteration-count(infinite, infinite);
+    @include animation-direction(normal, normal);
+    @include animation-timing-function(linear, ease-in);
 }
 
 /* This CSS rule is applied to all img elements directly inside div elements which are
@@ -38,15 +38,15 @@
        The createALeaf function in the Leaves.js file determines whether a leaf has the 
        clockwiseSpin or counterclockwiseSpinAndFlip animation.
     */
-     -webkit-animation-iteration-count: infinite;
-     -webkit-animation-direction: alternate;
-     -webkit-animation-timing-function: ease-in-out;
-     -webkit-transform-origin: 50% -100%;
+     @include animation-iteration-count(infinite);
+     @include animation-direction(alternate);
+     @include animation-timing-function(ease-in-out);
+     @include transform-origin(50% -100%);
 }
 
 
 /* Hides a leaf towards the very end of the animation */
-@-webkit-keyframes fade
+@include keyframes(fade)
 {
 //     /* Show a leaf while into or below 95 percent of the animation and hide it, otherwise */
     0%   { opacity: 1; }
@@ -56,29 +56,29 @@
 
 
 /* Makes a leaf fall from -300 to 600 pixels in the y-axis */
-@-webkit-keyframes drop
+@include keyframes(drop)
 {
     /* Move a leaf to -300 pixels in the y-axis at the start of the animation */
-    0%   { -webkit-transform: translate(0px, -10px); }
+    0%   { @include transform(translate(0px, -10px)); }
     /* Move a leaf to 600 pixels in the y-axis at the end of the animation */
-    100% { -webkit-transform: translate(0px, 5050px); }
+    100% { @include transform(translate(0px, 5050px)); }
 }
 
 /* Rotates a leaf from -50 to 50 degrees in 2D space */
-@-webkit-keyframes clockwiseSpin
+@include keyframes(clockwiseSpin)
 {
     /* Rotate a leaf by -50 degrees in 2D space at the start of the animation */
-    0%   { -webkit-transform: rotate(-50deg); }
+    0%   { @include transform(rotate(-50deg)); }
     /*  Rotate a leaf by 50 degrees in 2D space at the end of the animation */
-    100% { -webkit-transform: rotate(50deg); }
+    100% { @include transform(rotate(50deg)); }
 }
 
 
 /* Flips a leaf and rotates it from 50 to -50 degrees in 2D space */
-@-webkit-keyframes counterclockwiseSpinAndFlip 
+@include keyframes(counterclockwiseSpinAndFlip)
 {
     /* Flip a leaf and rotate it by 50 degrees in 2D space at the start of the animation */
-    0%   { -webkit-transform: scale(-1, 1) rotate(50deg); }
+    0%   { @include transform(scale(-1, 1) rotate(50deg)); }
     /* Flip a leaf and rotate it by -50 degrees in 2D space at the end of the animation */
-    100% { -webkit-transform: scale(-1, 1) rotate(-50deg); }
+    100% { @include transform(scale(-1, 1) rotate(-50deg)); }
 }

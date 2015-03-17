@@ -32,17 +32,22 @@ body {
   p {
     // Web View until '@include media()'
     display: block;
-    margin: 20px auto;
+    margin: 1.2vh auto;
     // margin-top: -5px;
     font-family: $font-stack;
-    font-size: 1.25em;
+    font-size: 1.8vh;
     text-align: center;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     color: $grey;
     background-color: $navigation-color;
     padding: 10px;
     border-radius: 3px;
-    max-width: 50vw;
+    max-width: 59.6vh;
+  }
+  @include media($mobile1){
+    p {
+      max-width: 29.2vh;
+    }
   }
   button {
       // 
@@ -70,6 +75,7 @@ body {
 
   span {
   color: #F25239;
+  text-transform: uppercase;
   }
 }
 
@@ -81,20 +87,28 @@ body {
   // @include span-columns(8);
   // text-align: center;
   // margin-left: 15vw;
-
   .squares {
     // display: inline;
     margin: 0 auto 50px;
-
-  .square {
-    width: 17vh;
-    height: 17vh;
-    margin: 1.2vh;
-    border-radius: 5px;
-    display: inline-block;
-    // float: left;
+    max-width: 60.8vh;
+    .square {
+      width: 14vh;
+      height: 14vh;
+      margin: 1.2vh 0.6vh;
+      border-radius: 5px;
+      // display: inline-block;
+      float: left;
+    }
   }
- }
+  @include media($mobile1) {
+    .squares {
+        margin: 0 auto 50px;
+        max-width: 30.4vh;
+      .square:nth-child(2n+1) {
+        clear: both;
+      }    
+    }
+  }
 }
 
 .pop-up {
@@ -166,23 +180,24 @@ body {
 }
 
 .music-player {
-  margin: 5vh auto -30vh;
-  width: 400px;
-  height: 375px;
+  margin: 16vh auto -30vh;
+  // width: 400px;
+  height: 46vh;
   background-repeat: no-repeat;
   text-align: center;
   
   i {
     color: darkorange;
-    font-size: 19vh;
+    font-size: 14vh;
   }
 }
 
-.music-player:hover {}
+@include media($mobile1){
+  .music-player {
+    margin: 5vh auto -30vh;
+  }
+}
 
-// #sc-widget {
-//   display: none;
-// }
 
 //DREAM PATCH //////////////////////////////////////////////////////
 
@@ -229,7 +244,7 @@ body {
   background-position: 8px 2px;
   border-radius: 5px;
   border: 5px solid #F25239;
-  // The most recently added patch pulses
+  // The most recently added patch is revealed (fades in)
   .quilt-patch:nth-last-child(2) {
     opacity: 0.0;
   //   @include animation(pulsate 8s ease-out);
@@ -242,13 +257,13 @@ body {
   // }
 }
 
-.pulse {
+.reveal {
     opacity: 0.0;
-    @include animation(pulsate 5s ease-out);
+    @include animation(reveal 5s ease-out);
     @include animation-fill-mode(forwards);
     // @include animation-iteration-count(infinite); 
   }
-  @include keyframes(pulsate) {
+  @include keyframes(reveal) {
       0% {@include transform(scale(0.1, 0.1) opacity 0.0)}
       100% {opacity: 1.0;}
       // 100% {@include transform(scale(1.2, 1.2) opacity 0.0)}
