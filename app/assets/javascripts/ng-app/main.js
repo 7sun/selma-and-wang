@@ -90,13 +90,16 @@ angular
       }
 	  }
 
-    // Checks if patch is complete, then shows save button and patch.
+    // Checks if patch is complete, then shows save button and patch and stops the music.
 	  function checkForCompletePatch(){
 	    if (clickCount >= 5.5 || (clickCount >= 5 && inverse == false) ){
 	    	$('#save').removeClass('hidden');
 	      $('#dream-patch').removeClass('hidden');
 	      $('#scroll-link-2 button').removeClass('hidden');
 	      $('#to-quilt').removeClass('hidden');
+	      $('.music-player').addClass('hidden');
+	      // Stops the music from playing
+	      $('.play-icon').trigger('click');
 	      patchRef.set(dbsquares);
 	      patchRef.onDisconnect().cancel();
 	      // prepCanvas();
