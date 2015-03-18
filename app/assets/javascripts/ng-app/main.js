@@ -97,7 +97,7 @@ angular
 	      $('#dream-patch').removeClass('hidden');
 	      $('#scroll-link-2 button').removeClass('hidden');
 	      $('#to-quilt').removeClass('hidden');
-	      $('.music-player').addClass('hidden');
+	      $('.music-player').css({'display': 'none'});
 	      // Stops the music from playing
 	      $('.play-icon').trigger('click');
 	      patchRef.set(dbsquares);
