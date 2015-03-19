@@ -264,6 +264,10 @@ body {
   // }
 }
 
+.quilt-scenario {
+  padding: 40px 0px;
+}
+
 .reveal {
     opacity: 0.0;
     @include animation(reveal 5s ease-out);
