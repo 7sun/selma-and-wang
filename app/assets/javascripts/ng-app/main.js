@@ -8,10 +8,11 @@ angular
 		var dbsquares = [{topColor: "", sideColor: ""}, {topColor: "", sideColor: ""}, {topColor: "", sideColor: ""},
 										{topColor: "", sideColor: ""}, {topColor: "", sideColor: ""}, {topColor: "", sideColor: ""}]
 
-		// default squares to send to firebase in case of client disconnet to maintain patternsync
+		// default squares to send to firebase in case of client disconnet to maintain pattern sync
 		var dbDefaultSquares = [{topColor: "#AEE5F1", sideColor: "#FEBBCD"}, {topColor: "#B3BCBF", sideColor: "#AEE5F1"}, {topColor: "#FEBBCD", sideColor: "#B3BCBF"},
 										{topColor: "#F25239", sideColor: "#FEBBCD"}, {topColor: "#AEE5F1", sideColor: "#B3BCBF"}, {topColor: "#AEE5F1", sideColor: "#B3BCBF"}]
 		var ref = new Firebase("https://selmaandwang.firebaseio.com/patches");
+		var counterRef = ref.child("counter");
 		var patches = $firebase(ref).$asObject();
 		patches.$bindTo($scope, 'patches');
 
@@ -23,20 +24,31 @@ angular
 			return x >= min && x <= max;
 		}
 
-		var counterRef = ref.child("counter");
+
 		counterRef.once("value", function(snapshot) {
+			console.log(snapshot.val())
 			// sets local counter to match initial Firebase counter
 			counter = snapshot.val() + 1;
+			// Checks if quilt is full at 96 patches. If quilt is full, the patches database is reset.
+			if (counter == 97){
+				ref.remove();
+				counter = 1;
+			}
 			// Increases counter in Firebase by 1
 			counterRef.transaction(function(currentValue) {
 		  	return (currentValue || 0) + 1;
 			});
+			console.log("counter = " + counter);
 			setTransparentTriangles();
 		});
 
 	  // Sets which triangles will be taken out of the patch. Switches to create diamond pattern
 		function setTransparentTriangles(){
-    	if ( between(counter, 1, 3) || between(counter, 7, 9) || between(counter, 16, 18) || between(counter, 22, 24) ){
+    	if ( 
+    	between(counter, 1, 3) || between(counter, 7, 9) || between(counter, 13, 15) || between(counter, 19, 21) || between(counter, 28, 30) ||
+    	between(counter, 34, 36) || between(counter, 40, 42) || between(counter, 46, 51) || between(counter, 55, 57) || between(counter, 61, 63) ||
+    	between(counter, 67, 69) || between(counter, 73, 75) || between(counter, 79, 81) || between(counter, 88, 90) || between(counter, 94, 96)
+			){
     		$('#answer-square-0').css({"borderTopColor": "transparent"});
     		// $('.answer-square').css({"borderRight": "20vw solid #9BCAE1"});
     		$('.answer-square').css({"borderRight": "12vh solid transparent"});

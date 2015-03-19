@@ -237,20 +237,20 @@ body {
 
 
 #quilt {
-  // height: 95vw;
-  // width: 96vw;
+  height: 48vh;
+  width: 48vh;
   // background-image: url(http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef014e8827bb78970d-640wi);
   // background-repeat: no-repeat;
-  overflow-y: hidden; // Hide to remove overflow for effect
-  height: 504px;
-  width: 514px;
-  margin: 9vh auto;
-  background-image: url(http://i.imgur.com/XmPZZpY.jpg);
+  // height: 504px;
+  // width: 514px;
+  margin: 6vh auto;
+  // background-image: url(http://i.imgur.com/XmPZZpY.jpg);
   background-size: cover;
   overflow-y: hidden;
-  background-position: 8px 2px;
-  border-radius: 5px;
-  border: 5px solid #F25239;
+  // background-position: 8px 2px;
+  // border-radius: 5px;
+  // border: 5px solid #F25239;
+
   // The most recently added patch is revealed (fades in)
   .quilt-patch:nth-last-child(2) {
     opacity: 0.0;
@@ -282,18 +282,18 @@ body {
 // Patches 1-3
 .quilt-patch {
   float: left;
-  // width: 16vw;
-  width: 84px;
+  width: 4vh;
+  // width: 84px;
   .quilt-square {
     float: left;
-    // width: 8vw;
-    // height: 8vw;
-    // border-top: 8vw solid;
-    // border-right: 8vw solid;
-    width: 42px;
-    height: 42px;
-    border-top: 42px solid;
-    border-right: 42px solid;
+    width: 2vh;
+    height: 2vh;
+    border-top: 2vh solid;
+    border-right: 2vh solid;
+    // width: 42px;
+    // height: 42px;
+    // border-top: 42px solid;
+    // border-right: 42px solid;
   }
   .quilt-square:nth-child(6){
     border-right-color: transparent !important;
@@ -309,8 +309,8 @@ body {
 // Patches 4-6
 div:nth-of-type(n+4):nth-of-type(-n+6){
   .quilt-square {
-    // border-left: 8vw solid;
-    border-left: 42px solid;
+    border-left: 2vh solid;
+    // border-left: 42px solid;
     border-right-width: none; // Comment out for random pattern effect
     border-right-style: none; // Comment out for random pattern effect
   }
@@ -332,8 +332,8 @@ div:nth-of-type(n+7):nth-of-type(-n+9){
 // Patches 10-12
 div:nth-of-type(n+10):nth-of-type(-n+12){
   .quilt-square {
-    // border-left: 8vw solid;
-    border-left: 42px solid;
+    border-left: 2vh solid;
+    // border-left: 42px solid;
     border-right-width: none; // Comment out for random pattern effect
     border-right-style: none; // Comment out for random pattern effect
   }
@@ -347,32 +347,39 @@ div:nth-of-type(n+10):nth-of-type(-n+12){
 
 // Patches 13-15
 div:nth-of-type(n+13):nth-of-type(-n+15){
-  .quilt-square {
-    // border-left: 8vw solid;
-    border-left: 42px solid;
-    border-right-width: none; // Comment out for random pattern effect
-    border-right-style: none; // Comment out for random pattern effect
-  }
-  .quilt-square:nth-child(2){
+  .quilt-square:nth-child(1){
     border-top-color: transparent !important;
-  }
-  .quilt-square:nth-child(5){
-    border-left-color: transparent !important;
   }
 }
 
 // Patches 16-18
 div:nth-of-type(n+16):nth-of-type(-n+18){
-  .quilt-square:nth-child(1){
+  .quilt-square {
+    border-left: 2vh solid;
+    // border-left: 42px solid;
+    border-right-width: none; // Comment out for random pattern effect
+    border-right-style: none; // Comment out for random pattern effect
+  }
+  .quilt-square:nth-child(5){
+    border-left-color: transparent !important;
+  }
+  .quilt-square:nth-child(2){
     border-top-color: transparent !important;
   }
 }
 
 // Patches 19-21
 div:nth-of-type(n+19):nth-of-type(-n+21){
+  .quilt-square:nth-child(1){
+    border-top-color: transparent !important;
+  }
+}
+
+// Patches 22-24
+div:nth-of-type(n+22):nth-of-type(-n+24){
   .quilt-square {
-    // border-left: 8vw solid;
-    border-left: 42px solid;
+    border-left: 2vh solid;
+    // border-left: 42px solid;
     border-right-width: none; // Comment out for random pattern effect
     border-right-style: none; // Comment out for random pattern effect
   }
@@ -384,18 +391,287 @@ div:nth-of-type(n+19):nth-of-type(-n+21){
   }
 }
 
-// Patches 22-24
-div:nth-of-type(n+22):nth-of-type(-n+24){
+
+// Patches 25-27
+div:nth-of-type(n+25):nth-of-type(-n+27){
+  .quilt-square {
+    border-left: 2vh solid;
+    // border-left: 42px solid;
+    border-right-width: none; // Comment out for random pattern effect
+    border-right-style: none; // Comment out for random pattern effect
+  }
+  .quilt-square:nth-child(2){
+    border-top-color: transparent !important;
+  }
+  .quilt-square:nth-child(5){
+    border-left-color: transparent !important;
+  }
+}
+
+// Patches 28-30
+div:nth-of-type(n+28):nth-of-type(-n+30){
   .quilt-square:nth-child(1){
     border-top-color: transparent !important;
   }
 }
 
-// alt-quilt-patterns
+// Patches 31-33
+div:nth-of-type(n+31):nth-of-type(-n+33){
+  .quilt-square {
+    border-left: 2vh solid;
+    // border-left: 42px solid;
+    border-right-width: none; // Comment out for random pattern effect
+    border-right-style: none; // Comment out for random pattern effect
+  }
+  .quilt-square:nth-child(5){
+    border-left-color: transparent !important;
+  }
+  .quilt-square:nth-child(2){
+    border-top-color: transparent !important;
+  }
+}
 
-// .quilt-square:nth-child(2n+1){
-//   clear: left;
-// }
+// Patches 34-36
+div:nth-of-type(n+34):nth-of-type(-n+36){
+  .quilt-square:nth-child(1){
+    border-top-color: transparent !important;
+  }
+}
+
+
+// Patches 37-39
+div:nth-of-type(n+37):nth-of-type(-n+39){
+  .quilt-square {
+    border-left: 2vh solid;
+    // border-left: 42px solid;
+    border-right-width: none; // Comment out for random pattern effect
+    border-right-style: none; // Comment out for random pattern effect
+  }
+  .quilt-square:nth-child(2){
+    border-top-color: transparent !important;
+  }
+  .quilt-square:nth-child(5){
+    border-left-color: transparent !important;
+  }
+}
+
+// Patches 40-42
+div:nth-of-type(n+40):nth-of-type(-n+42){
+  .quilt-square:nth-child(1){
+    border-top-color: transparent !important;
+  }
+}
+
+// Patches 43-45
+div:nth-of-type(n+43):nth-of-type(-n+45){
+  .quilt-square {
+    border-left: 2vh solid;
+    // border-left: 42px solid;
+    border-right-width: none; // Comment out for random pattern effect
+    border-right-style: none; // Comment out for random pattern effect
+  }
+  .quilt-square:nth-child(5){
+    border-left-color: transparent !important;
+  }
+  .quilt-square:nth-child(2){
+    border-top-color: transparent !important;
+  }
+}
+
+// Patches 46-48
+div:nth-of-type(n+46):nth-of-type(-n+48){
+  .quilt-square:nth-child(1){
+    border-top-color: transparent !important;
+  }
+}
+
+// Patches 49-51
+div:nth-of-type(n+49):nth-of-type(-n+51){
+  .quilt-square:nth-child(1){
+    border-top-color: transparent !important;
+  }
+}
+
+// Patches 52-54
+div:nth-of-type(n+52):nth-of-type(-n+54){
+  .quilt-square {
+    border-left: 2vh solid;
+    // border-left: 42px solid;
+    border-right-width: none; // Comment out for random pattern effect
+    border-right-style: none; // Comment out for random pattern effect
+  }
+  .quilt-square:nth-child(5){
+    border-left-color: transparent !important;
+  }
+  .quilt-square:nth-child(2){
+    border-top-color: transparent !important;
+  }
+}
+
+// Patches 55-57
+div:nth-of-type(n+55):nth-of-type(-n+57){
+  .quilt-square:nth-child(1){
+    border-top-color: transparent !important;
+  }
+}
+
+// Patches 58-60
+div:nth-of-type(n+58):nth-of-type(-n+60){
+  .quilt-square {
+    border-left: 2vh solid;
+    // border-left: 42px solid;
+    border-right-width: none; // Comment out for random pattern effect
+    border-right-style: none; // Comment out for random pattern effect
+  }
+  .quilt-square:nth-child(5){
+    border-left-color: transparent !important;
+  }
+  .quilt-square:nth-child(2){
+    border-top-color: transparent !important;
+  }
+}
+
+// Patches 61-63
+div:nth-of-type(n+61):nth-of-type(-n+63){
+  .quilt-square:nth-child(1){
+    border-top-color: transparent !important;
+  }
+}
+
+// Patches 64-66
+div:nth-of-type(n+64):nth-of-type(-n+66){
+  .quilt-square {
+    border-left: 2vh solid;
+    // border-left: 42px solid;
+    border-right-width: none; // Comment out for random pattern effect
+    border-right-style: none; // Comment out for random pattern effect
+  }
+  .quilt-square:nth-child(5){
+    border-left-color: transparent !important;
+  }
+  .quilt-square:nth-child(2){
+    border-top-color: transparent !important;
+  }
+}
+
+// Patches 67-69
+div:nth-of-type(n+67):nth-of-type(-n+69){
+  .quilt-square:nth-child(1){
+    border-top-color: transparent !important;
+  }
+}
+
+// Patches 70-72
+div:nth-of-type(n+70):nth-of-type(-n+72){
+  .quilt-square {
+    border-left: 2vh solid;
+    // border-left: 42px solid;
+    border-right-width: none; // Comment out for random pattern effect
+    border-right-style: none; // Comment out for random pattern effect
+  }
+  .quilt-square:nth-child(5){
+    border-left-color: transparent !important;
+  }
+  .quilt-square:nth-child(2){
+    border-top-color: transparent !important;
+  }
+}
+
+// Patches 73-75
+div:nth-of-type(n+73):nth-of-type(-n+75){
+  .quilt-square {
+    border-left: 2vh solid;
+    // border-left: 42px solid;
+    border-right-width: none; // Comment out for random pattern effect
+    border-right-style: none; // Comment out for random pattern effect
+  }
+  .quilt-square:nth-child(2){
+    border-top-color: transparent !important;
+  }
+  .quilt-square:nth-child(5){
+    border-left-color: transparent !important;
+  }
+}
+
+// Patches 76-78
+div:nth-of-type(n+76):nth-of-type(-n+78){
+  .quilt-square:nth-child(1){
+    border-top-color: transparent !important;
+  }
+}
+
+// Patches 79-81
+div:nth-of-type(n+79):nth-of-type(-n+81){
+  .quilt-square {
+    border-left: 2vh solid;
+    // border-left: 42px solid;
+    border-right-width: none; // Comment out for random pattern effect
+    border-right-style: none; // Comment out for random pattern effect
+  }
+  .quilt-square:nth-child(5){
+    border-left-color: transparent !important;
+  }
+  .quilt-square:nth-child(2){
+    border-top-color: transparent !important;
+  }
+}
+
+// Patches 82-84
+div:nth-of-type(n+82):nth-of-type(-n+84){
+  .quilt-square:nth-child(1){
+    border-top-color: transparent !important;
+  }
+}
+
+
+// Patches 85-87
+div:nth-of-type(n+85):nth-of-type(-n+87){
+  .quilt-square {
+    border-left: 2vh solid;
+    // border-left: 42px solid;
+    border-right-width: none; // Comment out for random pattern effect
+    border-right-style: none; // Comment out for random pattern effect
+  }
+  .quilt-square:nth-child(2){
+    border-top-color: transparent !important;
+  }
+  .quilt-square:nth-child(5){
+    border-left-color: transparent !important;
+  }
+}
+
+// Patches 88-90
+div:nth-of-type(n+88):nth-of-type(-n+90){
+  .quilt-square:nth-child(1){
+    border-top-color: transparent !important;
+  }
+}
+
+// Patches 91-93
+div:nth-of-type(n+91):nth-of-type(-n+93){
+  .quilt-square {
+    border-left: 2vh solid;
+    // border-left: 42px solid;
+    border-right-width: none; // Comment out for random pattern effect
+    border-right-style: none; // Comment out for random pattern effect
+  }
+  .quilt-square:nth-child(5){
+    border-left-color: transparent !important;
+  }
+  .quilt-square:nth-child(2){
+    border-top-color: transparent !important;
+  }
+}
+
+// Patches 94-96
+div:nth-of-type(n+94):nth-of-type(-n+96){
+  .quilt-square:nth-child(1){
+    border-top-color: transparent !important;
+  }
+}
+
+
+// END OF QUILT //////////////////////////////////////////////////////////////
 
 #img-out {
   display: none;
