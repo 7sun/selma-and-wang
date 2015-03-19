@@ -43,6 +43,18 @@ body {
   }
 }
 
+#main-logo {
+  max-width: 75%;
+  margin-left: 12.5%;
+  margin-top: 10vh;
+
+  @include media($mobile) {
+    max-width: 90%;
+    margin-left: 5%;
+    margin-top: 20vh;
+  }
+}
+
 .thingy {
   width: 100%;
   height: 100%;

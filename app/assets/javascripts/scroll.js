@@ -42,11 +42,11 @@ $(document).ready(function() {
       } if (index == 2) {
         $("body").css("background-color","#9fe1c3");
       } if (index == 3) {
-        $("body").css("background-color","#9bcae1");
+        $("body").css("background-color","#F15A29");
       } if (index == 4){
-        $("body").css("background-color","#c8a3e1");
+        $("body").css("background-color","#F9ED32");
       } if (index == 5){
-        $("body").css("background-color","#e1858e");
+        $("body").css("background-color","#64818F");
       } if (index == 6) {
         $("body").css("background-color","#e1b888");
       } if (index == 7) {
