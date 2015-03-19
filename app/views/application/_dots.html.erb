@@ -32,7 +32,7 @@
      var a = snapshot.val();
      for (var key in a) { 
        var obj = a[key];
-       whoa(obj.x, obj.y, obj.color, obj.segment, false)
+       whoa(obj.x, obj.y, obj.color, obj.width, obj.height, false)
      }
      loaded = false;
    } else {
@@ -43,18 +43,18 @@
      if (loaded === false) { 
      var aa = snapshot.val();
        var ob = aa;
-       whoa(ob.x, ob.y, ob.color, ob.segment, true)
+       whoa(ob.x, ob.y, ob.color, ob.width, ob.height, true)
      }
    });
 
 
     
    // function for drawing the dots on the page
-   function whoa(x,y,color,segment,pulse) {
+   function whoa(x,y,color,width,height,pulse) {
      console.log(pulse)
      var point = new Point(x,y)
      var myCircle = new Path.Ellipse({
-       size: [20,25] ,
+       size: [width,height] ,
        center: point,
        fillColor: color 
      });
@@ -83,15 +83,19 @@
      var y = Math.floor((Math.random() * 800) + 100);
      var math = Math.random();
      if (math > 0.75) {
-       var segment = 1 
+       var width = 20 
+       var height = 25
      } else if (math < 0.75 && math > 0.50) {
-       var segment = 2
+       var width =  25
+       var height = 29
      } else if (math < 0.50 && math > 0.25) {
-       var segment = 3 
+       var width =  15
+       var height = 18
      } else {
-       var segment = 0
+       var width =  30
+       var height = 36
      }
-     myDataRef.push({ x: x, y: y, color: color,segment: segment})
+     myDataRef.push({ x: x, y: y, color: color,width: width,height: height})
      console.log(x,y)
    
     }
