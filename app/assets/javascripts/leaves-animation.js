@@ -1,7 +1,7 @@
 $(function(){
 
 	/* Define the number of leaves to be used in the animation */
-	const NUMBER_OF_LEAVES = 300;
+	const NUMBER_OF_LEAVES = 140;
 
 	/* 
 	    Called when the "Falling Leaves" page is completely loaded.

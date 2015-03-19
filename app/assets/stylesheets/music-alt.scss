@@ -32,7 +32,7 @@ body {
   p {
     // Web View until '@include media()'
     display: block;
-    margin: 1.2vh auto;
+    margin: 0 auto 1.2vh;
     // margin-top: -5px;
     font-family: $font-stack;
     font-size: 1.8vh;
@@ -46,7 +46,7 @@ body {
   }
   @include media($mobile1){
     p {
-      max-width: 29.2vh;
+      max-width: 30vh;
     }
   }
   // button {
@@ -94,7 +94,7 @@ body {
     .square {
       width: 14vh;
       height: 14vh;
-      margin: 1.2vh 0.6vh;
+      margin: 1.5vh 1vh;
       border-radius: 5px;
       // display: inline-block;
       float: left;
@@ -103,7 +103,7 @@ body {
   @include media($mobile1) {
     .squares {
         margin: 0 auto 50px;
-        max-width: 30.4vh;
+        max-width: 32vh;
       .square:nth-child(2n+1) {
         clear: both;
       }    
@@ -151,7 +151,7 @@ body {
 
 #square-1 {
   background: linear-gradient(#AEE5F1, #98deed);
-  box-shadow: 0px 10px #83d7e9;
+  box-shadow: 0px 1.4vh #83d7e9;
   &:hover {
     background: linear-gradient(#AEE5F1, #98deed);
   }
@@ -159,7 +159,7 @@ body {
 
 #square-2 {
   background: linear-gradient(#F25239, #f03d21);
-  box-shadow: 0px 10px #e92d0f;
+  box-shadow: 0px 1.4vh #e92d0f;
   &:hover {
     background: linear-gradient(#F25239, #f03d21);
   }
@@ -167,7 +167,7 @@ body {
 
 #square-3 {
   background: linear-gradient(#B3BCBF, #a5b0b3);
-  box-shadow: 0px 10px #97a4a8;
+  box-shadow: 0px 1.4vh #97a4a8;
   &:hover {
     background: linear-gradient(#B3BCBF, #a5b0b3);
   }
@@ -175,7 +175,7 @@ body {
 
 #square-4 {
   background: linear-gradient(#FEBBCD, #fea2bb);
-  box-shadow: 0px 10px #fd89a8;
+  box-shadow: 0px 1.4vh #fd89a8;
   &:hover {
     background: linear-gradient(#FEBBCD, #fea2bb);
   }
