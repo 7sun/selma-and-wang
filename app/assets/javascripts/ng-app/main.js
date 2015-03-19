@@ -9,8 +9,11 @@ angular
 										{topColor: "", sideColor: ""}, {topColor: "", sideColor: ""}, {topColor: "", sideColor: ""}]
 
 		// default squares to send to firebase in case of client disconnet to maintain pattern sync
-		var dbDefaultSquares = [{topColor: "#AEE5F1", sideColor: "#FEBBCD"}, {topColor: "#B3BCBF", sideColor: "#AEE5F1"}, {topColor: "#FEBBCD", sideColor: "#B3BCBF"},
-										{topColor: "#F25239", sideColor: "#FEBBCD"}, {topColor: "#AEE5F1", sideColor: "#B3BCBF"}, {topColor: "#AEE5F1", sideColor: "#B3BCBF"}]
+				var dbDefaultSquares = [{topColor: "#515D63", sideColor: "#ED028C"}, {topColor: "#FFF101", sideColor: "#231F20"}, {topColor: "#ED028C", sideColor: "#FFF101"},
+										{topColor: "#231F20", sideColor: "#ED028C"}, {topColor: "#515D63", sideColor: "#FFF101"}, {topColor: "#515D63", sideColor: "#ED028C"}];
+										// Old Colors
+		// var dbDefaultSquares = [{topColor: "#AEE5F1", sideColor: "#FEBBCD"}, {topColor: "#B3BCBF", sideColor: "#AEE5F1"}, {topColor: "#FEBBCD", sideColor: "#B3BCBF"},
+		// 								{topColor: "#F25239", sideColor: "#FEBBCD"}, {topColor: "#AEE5F1", sideColor: "#B3BCBF"}, {topColor: "#AEE5F1", sideColor: "#B3BCBF"}];
 		var ref = new Firebase("https://selmaandwang.firebaseio.com/patches");
 		var counterRef = ref.child("counter");
 		var patches = $firebase(ref).$asObject();

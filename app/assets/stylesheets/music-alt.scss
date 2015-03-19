@@ -2,14 +2,20 @@
 
 $mobile: new-breakpoint(max-width 600px 6);
 $greenscreen: #A0E18F;
-$accent-one: #AEE5F1; // Light Blue
-$accent-two: #F25239; // Orange
-$accent-three: #B3BCBF; // Grey
-$accent-four: #FEBBCD; // Pink
+$accent-one: #515D63; // Steel Gray
+$accent-two: #ED028C; // Fuscia
+$accent-three: #FFF101; // Yellow
+$accent-four: #231F20; // Black
 $grey: #333333; // Grey
 $navigation-color: transparentize(white, 0.2);
 $navigation-color-hover: white;
 $font-stack: 'Oswald', Helvetica, sans-serif;
+
+// Old Accent Colors
+// $accent-one: #AEE5F1; // Light Blue
+// $accent-two: #F25239; // Orange
+// $accent-three: #B3BCBF; // Grey
+// $accent-four: #FEBBCD; // Pink
 
 body {
   font-family: $font-stack, sans-serif;
@@ -150,35 +156,23 @@ body {
 // square show animation
 
 #square-1 {
-  background: linear-gradient(#AEE5F1, #98deed);
-  box-shadow: 0px 1.4vh #83d7e9;
-  &:hover {
-    background: linear-gradient(#AEE5F1, #98deed);
-  }
+  background: linear-gradient($accent-one, #465055); // Steel Gray
+  box-shadow: 0px 1.4vh #3a4347;
 }
 
 #square-2 {
-  background: linear-gradient(#F25239, #f03d21);
-  box-shadow: 0px 1.4vh #e92d0f;
-  &:hover {
-    background: linear-gradient(#F25239, #f03d21);
-  }
+  background: linear-gradient($accent-two, #d4027d); // Fuscia
+  box-shadow: 0px 1.4vh #ba026e;
 }
 
 #square-3 {
-  background: linear-gradient(#B3BCBF, #a5b0b3);
-  box-shadow: 0px 1.4vh #97a4a8;
-  &:hover {
-    background: linear-gradient(#B3BCBF, #a5b0b3);
-  }
+  background: linear-gradient($accent-three, #e7da00); // Yellow
+  box-shadow: 0px 1.4vh #cdc200;
 }
 
 #square-4 {
-  background: linear-gradient(#FEBBCD, #fea2bb);
-  box-shadow: 0px 1.4vh #fd89a8;
-  &:hover {
-    background: linear-gradient(#FEBBCD, #fea2bb);
-  }
+  background: linear-gradient(#312b2c, $accent-four); // Black
+  box-shadow: 0px 1.4vh #000000;
 }
 
 .hidden {
@@ -193,7 +187,7 @@ body {
   text-align: center;
   
   i {
-    color: darkorange;
+    color: #90268F;
     font-size: 14vh;
   }
 }
