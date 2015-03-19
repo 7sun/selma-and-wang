@@ -47,7 +47,7 @@ angular
     	if ( 
     	between(counter, 1, 3) || between(counter, 7, 9) || between(counter, 13, 15) || between(counter, 19, 21) || between(counter, 28, 30) ||
     	between(counter, 34, 36) || between(counter, 40, 42) || between(counter, 46, 51) || between(counter, 55, 57) || between(counter, 61, 63) ||
-    	between(counter, 67, 69) || between(counter, 73, 75) || between(counter, 79, 81) || between(counter, 88, 90) || between(counter, 94, 96)
+    	between(counter, 67, 69) || between(counter, 76, 78) || between(counter, 82, 84) || between(counter, 88, 90) || between(counter, 94, 96)
 			){
     		$('#answer-square-0').css({"borderTopColor": "transparent"});
     		// $('.answer-square').css({"borderRight": "20vw solid #9BCAE1"});
