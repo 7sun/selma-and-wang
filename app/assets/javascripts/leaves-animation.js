@@ -77,8 +77,30 @@ $(function(){
 	    		return "aquamarine";
 	    	}
 	    }
+
+	    /* Randomly choose a leaf size and assign it to the newly created element */
+	    function pickLeafSize(){
+	    	var number = Math.floor(Math.random() * (5 - 1)) + 1;
+	    	if (number == 1){
+	    		return ["20px", "25px"];
+	    	}
+	    	else if (number == 2){
+	    		return ["32px", "40px"];
+	    	}
+	    	else if (number == 3){
+	    		return ["44px", "55px"];
+	    	}
+	    	else if (number == 4){
+	    		return ["56px", "70px"];
+	    	}
+
+	    }
+
+	    var leafSize = pickLeafSize();
+	    leafColor.style.width = leafSize[0];
+	    leafColor.style.height = leafSize[1];
 	    leafColor.style.backgroundColor = pickLeafColor();
-	    
+
 	    leafDiv.style.top = (Math.floor(Math.random() * (-5000 + -20) -20)).toString() + "px"
 
 	    /* Position the leaf at a random location along the screen */
