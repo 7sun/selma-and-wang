@@ -195,6 +195,8 @@ body {
 #myCanvas {
   margin-left: -100px;
   margin-top: -155px;
+  width: 100vw;
+  height: 100vh;
   position: fixed;
   z-index: -1;
 }
