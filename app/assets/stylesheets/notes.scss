@@ -1,8 +1,13 @@
 $mobile: new-breakpoint(max-width 640px 6);
+$mobile2: new-breakpoint(max-width 867px 12);
 
 span {
   font-size: .75em;
   color: #7F7F7F;
+}
+
+.guestbook {
+  overflow: scroll;
 }
 
 .item {
@@ -16,6 +21,11 @@ span {
   color: black;
   padding: 2%;
   overflow-y: scroll;
+
+  @include media($mobile2) {
+   @include span-columns(6);
+   
+  }
 
   @include media ($mobile) {
     @include span-columns(6);
