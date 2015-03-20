@@ -1,4 +1,4 @@
-$(function(){
+$(".soundcloud").ready(function(){
 
 	/* Define the number of leaves to be used in the animation */
 	const NUMBER_OF_LEAVES = 140;

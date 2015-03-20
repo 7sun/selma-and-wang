@@ -17,7 +17,7 @@
   <%= favicon_link_tag 'ios-selma-icon.png', rel: 'apple-touch-icon', type: 'image/png' %>
   <%= csrf_meta_tags %>
 </head>
-  <body class="<%= params[:controller] %>">
+  <body class="<%= params[:controller] %> <%= params[:action] %> ">
     <a href="/"><img class="bug" src="<%= asset_path('SnW_2a.svg')%>" alt="Logo Image"></a>
 
     <%= yield %>
