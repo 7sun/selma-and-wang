@@ -55,6 +55,22 @@
       <article id="scroll-link-4" class="scenarios">
         <div class="b1">FIN.<br></div>
           <div class="p1">Thanks for you input</div>
+          <ul>
+        <li for="modal-1"><a><label for="modal-1"> Join the mailing list</label></a></li>
+          </ul>
+           <div class="modal">
+              <input class="modal-state" id="modal-1" type="checkbox" />
+              <div class="modal-window">
+               <div class="modal-inner">
+                  <label class="modal-close" for="modal-1"></label>
+                  <%= form_for Note.new() do |f| %>
+                  <%= f.text_field :name %>
+                  <%= f.text_area :text %>
+                  <%= f.submit %>
+                  <% end %>
+                </div>
+              </div>
+          </div>
           <div class="scn-btns-container">
             <button class="scn-btns v1" id="a" >About</button>
             <!-- <button class="scn-btns v1" id="a" >Leave a Note</button> -->
