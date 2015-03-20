@@ -112,7 +112,7 @@ $(document).ready(function() {
 $(document).ready(function() {
   $( "#to-quilt" ).click(function() {
     $(".main").moveDown();
-    $( "#quilt .quilt-patch:nth-last-child(2)" ).addClass('pulse');
+    $( "#quilt .quilt-patch:nth-last-child(2)" ).addClass('reveal');
   });
 });
 
