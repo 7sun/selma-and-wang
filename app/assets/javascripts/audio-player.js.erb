@@ -3,7 +3,8 @@ $(function(){
   var audioReady = function () {
     // sets soundcloud api id
     var soundcloudID = "<%= ENV['SOUNDCLOUD_CLIENT_ID'] %>"
-    this.load('https://api.soundcloud.com/tracks/188155459/stream?client_id=' + soundcloudID);
+    this.load('https://api.soundcloud.com/tracks/170915304/stream?client_id=' + soundcloudID);
+    // Track # for Sam Gellaitry 188155459
     // maps trigger to play button
     var play_pause = document.querySelector('.play-icon');
     play_pause.addEventListener('click', playPause.bind(this));
@@ -11,7 +12,7 @@ $(function(){
     // Binds playback counter to a constantly running number
     this.on('timeupdate', function (position, duration) {
       track_position = Math.floor(position);
-      if (track_position % 1 == 0 && track_position > 0 && track_position != current_position){
+      if (track_position % 9 == 0 && track_position > 0 && track_position != current_position){
         // Checks to make sure color squares do not load more than once for the same time position
         current_position = track_position;
         $('#questions').removeClass('hidden');

@@ -35,26 +35,26 @@ body {
     // padding: 40px;
     // margin-top: 70px;
 
-  p {
-    // Web View until '@include media()'
-    display: block;
-    margin: 0 auto 1.2vh;
-    // margin-top: -5px;
-    font-family: $font-stack;
-    font-size: 1.8vh;
-    text-align: center;
-    // text-transform: uppercase;
-    color: $grey;
-    background-color: $navigation-color;
-    padding: 10px;
-    border-radius: 3px;
-    max-width: 59.6vh;
-  }
-  @include media($mobile1){
     p {
-      max-width: 30vh;
+      // Web View until '@include media()'
+      display: block;
+      margin: 0 auto 1.2vh;
+      // margin-top: -5px;
+      font-family: $font-stack;
+      font-size: 1.8vh;
+      text-align: center;
+      // text-transform: uppercase;
+      color: $grey;
+      background-color: $navigation-color;
+      padding: 10px;
+      border-radius: 3px;
+      max-width: 62vh;
     }
-  }
+    @include media($mobile1){
+      p {
+        max-width: 30vh;
+      }
+    }
   // button {
   //     // 
   //     @include button(flat, $navigation-color);
@@ -96,7 +96,7 @@ body {
   .squares {
     // display: inline;
     margin: 0 auto 50px;
-    max-width: 60.8vh;
+    max-width: 64vh;
     .square {
       width: 14vh;
       height: 14vh;
