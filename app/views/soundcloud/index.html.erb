@@ -9,7 +9,7 @@
     <article id="scroll-link-1" class="scenarios">
       <div class="headphones-container">
 
-        <div class="b1">HEAR <span>COLOR</span></div class="b1">
+        <div id="hear-color-title" class="b1">HEAR <span>COLOR</span></div class="b1">
         <p class="p1">Selma has synesthesia, which allows her to see colors when she hears music. See the world through her ears by making a patch for her Grandma's quilt.<br><span>
         <i class="fa fa-headphones fa-2x"></i>
         Plug in headphones to begin</span></p>
@@ -34,15 +34,15 @@
 
         <!-- Question squares -->
       <div id="questions" class="hidden">
-        <p>Which color do you imagine?</p>
+        <p>Pick a color for this moment</p>
         <div class="squares">
-          <div id="square-1" class="square" ng-click="addSquareColor('#AEE5F1')"></div>
-          <div id="square-2" class="square" ng-click="addSquareColor('#F25239')"></div>
-          <div id="square-3" class="square" ng-click="addSquareColor('#B3BCBF')"></div>
-          <div id="square-4" class="square" ng-click="addSquareColor('#FEBBCD')"></div>
+          <div id="square-1" class="square" ng-click="addSquareColor('#515D63')"></div>
+          <div id="square-2" class="square" ng-click="addSquareColor('#ED028C')"></div>
+          <div id="square-3" class="square" ng-click="addSquareColor('#FFF101')"></div>
+          <div id="square-4" class="square" ng-click="addSquareColor('#231F20')"></div>
         </div>
       </div>
-      <button class="scn-btns hidden">See your patch</button>
+      <button id="patch-btn" class="scn-btns hidden">See your patch</button>
     </article>
 
     <!-- Section 3 - Patch -->
@@ -55,15 +55,15 @@
         <section ng-repeat="square in squares" id="answer-square-{{$index}}" class="answer-square"></section>
       </div>
       <div class="patchbox">
-      <a download='dreampatch.png' id='save' class='hidden'>Download Wallpaper</a>
+      <!-- <a download='dreampatch.png' id='save' class='hidden'>Download Wallpaper</a> -->
       <div id='img-out'></div>
-      <button id="to-quilt" class="hidden">Add to Quilt</button>
+      <button id="to-quilt" class="scn-btns hidden">Add to Quilt</button>
       </div>
     </article>
 
     <!-- Section 4 - Quilt -->
     
-    <article id="scroll-link-4" class="scenarios">
+    <article id="scroll-link-4" class="scenarios quilt-scenario">
       <!-- Full quilt of all users patches -->
       <!-- <h2>Grandma's Quilt</h2> -->
       <!-- <p>Watch for other dreamers to add their patches.</p> -->
@@ -72,7 +72,8 @@
           <div class="quilt-square" ng-repeat="triangle in patch" style="border-top-color:{{triangle.topColor}};border-right-color:{{triangle.sideColor}};border-left-color:{{triangle.sideColor}};"></div>
         </div>
       </div>
-      <%= link_to 'Home', root_path, class: 'scn-btns' %>
+      <a download='dreampatch.png' id='save' class='hidden'>Download Wallpaper</a>
+      <%#= link_to 'Home', root_path, class: 'scn-btns' %>
     </article>
 
 
