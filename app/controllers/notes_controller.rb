@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
   def index
-    @note = Note.all
+    @note = Note.all.order(created_at: :desc)
   end
 
   def new
