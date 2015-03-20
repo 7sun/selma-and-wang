@@ -4,6 +4,7 @@ class SoundcloudController < ApplicationController
   end
 
   def quilt
+    render layout: 'basic_layout'
   end
 
 end
