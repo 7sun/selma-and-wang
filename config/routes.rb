@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :notes
-
+  resources :emails
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'application#index'
 
