@@ -1,10 +1,17 @@
+<div class="form-bk"></div>
+
+<div class="guestbook">
+
 <div class='notes-containter'>
-<% @note.each do |n| %>
-<div class="item"> 
-  From: <%= n.name %>
-  <br>
-  <br>
-  <%= n.text %>
+	<% @note.each do |n| %>
+		<div class="item"> 
+		  <%= n.text %>
+		  <br>
+		  <span>From:</span> <%= n.name %>
+		</div>
+	<% end %>
 </div>
-<% end %>
+
 </div>
+
+<img class="thingy2" src="<%= asset_path('testshape.svg')%>" alt="Logo Image">
