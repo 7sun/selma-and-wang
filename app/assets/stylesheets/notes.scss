@@ -1,15 +1,48 @@
+$mobile: new-breakpoint(max-width 640px 6);
+$mobile2: new-breakpoint(max-width 867px 12);
+
+span {
+  font-size: .75em;
+  color: #7F7F7F;
+}
+
+.guestbook {
+  overflow: scroll;
+}
+
 .item {
-  width: 20%;
-  margin: 2.5%;
-  background-color: white;
+  @include span-columns(4);
+  @include omega(3n);
+  margin-top: 2%;
+  background-color: transparentize(white, 0.2);
   display: inline-block;
   height: 140px;
   border-radius: 5px;
   color: black;
-  box-shadow: -3px 3px 2px #888888;
+  padding: 2%;
+  overflow-y: scroll;
+
+  @include media($mobile2) {
+   @include span-columns(6);
+   
+  }
+
+  @include media ($mobile) {
+    @include span-columns(6);
+    padding: 5%;
+    font-size: .88em;
+  }
+
 }
+
 .notes-containter {
   margin-left: 10%;
   margin-right: 10%;
-  margin-top: 50px;
+  margin-top: 10%;
+
+  @include media($mobile) {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 20%; 
+  }
 }

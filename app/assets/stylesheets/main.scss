@@ -43,6 +43,18 @@ body {
   }
 }
 
+#main-logo {
+  max-width: 75%;
+  margin-left: 12.5%;
+  margin-top: 10vh;
+
+  @include media($mobile) {
+    max-width: 90%;
+    margin-left: 5%;
+    margin-top: 20vh;
+  }
+}
+
 .thingy {
   width: 100%;
   height: 100%;
@@ -107,30 +119,9 @@ body {
 
     @include media($mobile){
       font-size: 15vw;
-      margin-top: 20vh;
+      margin-top: 15vh;
     }
   }
-
-  // p {
-  //   @include outer-container;
-  //   display: block;
-  //   margin: auto;
-  //   margin-top: -5px;
-  //   font-family: $font-stack;
-  //   font-size: 5vw;
-  //   text-align: center;
-  //   // text-transform: uppercase;
-  //   color: $grey;
-  //   background-color: $navigation-color;
-  //   padding: 10px;
-  //   border-radius: 3px;
-  //   max-width: 75vw;
-
-  //   @include media($mobile) {
-  //     font-size: 16px;
-  //   }
-
-  // }
 
   .p1 {
     @include outer-container;
@@ -148,7 +139,44 @@ body {
     max-width: 65vw;
 
     @include media($mobile) {
-      font-size: .75em;
+      font-size: 4vw;
+    }
+  }
+
+  .b2 {
+    font-size: 12vw;
+    text-align: center;
+    font-family: $font-stack, sans-serif;
+    line-height: 1.25em;
+    color: $navigation-color;
+    margin-top: 10vh;
+    margin-bottom: 1vh;
+
+    @include media($mobile){
+      font-size: 15vw;
+      margin-top: 15%;
+    }
+  }
+
+  .p2 {
+    @include outer-container;
+    display: block;
+    margin: auto;
+    margin-top: -1vh;
+    font-family: $font-stack;
+    font-size: 1vw;
+    text-align: justify;
+
+    // text-transform: uppercase;
+    color: $grey;
+    background-color: $navigation-color;
+    padding: 10px;
+    border-radius: 3px;
+    max-width: 65vw;
+
+    @include media($mobile) {
+      font-family: times;
+      font-size: 2.5vw;
     }
   }
 
