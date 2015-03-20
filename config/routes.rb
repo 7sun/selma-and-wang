@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   post '/login'       => 'sessions#create'
   get '/logout'       => 'sessions#destroy', as: 'logout'
   get 'music-player'  => 'soundcloud#index', as: 'soundcloud'
+  get 'quilt'  => 'soundcloud#quilt', as: 'quilt'
   get '/auth/:provider/callback', to: 'sessions#create_fb'
   post '/dots' => 'dots#counter', as: :count
   # for tesing svg to canvas

@@ -1,0 +1,9 @@
+<div id="container" ng-app="SelmaApp">
+  <div id="content-wrapper" ng-controller="patchController">
+		<div id="quilt-full">
+		  <div class="quilt-patch-full" ng-repeat="patch in patches">
+		    <div class="quilt-square-full" ng-repeat="triangle in patch" style="border-top-color:{{triangle.topColor}};border-right-color:{{triangle.sideColor}};border-left-color:{{triangle.sideColor}};"></div>
+		  </div>
+		</div>
+	</div>
+</div>
