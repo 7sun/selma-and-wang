@@ -10,7 +10,7 @@
   <%= javascript_include_tag 'application' %>
   <script src="https://cdn.firebase.com/libs/angularfire/0.9.2/angularfire.min.js"></script>
   <script src='https://cdn.jsdelivr.net/filesaver.js/0.2/FileSaver.js'></script>
-  <script src="/path/to/masonry.pkgd.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/masonry/3.2.2/masonry.pkgd.min.js"></script>
   <meta name="viewport" content="width=device-width">
   <!-- <meta name="viewport" content="maximum-scale=1"> -->
   <%= favicon_link_tag 'selmaicon.ico' %>
@@ -63,7 +63,7 @@
   </div>
 <!-- Modal end -->
 
-<body>
+<body class="<%= params[:controller] %> <%= params[:action] %> ">
 
 <%= yield %>
 

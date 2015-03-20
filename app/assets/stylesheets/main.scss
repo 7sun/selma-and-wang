@@ -223,6 +223,8 @@ body {
 #myCanvas {
   margin-left: -100px;
   margin-top: -155px;
+  width: 100vw;
+  height: 100vh;
   position: fixed;
   z-index: -1;
 }
@@ -482,6 +484,10 @@ input[type="submit"]:hover {
 
 .modal-open {
   overflow: scroll;
+}
+
+.soundcloud.quilt {
+  background-color: #628290;
 }
 
 // @-webkit-keyframes pulse {

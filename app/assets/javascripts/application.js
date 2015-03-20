@@ -16,4 +16,5 @@
 //= require jquery.onepage-scroll.min.js
 //= require angular
 //= require angular-resource
+//= require jquery.readyselector
 //= require_tree .

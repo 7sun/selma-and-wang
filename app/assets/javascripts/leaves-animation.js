@@ -1,4 +1,4 @@
-$(function(){
+$(".soundcloud").ready(function(){
 
 	/* Define the number of leaves to be used in the animation */
 	const NUMBER_OF_LEAVES = 140;
@@ -63,18 +63,42 @@ $(function(){
 	    
 	    /* Randomly choose a leaf color and assign it to the newly created element */
 	    function pickLeafColor(){
-	    	var number = Math.floor(Math.random() * (5 - 1)) + 1;
+	    	var number = Math.floor(Math.random() * (13 - 1)) + 1;
 	    	if (number == 1){
-	    		return "cornflowerblue";
+	    		return "#ED1C24";
 	    	}
 	    	else if (number == 2){
-	    		return "gold";
+	    		return "#F7941E";
 	    	}
 	    	else if (number == 3){
-	    		return "darkorange";
+	    		return "#92278F";
 	    	}
 	    	else if (number == 4){
-	    		return "aquamarine";
+	    		return "#DA1C5C";
+	    	}
+	    	else if (number == 5){
+	    		return "#D7DF23";
+	    	}
+	    	else if (number == 6){
+	    		return "#231F20";
+	    	}
+	    	else if (number == 7){
+	    		return "#FFDE17";
+	    	}
+	    	else if (number == 8){
+	    		return "#E2CA30";
+	    	}
+	    	else if (number == 9){
+	    		return "#954124";
+	    	}
+	    	else if (number == 10){
+	    		return "#60391";
+	    	}
+	    	else if (number == 11){
+	    		return "#414042";
+	    	}
+	    	else if (number == 12){
+	    		return "#71845C";
 	    	}
 	    }
 
