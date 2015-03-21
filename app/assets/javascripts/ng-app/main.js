@@ -130,13 +130,4 @@ angular
 	  	$('.wallpaper-square').css({'borderWidth': "27vh"});
 	  })
 
-		  // function prepCanvas(){
-   //  	html2canvas($("#dream-patch"), {
-   //    	onrendered: function(canvas) {
-   //      	save.href = canvas.toDataURL("image/png")              
-   //    	}
-   //   	})
-   //  }
-
-
 }]);
