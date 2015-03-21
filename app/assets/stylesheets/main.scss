@@ -346,7 +346,7 @@ input[type="submit"]:hover {
   //////////////////////////////////////////////////////////////////////////////////
 
   $modal-padding: 3em;
-  $modal-background: $base-background-color;
+  $modal-background: rgba(255, 255, 255, 0.6);
   $modal-close-color: $light-gray;
   $modal-image-height: 135px;
   $modal-image-width: $modal-image-height;
@@ -398,7 +398,7 @@ input[type="submit"]:hover {
   .modal-close {
     @include position(absolute, ($modal-padding /2) ($modal-padding /2) null null);
     @include size(1.5em);
-    background: $modal-background;
+    // background: $modal-background;
     cursor: pointer;
 
     &:after,
