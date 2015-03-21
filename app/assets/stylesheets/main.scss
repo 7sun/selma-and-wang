@@ -51,7 +51,7 @@ body {
   @include media($mobile) {
     max-width: 90%;
     margin-left: 5%;
-    margin-top: 20vh;
+    margin-top: 8vh;
   }
 }
 
@@ -119,7 +119,7 @@ body {
 
     @include media($mobile){
       font-size: 15vw;
-      margin-top: 15vh;
+      margin-top: 16vh;
     }
   }
 
@@ -175,7 +175,6 @@ body {
     max-width: 65vw;
 
     @include media($mobile) {
-      font-family: times;
       font-size: 2.5vw;
     }
   }
@@ -526,4 +525,39 @@ input[type="submit"]:hover {
 // 	animation:none;
 // }
 
-
+#a {
+  color: #ED1C24;
+}
+#b {
+  color: #F7941E;
+}
+#c {
+  color: #92278F;
+}
+#d {
+  color: #DA1C5C;
+}
+#e {
+  color: #D7DF23;
+}
+#f {
+  color: #231F20;
+}
+#g {
+  color: #FFDE17;
+}
+#h {
+  color: #E2CA30;
+}
+#i {
+  color: #954124;
+}
+#j {
+  color: #603913;
+}
+#k {
+  color: #414042;
+}
+#l {
+  color: #71845C;
+}
