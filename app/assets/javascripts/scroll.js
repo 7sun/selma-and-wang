@@ -73,11 +73,11 @@ $(document).ready(function() {
   });
 });
 
-$(document).ready(function() {
-  $( "#to-quilt" ).click(function() {
-    $(".main").moveDown();
-  });
-});
+// $(document).ready(function() {
+//   $( "#to-quilt" ).click(function() {
+//     $(".main").moveDown();
+//   });
+// });
 
 $(document).ready(function() {
   $( "#going-up" ).click(function() {
