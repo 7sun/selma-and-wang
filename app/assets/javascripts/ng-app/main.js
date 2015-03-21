@@ -109,7 +109,7 @@ angular
 	  function checkForCompletePatch(){
 	    if (clickCount >= 5.5 || (clickCount >= 5 && inverse == false) ){
 	    	$('#save').removeClass('hidden');
-	      $('#dream-patch').removeClass('hidden');
+	      $('.dream-patch').removeClass('hidden');
 	      $('#scroll-link-2 button').removeClass('hidden');
 	      $('#to-quilt').removeClass('hidden');
 	      $('.music-player').css({'display': 'none'});
