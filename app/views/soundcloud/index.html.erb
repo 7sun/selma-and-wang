@@ -48,7 +48,7 @@
     
     <article id="scroll-link-3" class="scenarios">
       <!-- Dream patch squares. Hidden by default -->
-      <div id="dream-patch" class="hidden">
+      <div class="dream-patch" class="hidden">
       <!-- <h2>Your Patch</h2> -->
       <!-- <p>You created a patch for Grandma Alma's quilt!</p> -->
         <section ng-repeat="square in squares" id="answer-square-{{$index}}" class="answer-square"></section>
@@ -76,7 +76,7 @@
     </article>
 
     <article id="scroll-link-5">
-      <div id="dream-patch" >
+      <div class="dream-patch" >
       <a download='dreampatch.png' id='save' >Download Wallpaper</a>
     </article>
 
@@ -93,8 +93,8 @@
   $(function() { 
     var theCanvas
       $("#save").click(function() {
-          $('#dream-patch').css('backgroundColor', '#9BCAE1');
-          html2canvas($("#dream-patch"), {
+          $('.dream-patch').css('backgroundColor', '#9BCAE1');
+          html2canvas($(".dream-patch"), {
               onrendered: function(canvas) {
                 save.href = canvas.toDataURL("image/png")              
               }
