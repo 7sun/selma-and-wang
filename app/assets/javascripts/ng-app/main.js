@@ -11,9 +11,7 @@ angular
 		// default squares to send to firebase in case of client disconnet to maintain pattern sync
 				var dbDefaultSquares = [{topColor: "#515D63", sideColor: "#ED028C"}, {topColor: "#FFF101", sideColor: "#231F20"}, {topColor: "#ED028C", sideColor: "#FFF101"},
 										{topColor: "#231F20", sideColor: "#ED028C"}, {topColor: "#515D63", sideColor: "#FFF101"}, {topColor: "#515D63", sideColor: "#ED028C"}];
-										// Old Colors
-		// var dbDefaultSquares = [{topColor: "#AEE5F1", sideColor: "#FEBBCD"}, {topColor: "#B3BCBF", sideColor: "#AEE5F1"}, {topColor: "#FEBBCD", sideColor: "#B3BCBF"},
-		// 								{topColor: "#F25239", sideColor: "#FEBBCD"}, {topColor: "#AEE5F1", sideColor: "#B3BCBF"}, {topColor: "#AEE5F1", sideColor: "#B3BCBF"}];
+
 		var ref = new Firebase("https://selmaandwang.firebaseio.com/patches");
 		var counterRef = ref.child("counter");
 		var patches = $firebase(ref).$asObject();
@@ -52,13 +50,11 @@ angular
     	between(counter, 34, 36) || between(counter, 40, 42) || between(counter, 46, 51) || between(counter, 55, 57) || between(counter, 61, 63) ||
     	between(counter, 67, 69) || between(counter, 76, 78) || between(counter, 82, 84) || between(counter, 88, 90) || between(counter, 94, 96)
 			){
-    		$('#answer-square-0').css({"borderTopColor": "transparent"});
-    		// $('.answer-square').css({"borderRight": "20vw solid #9BCAE1"});
+    		$('.answer-square-0').css({"borderTopColor": "transparent"});
     		$('.answer-square').css({"borderRight": "12vh solid transparent"});
     		inverse = false;
     	} else {
-    		$('#answer-square-1').css({"borderTopColor": "transparent"});
-    		// $('.answer-square').css({"borderLeft": "20vw solid #9BCAE1"});
+    		$('.answer-square-1').css({"borderTopColor": "transparent"});
     		$('.answer-square').css({"borderLeft": "12vh solid transparent"});
     		inverse = true;
     	}
@@ -78,13 +74,10 @@ angular
 			// Checks if clickCount is a whole number. If so, the squares top/left triangle color is set
 	    if (clickCount % 1 == 0){
 	    	if (inverse){
-	    		// $('#answer-square-' + clickCountString).css({"borderLeft": "20vw solid " + color});
-	    		$('#answer-square-' + clickCountString).css({"borderLeft": "12vh solid " + color});
+	    		$('.answer-square-' + clickCountString).css({"borderLeft": "12vh solid " + color});
 	    		dbsquares[Math.floor(clickCount)].sideColor = color;
 	    	} else {
-	    		// $('#answer-square-' + clickCountString).css({"borderRight": "20vw solid transparent"}); NOT NEEDED FOR CURRENT BUILD
-		      // $('#answer-square-' + clickCountString).css({"borderTop": "20vw solid " + color});
-		      $('#answer-square-' + clickCountString).css({"borderTop": "12vh solid " + color});
+		      $('.answer-square-' + clickCountString).css({"borderTop": "12vh solid " + color});
 		      dbsquares[Math.floor(clickCount)].topColor = color;
 	    	}
 	      console.log(clickCount);
@@ -92,12 +85,10 @@ angular
 	      // Checks if clickCount end in 0.5. If so, the squares bottom/right triangle color is set 
 	    } else if (clickCount % 1 == 0.5){
 	    	if (inverse){
-	    		// $('#answer-square-' + clickCountString).css({"borderTop": "20vw solid " + color});
-	    		$('#answer-square-' + clickCountString).css({"borderTop": "12vh solid " + color});
+	    		$('.answer-square-' + clickCountString).css({"borderTop": "12vh solid " + color});
 	    		dbsquares[Math.floor(clickCount)].topColor = color;
 	    	} else {
-	      	// $('#answer-square-' + clickCountString).css({"borderRight": "20vw solid " + color});
-	      	$('#answer-square-' + clickCountString).css({"borderRight": "12vh solid " + color});
+	      	$('.answer-square-' + clickCountString).css({"borderRight": "12vh solid " + color});
 	      	dbsquares[Math.floor(clickCount)].sideColor = color;
 	      }
 	      console.log(clickCount);
@@ -118,7 +109,6 @@ angular
 	      $('.play-icon').trigger('click');
 	      patchRef.set(dbsquares);
 	      patchRef.onDisconnect().cancel();
-	      // prepCanvas();
 	    }
 	  }
 
@@ -134,6 +124,10 @@ angular
 	    } else {
 	      clickCount += 0.5;
 	    }
+	  })
+
+	  $('#get-patch').click(function(){
+	  	$('.wallpaper-square').css({'borderWidth': "27vh"});
 	  })
 
 		  // function prepCanvas(){

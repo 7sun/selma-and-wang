@@ -3,35 +3,26 @@
   <div id="content-wrapper" ng-controller="patchController">
     <div id="leafContainer"></div>
 
-    
     <!-- Section 1 - Intro -->
+
     <article id="scroll-link-1" class="scenarios">
       <div class="headphones-container">
-
         <div id="hear-color-title" class="b1">HEAR <span>COLOR</span></div class="b1">
         <p class="p1">Selma has synesthesia, which allows her to see colors when she hears music. See the world through her ears by making a patch for her Grandma's quilt.<br><span>
         <i class="fa fa-headphones fa-2x"></i>
         Plug in headphones to begin</span></p>
         <button class="scn-btns">Listen</button>
-        <!-- Peter's Version Below - Commeneted out for presentation -->
-
-<!--         <h2>Hear <span>Color</span></h2>
-        <p>Selma has synesthesia, which allows her to see colors when she hears music. See the world through her ears.</p>
-        <i class="fa fa-headphones"></i>
-        <h3>Plug in headphones to begin.</h3>
-        <button class="listen-btn">Listen</button> -->
-
       </div>
     </article>
 
     <!-- Section 2 - Player -->
-    
+
     <article  id="scroll-link-2" class="scenarios">
       <div class="music-player"> 
         <i class="fa fa-play play-icon"></i>
       </div>
 
-        <!-- Question squares -->
+      <!-- Question squares -->
       <div id="questions" class="hidden">
         <p>Pick a color for this moment</p>
         <div class="squares">
@@ -47,11 +38,9 @@
     <!-- Section 3 - Patch -->
     
     <article id="scroll-link-3" class="scenarios">
-      <!-- Dream patch squares. Hidden by default -->
       <div class="dream-patch" class="hidden">
-      <!-- <h2>Your Patch</h2> -->
-      <!-- <p>You created a patch for Grandma Alma's quilt!</p> -->
-        <section ng-repeat="square in squares" id="answer-square-{{$index}}" class="answer-square"></section>
+        <!-- <section ng-repeat="square in squares" id="answer-square-{{$index}}" class="answer-square"></section> -->
+        <section ng-repeat="square in squares" class="answer-square answer-square-{{$index}}"></section>
       </div>
       <div class="patchbox">
       <!-- <a download='dreampatch.png' id='save' class='hidden'>Download Wallpaper</a> -->
@@ -63,21 +52,21 @@
     <!-- Section 4 - Quilt -->
     
     <article id="scroll-link-4" class="scenarios quilt-scenario">
-      <!-- Full quilt of all users patches -->
-      <!-- <h2>Grandma's Quilt</h2> -->
-      <!-- <p>Watch for other dreamers to add their patches.</p> -->
       <div id="quilt">
         <div class="quilt-patch" ng-repeat="patch in patches | limitTo : 10">
           <div class="quilt-square" ng-repeat="triangle in patch" style="border-top-color:{{triangle.topColor}};border-right-color:{{triangle.sideColor}};border-left-color:{{triangle.sideColor}};"></div>
         </div>
       </div>
-      <button class="scn-btns">Get your Patch</button>
-      <%#= link_to 'Home', root_path, class: 'scn-btns' %>
+      <button class="scn-btns" id="get-patch">Get your Patch</button>
     </article>
 
     <article id="scroll-link-5">
-      <div class="dream-patch" >
-      <a download='dreampatch.png' id='save' >Download Wallpaper</a>
+      <div class="dream-patch wallpaper">
+        <section ng-repeat="square in squares" class="answer-square answer-square-{{$index}} wallpaper-square"></section>
+      </div>
+      <div class="btn-container">
+        <a download='dreampatch.png' id='save' >Download Wallpaper</a>
+      </div>
     </article>
 
 
@@ -93,8 +82,8 @@
   $(function() { 
     var theCanvas
       $("#save").click(function() {
-          $('.dream-patch').css('backgroundColor', '#9BCAE1');
-          html2canvas($(".dream-patch"), {
+          $('.wallpaper').css('backgroundColor', '#64818F');
+          html2canvas($(".wallpaper"), {
               onrendered: function(canvas) {
                 save.href = canvas.toDataURL("image/png")              
               }

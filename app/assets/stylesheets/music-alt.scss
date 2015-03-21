@@ -676,19 +676,16 @@ div:nth-of-type(n+94):nth-of-type(-n+96){
 }
 
 #save {
-  // font-size: 3vw; Hidden for web view
   padding: 1vh;
   color: #5a6465;
   display: block;
   width: 24vh;
-  // width: 280px;
-  margin: auto;
-  /* margin-bottom: 399px; */
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.9);
   z-index: 9999;
   position: relative;
-  // margin-top: -143px;
   font-size: 1.25em;
+  left: -50%;
+  bottom: 25vh;
 }
 
 @include media($mobile){
@@ -697,6 +694,14 @@ div:nth-of-type(n+94):nth-of-type(-n+96){
   }
 }
 
+.wallpaper {
+  height: 81vh;
+  margin: 5vh auto;
+}
 
+.btn-container {
+  position: absolute;
+  left: 50%;
+}
 
 
