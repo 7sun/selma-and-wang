@@ -95,11 +95,11 @@ $(document).ready(function() {
   });
 });
 
-$(document).ready(function() {
-  $( "#to-quilt" ).click(function() {
-     $(".main").moveTo(5);
-  });
-});
+// $(document).ready(function() {
+//   $( "#to-quilt" ).click(function() {
+//      $(".main").moveTo(5);
+//   });
+// });
 
 $(document).ready(function() {
   $( "#end" ).click(function() {
