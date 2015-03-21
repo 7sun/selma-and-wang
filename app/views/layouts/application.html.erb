@@ -54,7 +54,7 @@
         <div class="modal-inner">
             <label class="modal-close" for="modal-1"></label>
               <%= form_for Note.new() do |f| %>
-                <%= f.text_field :name %>
+                <%= f.text_field :name,:placeholder => 'Name', :style => "border:1px lightgray solid;" %>
                 <%= f.text_area :text %>
                 <%= f.submit %>
               <% end %>
