@@ -530,38 +530,45 @@ input[type="submit"]:hover {
 // }
 
 #a {
-  color: #ED1C24;
+  background-color: #ED1C24;
 }
 #b {
-  color: #F7941E;
+  background-color: #F7941E;
 }
 #c {
-  color: #92278F;
+  background-color: #92278F;
 }
 #d {
-  color: #DA1C5C;
+  background-color: #DA1C5C;
 }
 #e {
-  color: #D7DF23;
+  background-color: #D7DF23;
 }
 #f {
-  color: #231F20;
+  background-color: #231F20;
 }
 #g {
-  color: #FFDE17;
+  background-color: #FFDE17;
 }
 #h {
-  color: #E2CA30;
+  background-color: #E2CA30;
 }
 #i {
-  color: #954124;
+  background-color: #954124;
 }
 #j {
-  color: #603913;
+  background-color: #603913;
 }
 #k {
-  color: #414042;
+  background-color: #414042;
 }
 #l {
-  color: #71845C;
+  background-color: #71845C;
+}
+
+.color-btn {
+  border: 0.5em solid rgba(255, 255, 255,0.8) !important;
+  height: 1em !important;
+  width: 1em !important;
+  border-radius: 5% !important;
 }
