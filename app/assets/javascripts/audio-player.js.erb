@@ -44,4 +44,16 @@ $(".soundcloud.index").ready(function(){
 
   initAudio();
 
+  // Creates a png of the user's patch which they can download by clicking the 'download wallpaper' button
+  var theCanvas
+    $("#save").click(function() {
+        // Adds matching background color to png so that it doesn't appear white
+        $('.wallpaper').css('backgroundColor', '#9FE1C3');
+        html2canvas($(".wallpaper"), {
+            onrendered: function(canvas) {
+              save.href = canvas.toDataURL("image/png")              
+            }
+        })
+    })
+
 });

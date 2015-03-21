@@ -1,96 +1,74 @@
 <div class="main">
-<div id="container" ng-app="SelmaApp">
-  <div id="content-wrapper" ng-controller="patchController">
-    <div id="leafContainer"></div>
+  <div id="container" ng-app="SelmaApp">
+    <div id="content-wrapper" ng-controller="patchController">
+      
+      <div id="leafContainer"></div>
 
-    <!-- Section 1 - Intro -->
+      <!-- Section 1 - Intro -->
 
-    <article id="scroll-link-1" class="scenarios">
-      <div class="headphones-container">
-        <div id="hear-color-title" class="b1">HEAR <span>COLOR</span></div class="b1">
-        <p class="p1">Selma has synesthesia, which allows her to see colors when she hears music. See the world through her ears by making a patch for her Grandma's quilt.<br><span>
-        <i class="fa fa-headphones fa-2x"></i>
-        Plug in headphones to begin</span></p>
-        <button class="scn-btns">Listen</button>
-      </div>
-    </article>
-
-    <!-- Section 2 - Player -->
-
-    <article  id="scroll-link-2" class="scenarios">
-      <div class="music-player"> 
-        <i class="fa fa-play play-icon"></i>
-      </div>
-
-      <!-- Question squares -->
-      <div id="questions" class="hidden">
-        <p>Pick a color for this moment</p>
-        <div class="squares">
-          <div id="square-1" class="square" ng-click="addSquareColor('#515D63')"></div>
-          <div id="square-2" class="square" ng-click="addSquareColor('#ED028C')"></div>
-          <div id="square-3" class="square" ng-click="addSquareColor('#FFF101')"></div>
-          <div id="square-4" class="square" ng-click="addSquareColor('#231F20')"></div>
+      <article id="scroll-link-1" class="scenarios">
+        <div class="headphones-container">
+          <div id="hear-color-title" class="b1">HEAR <span>COLOR</span></div class="b1">
+          <p class="p1">Selma has synesthesia, which allows her to see colors when she hears music. See the world through her ears by making a patch for her Grandma's quilt.<br><span>
+          <i class="fa fa-headphones fa-2x"></i>
+          Plug in headphones to begin</span></p>
+          <button class="scn-btns">Listen</button>
         </div>
-      </div>
-      <button id="patch-btn" class="scn-btns hidden">See your patch</button>
-    </article>
+      </article>
 
-    <!-- Section 3 - Patch -->
-    
-    <article id="scroll-link-3" class="scenarios">
-      <div class="dream-patch" class="hidden">
-        <!-- <section ng-repeat="square in squares" id="answer-square-{{$index}}" class="answer-square"></section> -->
-        <section ng-repeat="square in squares" class="answer-square answer-square-{{$index}}"></section>
-      </div>
-      <div class="patchbox">
-      <!-- <a download='dreampatch.png' id='save' class='hidden'>Download Wallpaper</a> -->
-      <div id='img-out'></div>
-      <button id="to-quilt" class="scn-btns hidden">Add to Quilt</button>
-      </div>
-    </article>
+      <!-- Section 2 - Player -->
 
-    <!-- Section 4 - Quilt -->
-
-    <article></article>
-    
-    <article id="scroll-link-4" class="scenarios quilt-scenario">
-      <div id="quilt">
-        <div class="quilt-patch" ng-repeat="patch in patches | limitTo : 10">
-          <div class="quilt-square" ng-repeat="triangle in patch" style="border-top-color:{{triangle.topColor}};border-right-color:{{triangle.sideColor}};border-left-color:{{triangle.sideColor}};"></div>
+      <article  id="scroll-link-2" class="scenarios">
+        <div class="music-player"> 
+          <i class="fa fa-play play-icon"></i>
         </div>
-      </div>
-      <button class="scn-btns" id="get-patch">Get your Patch</button>
-    </article>
 
-    <article id="scroll-link-5">
-      <div class="dream-patch wallpaper">
-        <section ng-repeat="square in squares" class="answer-square answer-square-{{$index}} wallpaper-square"></section>
-      </div>
-      <div class="btn-container">
-        <a download='dreampatch.png' id='save' >Download Wallpaper</a>
-      </div>
-    </article>
+        <!-- Question squares -->
+        <div id="questions" class="hidden">
+          <p>Pick a color for this moment</p>
+          <div class="squares">
+            <div id="square-1" class="square" ng-click="addSquareColor('#515D63')"></div>
+            <div id="square-2" class="square" ng-click="addSquareColor('#ED028C')"></div>
+            <div id="square-3" class="square" ng-click="addSquareColor('#FFF101')"></div>
+            <div id="square-4" class="square" ng-click="addSquareColor('#231F20')"></div>
+          </div>
+        </div>
+        <button id="patch-btn" class="scn-btns hidden">See your patch</button>
+      </article>
 
+      <!-- Section 3 - Patch -->
+      
+      <article id="scroll-link-3" class="scenarios">
+        <div class="dream-patch" class="hidden">
+          <section ng-repeat="square in squares" class="answer-square answer-square-{{$index}}"></section>
+        </div>
+        <div class="patchbox">
+          <div id='img-out'></div>
+          <button id="to-quilt" class="scn-btns hidden">Add to Quilt</button>
+        </div>
+      </article>
 
+      <!-- Section 4 - Quilt -->
+      
+      <article id="scroll-link-4" class="scenarios quilt-scenario">
+        <div id="quilt">
+          <div class="quilt-patch" ng-repeat="patch in patches | limitTo : 10">
+            <div class="quilt-square" ng-repeat="triangle in patch" style="border-top-color:{{triangle.topColor}};border-right-color:{{triangle.sideColor}};border-left-color:{{triangle.sideColor}};"></div>
+          </div>
+        </div>
+        <button class="scn-btns" id="get-patch">Get your Patch</button>
+      </article>
 
-  </div><!-- Closes content-wrapper -->
+      <article id="scroll-link-5">
+        <div class="dream-patch wallpaper">
+          <section ng-repeat="square in squares" class="answer-square answer-square-{{$index}} wallpaper-square"></section>
+        </div>
+        <div class="btn-container">
+          <a download='dreampatch.png' id='save' >Download Wallpaper</a>
+        </div>
+      </article>
 
-</div><!-- Closes container  -->
+    </div><!-- Closes content-wrapper -->
+  </div><!-- Closes container  -->
+</div><!-- Closes main -->
 
-</div> 
-
-<script type="text/javascript">
-
-  $(function() { 
-    var theCanvas
-      $("#save").click(function() {
-          $('.wallpaper').css('backgroundColor', '#64818F');
-          html2canvas($(".wallpaper"), {
-              onrendered: function(canvas) {
-                save.href = canvas.toDataURL("image/png")              
-              }
-          })
-      })
-  });
-
-</script>

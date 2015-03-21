@@ -107,6 +107,14 @@ angular
 	      $('#questions').css({'display': 'none'});
 	      // Stops the music from playing
 	      $('.play-icon').trigger('click');
+	      // If patches lose sync orientation sync with DB, blank triangles are replaced with black (#231F20) color
+	      for (var i = 0; i <= dbsquares.length; i++){
+		      for (prop in dbsquares[i]){
+		      	if (dbsquares[i][prop] == "") {
+		      		dbsquares[i][prop] = "#231F20";
+		      	}
+		      }
+		    }
 	      patchRef.set(dbsquares);
 	      patchRef.onDisconnect().cancel();
 	    }
@@ -127,16 +135,7 @@ angular
 	  })
 
 	  $('#get-patch').click(function(){
-	  	$('.wallpaper-square').css({'borderWidth': "27vh"});
+	  	$('.wallpaper-square').css({'borderWidth': "26vh"});
 	  })
-
-		  // function prepCanvas(){
-   //  	html2canvas($("#dream-patch"), {
-   //    	onrendered: function(canvas) {
-   //      	save.href = canvas.toDataURL("image/png")              
-   //    	}
-   //   	})
-   //  }
-
 
 }]);
