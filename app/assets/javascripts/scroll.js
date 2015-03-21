@@ -40,18 +40,16 @@ $(document).ready(function() {
       if (index == 1) {
         $("body").css("background-color","#A0E18F");
       } if (index == 2) {
-        $("body").css("background-color","#9fe1c3");
-      } if (index == 3) {
         $("body").css("background-color","#F15A29");
-      } if (index == 4){
+      } if (index == 3) {
         $("body").css("background-color","#F9ED32");
-      } if (index == 5){
+      } if (index == 4){
         $("body").css("background-color","#64818F");
+      } if (index == 5){
+        $("body").css("background-color","#9FE1C3");
       } if (index == 6) {
-        $("body").css("background-color","#e1b888");
-      } if (index == 7) {
         $("body").css("background-color","#5ab9ad");
-      } if (index == 8) {
+      } if (index == 7) {
         $("body").css("background-color","#b98bb9");
       }
      },                               
@@ -97,11 +95,17 @@ $(document).ready(function() {
   });
 });
 
-// $(document).ready(function() {
-//   $( "#start" ).click(function() {
-//     $(".main").moveDown();
-//   });
-// });
+$(document).ready(function() {
+  $( "#to-quilt" ).click(function() {
+     $(".main").moveTo(5);
+  });
+});
+
+$(document).ready(function() {
+  $( "#end" ).click(function() {
+    $(".main").moveTo(1);
+  });
+});
 
 $(document).ready(function() {
   $( ".scn-btns" ).click(function() {
