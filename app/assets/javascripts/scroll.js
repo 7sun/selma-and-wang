@@ -42,7 +42,7 @@ $(document).ready(function() {
       } if (index == 2) {
         $("body").css("background-color","#F15A29");
       } if (index == 3) {
-        $("body").css("background-color","#F9ED32");
+        $("body").css("background-color","#FFE988");
       } if (index == 4){
         $("body").css("background-color","#64818F");
       } if (index == 5){
