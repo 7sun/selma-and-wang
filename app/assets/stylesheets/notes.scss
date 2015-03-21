@@ -1,7 +1,7 @@
 $mobile: new-breakpoint(max-width 640px 6);
 $mobile2: new-breakpoint(max-width 867px 12);
 
-span {
+.name {
   font-size: .75em;
   color: #7F7F7F;
 }
@@ -36,8 +36,8 @@ span {
 }
 
 .notes-containter {
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 12%;
+  margin-right: 12%;
   margin-top: 10%;
 
   @include media($mobile) {
