@@ -62,7 +62,7 @@
                <div class="modal-inner">
                   <label class="modal-close" for="modal-2"></label>
                   <%= form_for Email.new() do |f| %>
-                  <%= f.text_field :email %>
+                  <%= f.text_field :email,:placeholder => 'Email', :style => "border:1px lightgray solid;" %>
                   <%= f.submit %>
                   <% end %>
                 </div>
