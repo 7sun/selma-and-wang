@@ -68,6 +68,17 @@ angular
     	console.log(inverse);
     }
 
+    function setMeterBar(){
+    	meterWidth += 10;
+      meterWidthStyle = meterWidth.toString() + "%";
+      if (meterWidth < 100){
+      	$('.meter').css({'width': meterWidthStyle});
+      }
+      else if (meterWidth == 100){
+      	$('.progress-bar-indication').addClass('hidden');
+      }
+    }
+
   	// Adds color to half of the square. Adds color to each half before increasing the count to the next integer
 	  function addSquareColor(color){
 	  	// Rounds the clickCount to the nearest whole number, than converts it to a string for html injection
@@ -91,15 +102,7 @@ angular
 	      	dbsquares[Math.floor(clickCount)].sideColor = color;
 	      }
       }
-      console.log(clickCount);
-      meterWidth += 10;
-      meterWidthStyle = meterWidth.toString() + "%";
-      if (meterWidth < 100){
-      	$('.meter').css({'width': meterWidthStyle});
-      }
-      else if (meterWidth == 100){
-      	$('.progress-bar-indication').addClass('hidden');
-      }
+      setMeterBar();
 	    checkForCompletePatch();
 	  }
 
@@ -130,7 +133,6 @@ angular
 		// Hides question square after user clicks a square and increases click count.
 	  $('.square').click(function(){
 	    $('#questions').addClass('hidden');
-	    // $('#questions p').removeClass('expand');
 	    $('.progress-bar-indication').removeClass('expand');
 	    $('.square').removeClass('pop-up');
 	    if (inverse && (clickCount == 1.0 || clickCount == 3.5)){

@@ -12,8 +12,8 @@ $(".soundcloud.index").ready(function(){
     // Binds playback counter to a constantly running number
     this.on('timeupdate', function (position, duration) {
       track_position = Math.floor(position);
-      // loads questions squares every 8 seconds
-      if (track_position % 1 == 0 && track_position > 0 && track_position != current_position){
+      // loads questions squares every 7 seconds
+      if (track_position % 7 == 0 && track_position > 0 && track_position != current_position){
         // Checks to make sure color squares do not load more than once for the same time position
         current_position = track_position;
         $('#questions').removeClass('hidden');
