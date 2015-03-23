@@ -11,12 +11,6 @@ $navigation-color: transparentize(white, 0.2);
 $navigation-color-hover: white;
 $font-stack: 'Oswald', Helvetica, sans-serif;
 
-// Old Accent Colors
-// $accent-one: #AEE5F1; // Light Blue
-// $accent-two: #F25239; // Orange
-// $accent-three: #B3BCBF; // Grey
-// $accent-four: #FEBBCD; // Pink
-
 body {
   font-family: $font-stack, sans-serif;
   color: whitesmoke;
@@ -24,26 +18,15 @@ body {
 
 // INTRO VIEW //////////////////////////////////////////////////////////
 
-// #content-wrapper {
-
 // Section 1 - Intro
 
   .scenarios {
-    // padding: 5vh 0;
-    // width: 100vh;
-    // height: 100vw;
-    // padding: 40px;
-    // margin-top: 70px;
-
     p {
-      // Web View until '@include media()'
       display: block;
       margin: 0 auto 1.2vh;
-      // margin-top: -5px;
       font-family: $font-stack;
       font-size: 1.8vh;
       text-align: center;
-      // text-transform: uppercase;
       color: $grey;
       background-color: $navigation-color;
       padding: 10px;
@@ -55,26 +38,6 @@ body {
         max-width: 30vh;
       }
     }
-  // button {
-  //     // 
-  //     @include button(flat, $navigation-color);
-  //     appearance: none;
-  //     user-select: none;
-  //     display: inline;
-  //     text-align: center;
-  //     color: $accent-three;
-  //     background-color: $navigation-color;
-  //     font-family: $font-stack;
-  //     font-size: 1.25em;
-  //     font-weight: 900;
-  //     margin-top: 20px;
-  //     padding: 1em;
-  //     text-transform: uppercase;
-
-  //     &:hover {
-  //       color: $grey;
-  //     }
-  //   }
   }
 
 .headphones-container{
@@ -88,13 +51,7 @@ body {
 // Section 2 - Player //////////////////////////////////////////////////
 
 #questions {
-
-  // @include outer-container;
-  // @include span-columns(8);
-  // text-align: center;
-  // margin-left: 15vw;
   .squares {
-    // display: inline;
     margin: 0 auto 50px;
     max-width: 64vh;
     .square {
@@ -102,7 +59,6 @@ body {
       height: 14vh;
       margin: 1.5vh 1vh;
       border-radius: 5px;
-      // display: inline-block;
       float: left;
     }
   }
@@ -118,9 +74,7 @@ body {
 }
 
 #patch-btn {
-  // display: block;
   margin: 30vh auto 0;
-  // clear: both;
 }
 
 .pop-up {
@@ -220,9 +174,6 @@ body {
   width: 12vh;
   height: 12vh;
   border-top: 12vh solid transparent;
-  // width: 140px;
-  // height: 140px;
-  // border-top: 140px solid transparent;
 }
 
 .answer-square:nth-child(2n+1){
@@ -233,29 +184,14 @@ body {
 #quilt {
   height: 48vh;
   width: 48vh;
-  // background-image: url(http://latimesblogs.latimes.com/.a/6a00d8341c630a53ef014e8827bb78970d-640wi);
-  // background-repeat: no-repeat;
-  // height: 504px;
-  // width: 514px;
   margin: 6vh auto;
-  // background-image: url(http://i.imgur.com/XmPZZpY.jpg);
   background-size: cover;
   overflow-y: hidden;
-  // background-position: 8px 2px;
-  // border-radius: 5px;
-  // border: 5px solid #F25239;
 
   // The most recently added patch is revealed (fades in)
   .quilt-patch:nth-last-child(2) {
     opacity: 0.0;
-  //   @include animation(pulsate 8s ease-out);
-  //   @include animation-iteration-count(infinite); 
   }
-  // @include keyframes(pulsate) {
-  //     0% {@include transform(scale(0.1, 0.1) opacity 0.0)}
-  //     50% {opacity: 1.0;}
-  //     100% {@include transform(scale(1.2, 1.2) opacity 0.0)}
-  // }
 }
 
 .quilt-scenario {
@@ -265,13 +201,11 @@ body {
 .reveal {
     opacity: 0.0;
     @include animation(reveal 5s ease-out);
-    @include animation-fill-mode(forwards);
-    // @include animation-iteration-count(infinite); 
+    @include animation-fill-mode(forwards); 
   }
   @include keyframes(reveal) {
       0% {@include transform(scale(0.1, 0.1) opacity 0.0)}
       100% {opacity: 1.0;}
-      // 100% {@include transform(scale(1.2, 1.2) opacity 0.0)}
   }
 
 
@@ -281,17 +215,12 @@ body {
 .quilt-patch {
   float: left;
   width: 4vh;
-  // width: 84px;
   .quilt-square {
     float: left;
     width: 2vh;
     height: 2vh;
     border-top: 2vh solid;
     border-right: 2vh solid;
-    // width: 42px;
-    // height: 42px;
-    // border-top: 42px solid;
-    // border-right: 42px solid;
   }
   .quilt-square:nth-child(6){
     border-right-color: transparent !important;
@@ -308,7 +237,6 @@ body {
 div:nth-of-type(n+4):nth-of-type(-n+6){
   .quilt-square {
     border-left: 2vh solid;
-    // border-left: 42px solid;
     border-right-width: none; // Comment out for random pattern effect
     border-right-style: none; // Comment out for random pattern effect
   }
@@ -331,7 +259,6 @@ div:nth-of-type(n+7):nth-of-type(-n+9){
 div:nth-of-type(n+10):nth-of-type(-n+12){
   .quilt-square {
     border-left: 2vh solid;
-    // border-left: 42px solid;
     border-right-width: none; // Comment out for random pattern effect
     border-right-style: none; // Comment out for random pattern effect
   }
@@ -354,7 +281,6 @@ div:nth-of-type(n+13):nth-of-type(-n+15){
 div:nth-of-type(n+16):nth-of-type(-n+18){
   .quilt-square {
     border-left: 2vh solid;
-    // border-left: 42px solid;
     border-right-width: none; // Comment out for random pattern effect
     border-right-style: none; // Comment out for random pattern effect
   }
@@ -377,7 +303,6 @@ div:nth-of-type(n+19):nth-of-type(-n+21){
 div:nth-of-type(n+22):nth-of-type(-n+24){
   .quilt-square {
     border-left: 2vh solid;
-    // border-left: 42px solid;
     border-right-width: none; // Comment out for random pattern effect
     border-right-style: none; // Comment out for random pattern effect
   }
@@ -394,7 +319,6 @@ div:nth-of-type(n+22):nth-of-type(-n+24){
 div:nth-of-type(n+25):nth-of-type(-n+27){
   .quilt-square {
     border-left: 2vh solid;
-    // border-left: 42px solid;
     border-right-width: none; // Comment out for random pattern effect
     border-right-style: none; // Comment out for random pattern effect
   }
@@ -417,7 +341,6 @@ div:nth-of-type(n+28):nth-of-type(-n+30){
 div:nth-of-type(n+31):nth-of-type(-n+33){
   .quilt-square {
     border-left: 2vh solid;
-    // border-left: 42px solid;
     border-right-width: none; // Comment out for random pattern effect
     border-right-style: none; // Comment out for random pattern effect
   }
@@ -441,7 +364,6 @@ div:nth-of-type(n+34):nth-of-type(-n+36){
 div:nth-of-type(n+37):nth-of-type(-n+39){
   .quilt-square {
     border-left: 2vh solid;
-    // border-left: 42px solid;
     border-right-width: none; // Comment out for random pattern effect
     border-right-style: none; // Comment out for random pattern effect
   }
@@ -464,7 +386,6 @@ div:nth-of-type(n+40):nth-of-type(-n+42){
 div:nth-of-type(n+43):nth-of-type(-n+45){
   .quilt-square {
     border-left: 2vh solid;
-    // border-left: 42px solid;
     border-right-width: none; // Comment out for random pattern effect
     border-right-style: none; // Comment out for random pattern effect
   }
@@ -494,7 +415,6 @@ div:nth-of-type(n+49):nth-of-type(-n+51){
 div:nth-of-type(n+52):nth-of-type(-n+54){
   .quilt-square {
     border-left: 2vh solid;
-    // border-left: 42px solid;
     border-right-width: none; // Comment out for random pattern effect
     border-right-style: none; // Comment out for random pattern effect
   }
@@ -517,7 +437,6 @@ div:nth-of-type(n+55):nth-of-type(-n+57){
 div:nth-of-type(n+58):nth-of-type(-n+60){
   .quilt-square {
     border-left: 2vh solid;
-    // border-left: 42px solid;
     border-right-width: none; // Comment out for random pattern effect
     border-right-style: none; // Comment out for random pattern effect
   }
@@ -540,7 +459,6 @@ div:nth-of-type(n+61):nth-of-type(-n+63){
 div:nth-of-type(n+64):nth-of-type(-n+66){
   .quilt-square {
     border-left: 2vh solid;
-    // border-left: 42px solid;
     border-right-width: none; // Comment out for random pattern effect
     border-right-style: none; // Comment out for random pattern effect
   }
@@ -563,7 +481,6 @@ div:nth-of-type(n+67):nth-of-type(-n+69){
 div:nth-of-type(n+70):nth-of-type(-n+72){
   .quilt-square {
     border-left: 2vh solid;
-    // border-left: 42px solid;
     border-right-width: none; // Comment out for random pattern effect
     border-right-style: none; // Comment out for random pattern effect
   }
@@ -579,7 +496,6 @@ div:nth-of-type(n+70):nth-of-type(-n+72){
 div:nth-of-type(n+73):nth-of-type(-n+75){
   .quilt-square {
     border-left: 2vh solid;
-    // border-left: 42px solid;
     border-right-width: none; // Comment out for random pattern effect
     border-right-style: none; // Comment out for random pattern effect
   }
@@ -602,7 +518,6 @@ div:nth-of-type(n+76):nth-of-type(-n+78){
 div:nth-of-type(n+79):nth-of-type(-n+81){
   .quilt-square {
     border-left: 2vh solid;
-    // border-left: 42px solid;
     border-right-width: none; // Comment out for random pattern effect
     border-right-style: none; // Comment out for random pattern effect
   }
@@ -626,7 +541,6 @@ div:nth-of-type(n+82):nth-of-type(-n+84){
 div:nth-of-type(n+85):nth-of-type(-n+87){
   .quilt-square {
     border-left: 2vh solid;
-    // border-left: 42px solid;
     border-right-width: none; // Comment out for random pattern effect
     border-right-style: none; // Comment out for random pattern effect
   }
@@ -649,7 +563,6 @@ div:nth-of-type(n+88):nth-of-type(-n+90){
 div:nth-of-type(n+91):nth-of-type(-n+93){
   .quilt-square {
     border-left: 2vh solid;
-    // border-left: 42px solid;
     border-right-width: none; // Comment out for random pattern effect
     border-right-style: none; // Comment out for random pattern effect
   }
@@ -704,4 +617,40 @@ div:nth-of-type(n+94):nth-of-type(-n+96){
   left: 50%;
 }
 
+
+.progress-bar-indication {  
+  ///////////////////////////////////////////////////////////////////////////////////
+  $base-border-radius: 3px !default;
+  $base-background-color: rgba(255, 255, 255, 0.8);
+  //////////////////////////////////////////////////////////////////////////////////
+  background-color: $base-background-color;
+  border-radius: $base-border-radius;
+  margin: 0 auto;
+  max-width: 64vh;
+  height: 2.4em;
+
+  > span.meter {
+    @include box-sizing(border-box);
+    background-color: #F7931D;
+    background-repeat: repeat-x;
+    background-size: 40px 40px;
+    border-bottom-right-radius: 0;
+    border-radius: $base-border-radius /1.5;
+    border-top-right-radius: 0;
+    display: block;
+    height: 100%;
+    width: 0%;
+  }
+
+  p {
+    margin: -40px auto 0;
+    background-color: transparent;
+  }
+}
+
+@include media($mobile1) {
+  .progress-bar-indication {
+      max-width: 30vh;
+  }
+}
 

@@ -4,6 +4,7 @@ angular
 		$scope.squares = [1,2,3,4,5,6];
 		$scope.addSquareColor = addSquareColor;
 		var clickCount = -0.5;
+		var meterWidth = 0;
 		var inverse;
 		var dbsquares = [{topColor: "", sideColor: ""}, {topColor: "", sideColor: ""}, {topColor: "", sideColor: ""},
 										{topColor: "", sideColor: ""}, {topColor: "", sideColor: ""}, {topColor: "", sideColor: ""}]
@@ -67,6 +68,17 @@ angular
     	console.log(inverse);
     }
 
+    function setMeterBar(){
+    	meterWidth += 10;
+      meterWidthStyle = meterWidth.toString() + "%";
+      if (meterWidth < 100){
+      	$('.meter').css({'width': meterWidthStyle});
+      }
+      else if (meterWidth == 100){
+      	$('.progress-bar-indication').addClass('hidden');
+      }
+    }
+
   	// Adds color to half of the square. Adds color to each half before increasing the count to the next integer
 	  function addSquareColor(color){
 	  	// Rounds the clickCount to the nearest whole number, than converts it to a string for html injection
@@ -80,9 +92,7 @@ angular
 		      $('.answer-square-' + clickCountString).css({"borderTop": "12vh solid " + color});
 		      dbsquares[Math.floor(clickCount)].topColor = color;
 	    	}
-	      console.log(clickCount);
-	      checkForCompletePatch();
-	      // Checks if clickCount end in 0.5. If so, the squares bottom/right triangle color is set 
+	      // Checks if clickCount ends in 0.5. If so, the squares bottom/right triangle color is set 
 	    } else if (clickCount % 1 == 0.5){
 	    	if (inverse){
 	    		$('.answer-square-' + clickCountString).css({"borderTop": "12vh solid " + color});
@@ -91,9 +101,9 @@ angular
 	      	$('.answer-square-' + clickCountString).css({"borderRight": "12vh solid " + color});
 	      	dbsquares[Math.floor(clickCount)].sideColor = color;
 	      }
-	      console.log(clickCount);
-	      checkForCompletePatch();
       }
+      setMeterBar();
+	    checkForCompletePatch();
 	  }
 
     // Checks if patch is complete, then shows save button and patch and stops the music.
@@ -123,7 +133,7 @@ angular
 		// Hides question square after user clicks a square and increases click count.
 	  $('.square').click(function(){
 	    $('#questions').addClass('hidden');
-	    $('#questions p').removeClass('expand');
+	    $('.progress-bar-indication').removeClass('expand');
 	    $('.square').removeClass('pop-up');
 	    if (inverse && (clickCount == 1.0 || clickCount == 3.5)){
 	      clickCount += 1.0;
