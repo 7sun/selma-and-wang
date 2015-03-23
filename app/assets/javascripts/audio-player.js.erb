@@ -13,11 +13,12 @@ $(".soundcloud.index").ready(function(){
     this.on('timeupdate', function (position, duration) {
       track_position = Math.floor(position);
       // loads questions squares every 8 seconds
-      if (track_position % 8 == 0 && track_position > 0 && track_position != current_position){
+      if (track_position % 1 == 0 && track_position > 0 && track_position != current_position){
         // Checks to make sure color squares do not load more than once for the same time position
         current_position = track_position;
         $('#questions').removeClass('hidden');
-        $('#questions p').addClass('expand');
+        // $('#questions p').addClass('expand');
+        $('.progress-bar-indication').addClass('expand');
         $('.square').addClass('pop-up');
       };
     }, this);
