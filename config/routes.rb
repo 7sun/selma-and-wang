@@ -18,6 +18,5 @@ Rails.application.routes.draw do
   post '/dots' => 'dots#counter', as: :count
   # for tesing svg to canvas
   get '/testing' => 'application#testing'
-  get 'dashboard' => 'application#dashboard'
 
 end

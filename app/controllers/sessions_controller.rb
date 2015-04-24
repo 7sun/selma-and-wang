@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       # Show user login failure message
-      flash[:danger] = 'Your username and password do not match our records :('
+      flash[:danger] = 'Your username and password do not match our records'
       #  Redirect to login page to attempt login again
       redirect_to login_path
     end
